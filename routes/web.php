@@ -27,7 +27,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 // });
 
 //Auth login & logout
-Route::get('/', [LoginController::class, 'index'])->name('login.index');
+Route::get('/', [LoginController::class, 'index'])->name('login.index')->middleware('guest');
 Route::get('/', [LoginController::class, 'proces'])->name('login.proces');
 Route::get('/logout', function () {
     Auth::logout();
