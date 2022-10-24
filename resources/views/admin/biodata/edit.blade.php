@@ -6,7 +6,7 @@
     <a href="{{ Route('admin.biodata') }}" class="btn btn-primary btn-sm mt-5"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <div class="card mt-2">
         <div class="card-body">
-            <form action="{{ route('admin.biodata.update') }}" method="post">
+            <form action="/admin/informasi-biodata/{{ $biodata->id }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="form-floating mb-3">

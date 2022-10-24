@@ -6,7 +6,7 @@
     <a href="{{ Route('admin.biodata') }}" class="btn btn-primary btn-sm mt-5"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <div class="card mt-2">
         <div class="card-body">
-            <form action="{{ route('admin.biodata.store') }}" method="post">
+            <form action="{{ route('admin.biodata.store') }}" method="POST">
                 @csrf
                 <div class="form-floating mb-3">
                     <input type="number" class="form-control" name="nis" id="floatingInput" placeholder="NIS">

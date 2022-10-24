@@ -30,8 +30,12 @@
                                 <td class="text-center">{{ $biodata->class }}</td>
                                 <td class="text-center">{{ $biodata->jurusan }}</td>
                                 <td class="text-center">
-                                    <a href="admin/biodata/edit/{{ $biodata->id }}" class="btn btn-success btn-sm"><i class="bi bi-pencil-square"></i></a>
-                                    <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                    <form action="informasi-biodata/{{ $biodata->id }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <a href="informasi-biodata/{{ $biodata->id }}/edit" class="btn btn-success btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

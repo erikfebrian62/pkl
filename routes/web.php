@@ -51,7 +51,11 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
     Route::post('/informasi-biodata/store', [InformasibiodataController::class, 'store'])->name('biodata.store');
 
-    Route::get('/informasi-biodata/edit/{id}', [InformasibiodataController::class, 'edit'])->name('biodata.edit');
+    Route::get('/informasi-biodata/{id}/edit', [InformasibiodataController::class, 'edit'])->name('biodata.edit');
+
+    Route::put('/informasi-biodata/{id}', [InformasibiodataController::class, 'update'])->name('biodata.update');
+
+    Route::delete('/informasi-biodata/{id}', [InformasibiodataController::class, 'destroy'])->name('biodata.destroy');
 });
 
 

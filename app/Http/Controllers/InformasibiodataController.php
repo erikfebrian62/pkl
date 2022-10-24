@@ -51,7 +51,7 @@ class InformasibiodataController extends Controller
         $biodata->jurusan = $request->jurusan;
         $biodata->save();
 
-        return redirect(route('admin.biodata'))->with('Success', 'Data berhasil di Tambahkan');
+        return redirect(route('admin.biodata'))->with('Success', 'Data berhasil di Tambahkan!.');
     }
 
     /**
@@ -73,11 +73,8 @@ class InformasibiodataController extends Controller
      */
     public function edit($id)
     {
-        $biodata = Biodata::all();
-        return view('admin.biodata.edit',[
-            'title' => 'Edit',
-            'biodatas' => $biodata::find($id)
-        ]);
+        $biodata = Biodata::find($id);
+        return view('admin.biodata.edit', compact('biodata'));
     }
 
     /**
@@ -89,7 +86,21 @@ class InformasibiodataController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nis' => 'required',
+            'name' => 'required',
+            'class' => 'required',
+            'jurusan' => 'required'
+        ]);
+
+        $biodata = Biodata::find($id);
+        $biodata->nis = $request->nis;
+        $biodata->name = $request->name;
+        $biodata->class = $request->class;
+        $biodata->jurusan = $request->jurusan;
+        $biodata->save();
+
+        return redirect(route('admin.biodata'))->with('Success', 'Data telah di Perbarui!.');
     }
 
     /**
@@ -100,6 +111,9 @@ class InformasibiodataController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $biodata = Biodata::find($id);
+        $biodata->delete();
+
+        return redirect(route('admin.biodata'))->with('Success', 'Data telah di Hapus!.');
     }
 }
