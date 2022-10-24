@@ -13,7 +13,7 @@
                 <div class="card h-100">
                     <div class="col">
                         <div class="nomer">
-                            <h5></h5>
+                            <h5>{{ $loop->iteration }}</h5>
                         </div>
                         <img src="IMG/bill.jpg" class="card-img-md-auto" width="150px" alt="...">
                         <div class="nama">
@@ -50,7 +50,7 @@
                                     </div>
                                 </div>
                                 <h5>Kandidat</h5>
-                                <h1>NO 1</h1><br><br>
+                                <h1>NO {{ $loop->iteration }}</h1><br><br>
                                 <div class="row justify-content-start">
                                     <div class="col-auto">
                                     <img src="img/bill.jpg" width="130px" class="rounded" alt="">

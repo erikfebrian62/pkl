@@ -6,34 +6,8 @@
     <div class="col">
         <h3>Tambah Siswa</h3>
         <div class="card">
-            <form method="post" action="{{route('simpanbiodata')}}">
+            <form method="post" action="{{route('admin.informasi-biodata')}}">
                 @csrf
-
-                {{-- <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="nama" id="floatingInput" placeholder="">
-                    <label for="floatingInput">Nama</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="">
-                    <label for="floatingInput">NISN</label>
-                  </div>
-                  <div class="form-floating mb-3    ">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                      <option value="1">X</option>
-                      <option value="2">XI</option>
-                      <option value="3">XII</option>
-                    </select>
-                    <label for="floatingSelect">Pilih Kelas</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="">
-                    <label for="floatingInput">Jurusan</label>
-                  </div>
-                  <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
-                </div> --}}
-
                 <div class="form-floating mb-3">
                     <input
                         type="text"

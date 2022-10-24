@@ -1,10 +1,10 @@
 @extends('layouts.mainadmin')
 
 @section('content')
-    @include('informasisiswa')
+    @include('')
 
         <div class="container">
-            <a class="btn btn-success" href="{{route('tambahbiodata')}}"><i class="fa fa-plus"></i> Tambah Siswa</a><br><br>
+            <a class="btn btn-success" href="{{route('admin.informasi-biodata')}}"><i class="fa fa-plus"></i> Tambah Siswa</a><br><br>
             <div class="row justify-content-center align-items-center text-center mb-5">
 
                 <div class="card h-100">
@@ -18,7 +18,7 @@
                             <th scope="col">Aksi</th>
                         </thead>
                         @php $no = 1; @endphp
-                        @foreach ($biodata as $b)
+                        @foreach ($Biodata as $b)
                         <tbody>
                             <th scope="row">{{$no++}}</td>
                             <td class="text-center">{{$b->name}}</td>

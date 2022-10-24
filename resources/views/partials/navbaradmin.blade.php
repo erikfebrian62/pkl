@@ -11,10 +11,10 @@
               Admin
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/informasibiodata">Biodata Siswa</a></li>
-              <li><a class="dropdown-item" href="/editkandidat">Edit Kandidat</a></li>
+              <li><a class="dropdown-item" href="{{ Route('admin.informasi-biodata') }}">Biodata Siswa</a></li>
+              <li><a class="dropdown-item" href="{{ Route('admin.edit-kandidat') }}">Edit Kandidat</a></li>
               <li><a class="dropdown-item" href="#">Informasi Pemenang dan <br> Struktur Organisasi</a></li>
-              <li><a class="dropdown-item" href="#">Logout</a></li>
+              <li><a class="dropdown-item" href="{{ Route('logout') }}">Logout</a></li>
             </ul>
           </li>
         </ul>

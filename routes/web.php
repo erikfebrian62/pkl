@@ -27,20 +27,21 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 // });
 
 //Auth login & logout
-Route::get('/', [LoginController::class, 'index'])->name('login.index')->middleware('guest');
-Route::get('/', [LoginController::class, 'proces'])->name('login.proces');
+Route::get('/', [LoginController::class, 'index'])->name('login.index');
+Route::post('/', [LoginController::class, 'proces'])->name('login.proces');
 Route::get('/logout', function () {
     Auth::logout();
 
-    return redirect(route('login.index'))->name('logout');
-});
+    return redirect(route('login.index'));
+})->name('logout');
 
 
 //Middleware admin
 Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( function() {
     Route::get('/dasboard', [DashboardController::class, 'dash'])->name('dashboard');
     Route::get('/edit-kandidat', [EditkandidatController::class, 'edit'])->name('edit-kandidat');
-    Route::get('/informasi-biodata', [InformasibiodataController::class, 'biodata'])->name('informasi-biodata');
+    Route::get('/informasi-biodata', [InformasibiodataController::class, 'index'])->name('informasi-biodata');
+    Route::get('/informasi-biodata/tambah', [InformasibiodataController::class, 'create'])->name('informasi-biodata.tambah');
 });
 
 
