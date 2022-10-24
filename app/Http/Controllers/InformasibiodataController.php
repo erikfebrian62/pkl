@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Biodata;
+
 use Illuminate\Http\Request;
+use App\Models\Biodata;
 
 class InformasibiodataController extends Controller
 {
@@ -14,8 +15,8 @@ class InformasibiodataController extends Controller
      */
     public function index()
     {
-        $Biodata = Biodata::all();
-        return view('admin.informasibiodata', $Biodata);
+        $biodata = Biodata::all();
+        return view('admin.biodata.index',compact('biodata'));
     }
 
     /**
@@ -25,7 +26,7 @@ class InformasibiodataController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.biodata.create');
     }
 
     /**
@@ -36,7 +37,21 @@ class InformasibiodataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nis' => 'required',
+            'name' => 'required',
+            'class' => 'required',
+            'jurusan' => 'required'
+        ]);
+
+        $biodata = new Biodata;
+        $biodata->nis = $request->nis;
+        $biodata->name = $request->name;
+        $biodata->class = $request->class;
+        $biodata->jurusan = $request->jurusan;
+        $biodata->save();
+
+        return redirect(route('admin.biodata'))->with('Success', 'Data berhasil di Tambahkan');
     }
 
     /**
@@ -47,7 +62,7 @@ class InformasibiodataController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -58,7 +73,11 @@ class InformasibiodataController extends Controller
      */
     public function edit($id)
     {
-        //
+        $biodata = Biodata::all();
+        return view('admin.biodata.edit',[
+            'title' => 'Edit',
+            'biodatas' => $biodata::find($id)
+        ]);
     }
 
     /**

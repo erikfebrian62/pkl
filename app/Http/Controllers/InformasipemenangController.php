@@ -8,8 +8,6 @@ class InformasipemenangController extends Controller
 {
     public function pemenang()
     {
-        return view('user.informasipemenang', [
-            'title' => 'Informasi-Pemenang'
-        ]);
+        return view('user.informasipemenang');
     }
 }

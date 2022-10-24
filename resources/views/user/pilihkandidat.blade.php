@@ -8,7 +8,7 @@
 
         <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
 
-        @foreach($candidates as $candidate)
+        @foreach($candidate as $candidate)
             <div class="col">
                 <div class="card h-100">
                     <div class="col">

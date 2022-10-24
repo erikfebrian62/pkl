@@ -8,8 +8,6 @@ class InformasisuaraController extends Controller
 {
     public function suara()
     {
-        return view('user.informasisuara', [
-            'title' => 'Informasi-Suara'
-        ]);
+        return view('user.informasisuara');
     }
 }

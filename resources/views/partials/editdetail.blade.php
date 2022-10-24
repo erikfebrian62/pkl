@@ -1,8 +1,8 @@
-          <!-- Button trigger modal -->
+         <!-- Button trigger modal -->
           <p type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Edit
           </p>
-    
+
           <!-- Modal -->
           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" class="rounded">
             <div class="modal-dialog modal-dialog-centered modal-lg ">
@@ -44,4 +44,3 @@
               </div>
             </div>
           </div>
-        

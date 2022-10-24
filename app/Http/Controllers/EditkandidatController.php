@@ -8,8 +8,6 @@ class EditkandidatController extends Controller
 {
     public function edit()
     {
-        return view('admin.editkandidat', [
-            'title' => 'Edit-Kandidat'
-        ]);
+        return view('admin.editkandidat');
     }
 }

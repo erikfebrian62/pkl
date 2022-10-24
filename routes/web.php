@@ -28,7 +28,9 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 //Auth login & logout
 Route::get('/', [LoginController::class, 'index'])->name('login.index');
+
 Route::post('/', [LoginController::class, 'proces'])->name('login.proces');
+
 Route::get('/logout', function () {
     Auth::logout();
 
@@ -38,18 +40,30 @@ Route::get('/logout', function () {
 
 //Middleware admin
 Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( function() {
+
     Route::get('/dasboard', [DashboardController::class, 'dash'])->name('dashboard');
+
     Route::get('/edit-kandidat', [EditkandidatController::class, 'edit'])->name('edit-kandidat');
-    Route::get('/informasi-biodata', [InformasibiodataController::class, 'index'])->name('informasi-biodata');
-    Route::get('/informasi-biodata/tambah', [InformasibiodataController::class, 'create'])->name('informasi-biodata.tambah');
+
+    Route::get('/informasi-biodata', [InformasibiodataController::class, 'index'])->name('biodata');
+
+    Route::get('/informasi-biodata/create', [InformasibiodataController::class, 'create'])->name('biodata.create');
+
+    Route::post('/informasi-biodata/store', [InformasibiodataController::class, 'store'])->name('biodata.store');
+
+    Route::get('/informasi-biodata/edit/{id}', [InformasibiodataController::class, 'edit'])->name('biodata.edit');
 });
 
 
 //Middleware user
 Route::prefix('user')->name('user.')->middleware('role:user')->group( function() {
+
     Route::get('/pilih-kandidat', [PilihkandidatController::class, 'voting'])->name('pilih-kandidat');
+
     Route::get('/informasi-suara', [InformasisuaraController::class, 'suara'])->name('informasi-suara');
+
     Route::get('/informasi-siswa', [InformasisiswaController::class, 'siswa'])->name('informasi-siswa');
+
     Route::get('/informasi-pemenang', [InformasipemenangController::class, 'pemenang'])->name('informasi-pemenang');
 });
 

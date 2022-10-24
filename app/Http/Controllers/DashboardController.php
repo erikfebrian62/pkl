@@ -8,8 +8,6 @@ class DashboardController extends Controller
 {
     public function dash()
     {
-        return view('admin.dashboard', [
-            'title' => 'Dashboard'
-        ]);
+        return view('admin.dashboard');
     }
 }
