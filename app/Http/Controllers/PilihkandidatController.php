@@ -10,6 +10,6 @@ class PilihkandidatController extends Controller
     public function voting()
     {
         $candidate = Candidate::all();
-        return view('user.pilihkandidat',compact('candidate'));
+        return view('user.pilihkandidat', compact('candidate'));
     }
 }

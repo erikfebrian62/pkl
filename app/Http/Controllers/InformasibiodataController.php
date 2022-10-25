@@ -51,7 +51,7 @@ class InformasibiodataController extends Controller
         $biodata->jurusan = $request->jurusan;
         $biodata->save();
 
-        return redirect(route('admin.biodata'))->with('Success', 'Data berhasil di Tambahkan!.');
+        return redirect(route('admin.biodata.index'))->with('Success', 'Data berhasil di Tambahkan!.');
     }
 
     /**
@@ -100,7 +100,7 @@ class InformasibiodataController extends Controller
         $biodata->jurusan = $request->jurusan;
         $biodata->save();
 
-        return redirect(route('admin.biodata'))->with('Success', 'Data telah di Perbarui!.');
+        return redirect(route('admin.biodata.index'))->with('Success', 'Data telah di Perbarui!.');
     }
 
     /**
@@ -114,6 +114,6 @@ class InformasibiodataController extends Controller
         $biodata = Biodata::find($id);
         $biodata->delete();
 
-        return redirect(route('admin.biodata'))->with('Success', 'Data telah di Hapus!.');
+        return redirect(route('admin.biodata.index'))->with('Success', 'Data telah di Hapus!.');
     }
 }

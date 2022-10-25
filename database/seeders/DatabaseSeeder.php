@@ -69,8 +69,8 @@ class DatabaseSeeder extends Seeder
 
         Candidate::create([
             'img' => 'Jokowi.jpg',
-            'nis' => '123123',
-            'name' => 'Burhan Upomo',
+            'ketua' => 'Burhan Upomo',
+            'wakil' => 'Yoyi Son',
             'class' => 'XII',
             'jurusan' => 'RPL',
             'visi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!',
@@ -79,8 +79,8 @@ class DatabaseSeeder extends Seeder
 
         Candidate::create([
             'img' => 'SBY.png',
-            'nis' => '231231',
-            'name' => 'Sustisno',
+            'ketua' => 'Sonri',
+            'wakil' => 'Yamino',
             'class' => 'XII',
             'jurusan' => 'TKJ',
             'visi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!',
@@ -89,8 +89,8 @@ class DatabaseSeeder extends Seeder
 
         Candidate::create([
             'img' => 'Habibie.jpg',
-            'nis' => '321321',
-            'name' => 'Herman Bagja',
+            'ketua' => 'Koror',
+            'wakil' => 'Santi',
             'class' => 'XII',
             'jurusan' => 'TBSM',
             'visi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!',

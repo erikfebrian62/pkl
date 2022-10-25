@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('candidates', function (Blueprint $table) {
             $table->id();
             $table->string('img');
-            $table->string('nis');
-            $table->string('name');
+            $table->string('ketua');
+            $table->string('wakil');
             $table->string('class');
             $table->string('jurusan');
             $table->text('visi');

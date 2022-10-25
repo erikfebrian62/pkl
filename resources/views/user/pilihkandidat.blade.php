@@ -40,7 +40,7 @@
 
 
                         <!-- Modal -->
-                        <div class="modal fade" id="kandidat {{ $candidat->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" class="rounded">
+                        <div class="modal fade" id="kandidat {{ $candidate->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" class="rounded">
                             <div class="modal-dialog modal-dialog-centered modal-lg ">
                             <div class="modal-content p-4">
                                 <div class="modal-body">
