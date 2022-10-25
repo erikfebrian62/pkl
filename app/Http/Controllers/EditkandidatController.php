@@ -15,7 +15,7 @@ class EditkandidatController extends Controller
     public function index()
     {
         $candidate = Candidate::all();
-        return view('admin.candidat.index',compact('candidate'));
+        return view('admin.candidat.index', compact('candidate'));
     }
 
     /**
@@ -37,7 +37,6 @@ class EditkandidatController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' => 'required',
             'ketua' => 'required',
             'wakil' => 'required',
             'kelas' => 'required',
@@ -46,8 +45,7 @@ class EditkandidatController extends Controller
             'misi' => 'required'
         ]);
 
-        $candidate = new Candidate();
-        $candidate->image = $request->image;
+        $candidate = new Candidate;
         $candidate->ketua = $request->ketua;
         $candidate->wakil = $request->wakil;
         $candidate->kelas = $request->kelas;

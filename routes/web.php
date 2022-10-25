@@ -43,8 +43,6 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
     Route::get('/dasboard', [DashboardController::class, 'dash'])->name('dashboard');
 
-    Route::get('/edit-kandidat', [EditkandidatController::class, 'edit'])->name('edit-kandidat');
-
     //crud user
     Route::get('/informasi-biodata', [InformasibiodataController::class, 'index'])->name('biodata.index');
 
@@ -59,17 +57,17 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
     Route::delete('/informasi-biodata/{id}', [InformasibiodataController::class, 'destroy'])->name('biodata.destroy');
 
     //crud candidate
-    Route::get('/informasi-kandidat', [EditkandidatController::class, 'index'])->name('kandidat.index');
+    Route::get('/edit-kandidat', [EditkandidatController::class, 'index'])->name('kandidat.index');
 
-    Route::get('/informasi-kandidat/create', [EditkandidatController::class, 'create'])->name('kandidat.create');
+    Route::get('/edit-kandidat/create', [EditkandidatController::class, 'create'])->name('kandidat.create');
 
-    Route::post('/informasi-kandidat/store', [EditkandidatController::class, 'store'])->name('kandidat.store');
+    Route::post('/edit-kandidat/store', [EditkandidatController::class, 'store'])->name('kandidat.store');
 
-    Route::get('/informasi-kandidat/{id}/edit', [EditkandidatController::class, 'edit'])->name('kandidat.edit');
+    Route::get('/edit-kandidat/{id}/edit', [EditkandidatController::class, 'edit'])->name('kandidat.edit');
 
-    Route::put('/informasi-kandidat/{id}', [EditkandidatController::class, 'update'])->name('kandidat.update');
+    Route::put('/edit-kandidat/{id}', [EditkandidatController::class, 'update'])->name('kandidat.update');
 
-    Route::delete('/informasi-kandidat/{id}', [EditkandidatController::class, 'destroy'])->name('kandidat.destroy');
+    Route::delete('/edit-kandidat/{id}', [EditkandidatController::class, 'destroy'])->name('kandidat.destroy');
 });
 
 

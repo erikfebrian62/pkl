@@ -6,11 +6,11 @@
     <a href="{{ Route('admin.kandidat.index') }}" class="btn btn-primary btn-sm mt-5"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <div class="card mt-2">
         <div class="card-body">
-            <form action="{{ route('admin.kandidat.store') }}" method="POST">
+            <form action="{{ Route('admin.kandidat.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="form-floating mb-3">
-                    <input type="number" class="form-control" name="nis" id="floatingInput" placeholder="Image">
-                    <label for="floatingInput">Image</label>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Image</label>
+                    <input class="form-control" type="file" name="image" id="formFile">
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" name="name" id="floatingInput" placeholder="Ketua">

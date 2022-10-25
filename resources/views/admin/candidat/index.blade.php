@@ -32,10 +32,10 @@
                                 <td class="text-center">{{ $candidate->class }}</td>
                                 <td class="text-center">{{ $candidate->jurusan }}</td>
                                 <td class="text-center">
-                                    <form action="informasi-kandidat/{{ $candidate->id }}" method="POST">
+                                    <form action="edit-kandidat/{{ $candidate->id }}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <a href="informasi-kandidat/{{ $candidate->id }}/edit" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                        <a href="edit-kandidat/{{ $candidate->id }}/edit" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
                                         <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                     </form>
                                 </td>
