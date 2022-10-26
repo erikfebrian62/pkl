@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\Candidate;
+
 
 class EditkandidatController extends Controller
 {
@@ -15,7 +17,7 @@ class EditkandidatController extends Controller
     public function index()
     {
         $candidate = Candidate::all();
-        return view('admin.candidat.index', compact('candidate'));
+        return view('admin.candidat.index',compact('candidate'));
     }
 
     /**
@@ -39,20 +41,22 @@ class EditkandidatController extends Controller
         $request->validate([
             'ketua' => 'required',
             'wakil' => 'required',
-            'kelas' => 'required',
+            'class' => 'required',
             'jurusan' => 'required',
             'visi' => 'required',
-            'misi' => 'required'
+            'misi' => 'required',
         ]);
 
-        $candidate = new Candidate;
-        $candidate->ketua = $request->ketua;
-        $candidate->wakil = $request->wakil;
-        $candidate->kelas = $request->kelas;
-        $candidate->jurusan = $request->jurusan;
-        $candidate->visi = $request->visi;
-        $candidate->misi = $request->misi;
-        $candidate->save();
+        $input = $request->all();
+
+        if ($img = $request->file('img')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $img->getClientOriginalExtension();
+            $img->move($destinationPath, $profileImage);
+            $input['img'] = "$profileImage";
+        }
+
+        Candidate::create($input);
 
         return redirect(route('admin.kandidat.index'))->with('Success', 'Data berhasil di Tambahkan!.');
     }
@@ -65,7 +69,7 @@ class EditkandidatController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -90,26 +94,28 @@ class EditkandidatController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'image' => 'required',
             'ketua' => 'required',
             'wakil' => 'required',
-            'kelas' => 'required',
+            'class' => 'required',
             'jurusan' => 'required',
             'visi' => 'required',
-            'misi' => 'required'
+            'misi' => 'required',
         ]);
 
-        $candidate = Candidate::find($id);
-        $candidate->image = $request->image;
-        $candidate->ketua = $request->ketua;
-        $candidate->wakil = $request->wakil;
-        $candidate->kelas = $request->kelas;
-        $candidate->jurusan = $request->jurusan;
-        $candidate->visi = $request->visi;
-        $candidate->misi = $request->misi;
-        $candidate->save();
+        $input = $request->all();
 
-        return redirect(route('admin.kandidat.index'))->with('Success', 'Data berhasil di Perbarui!.');
+        if ($img = $request->file('img')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $img->getClientOriginalExtension();
+            $img->move($destinationPath, $profileImage);
+            $input['img'] = "$profileImage";
+        }else{
+            unset($input['img']);
+        }
+
+        Candidate::updated($input);
+
+        return redirect(route('admin.kandidat.index'))->with('Success', 'Data telah di Perbarui!.');
     }
 
     /**
@@ -123,6 +129,6 @@ class EditkandidatController extends Controller
         $candidate = Candidate::find($id);
         $candidate->delete();
 
-        return redirect(route('admin.kandidat.index'))->with('Success', 'Data berhasil di Hapus!.');
+        return redirect(route('admin.kandidat.index'))->with('Success', 'Data telah di Hapus!.');
     }
 }

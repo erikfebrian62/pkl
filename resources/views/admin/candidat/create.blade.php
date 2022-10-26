@@ -8,16 +8,15 @@
         <div class="card-body">
             <form action="{{ Route('admin.kandidat.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="mb-3">
-                    <label for="formFile" class="form-label">Image</label>
-                    <input class="form-control" type="file" name="image" id="formFile">
+                <div class=" mb-3">
+                    <input type="file" class="form-control" name="img" id="img">
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="name" id="floatingInput" placeholder="Ketua">
+                    <input type="text" class="form-control" name="ketua" id="floatingInput" placeholder="Ketua">
                     <label for="floatingInput">Ketua</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="name" id="floatingInput" placeholder="Wakil">
+                    <input type="text" class="form-control" name="wakil" id="floatingInput" placeholder="Wakil">
                     <label for="floatingInput">Wakil</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -29,11 +28,11 @@
                     <label for="floatingInput">Jurusan</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="jurusan" id="floatingInput" placeholder="Visi">
+                    <input type="text" class="form-control" name="visi" id="floatingInput" placeholder="Jurusan">
                     <label for="floatingInput">Visi</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="jurusan" id="floatingInput" placeholder="Misi">
+                    <input type="text" class="form-control" name="misi" id="floatingInput" placeholder="Jurusan">
                     <label for="floatingInput">Misi</label>
                 </div>
                 <button type="submit" class="btn  btn-success btn-md float-end">Simpan</button>

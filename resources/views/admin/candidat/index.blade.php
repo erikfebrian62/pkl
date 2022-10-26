@@ -15,7 +15,7 @@
                 <table class="table table-striped">
                     <thead>
                         <th class="text-center">No</th>
-                        <th class="text-center">Image</th>
+                        <th class="text-center">Profile</th>
                         <th class="text-center">Ketua</th>
                         <th class="text-center">Wakil</th>
                         <th class="text-center">Kelas</th>
@@ -26,7 +26,7 @@
                         @foreach ($candidate as $candidate)
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
-                                <td class="text-center">{{ $candidate->image }}</td>
+                                <td class="text-center"><img src="/images/{{ $candidate->img }}" width="40px"></td>
                                 <td class="text-center">{{ $candidate->ketua }}</td>
                                 <td class="text-center">{{ $candidate->wakil }}</td>
                                 <td class="text-center">{{ $candidate->class }}</td>

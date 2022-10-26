@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Biodata extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nis',
+        'name',
+        'class',
+        'jurusan'
+    ];
 }
