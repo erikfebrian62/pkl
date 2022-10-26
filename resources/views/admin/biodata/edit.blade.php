@@ -3,10 +3,10 @@
 @section('content')
 <div class="container">
     <h1 class="text-center fw-bold">BIODATA SISWA</h1>
-    <a href="{{ Route('admin.biodata.index') }}" class="btn btn-primary btn-sm mt-5"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
+    <a href="{{ route('admin.biodata.index') }}" class="btn btn-primary btn-sm mt-5"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <div class="card mt-2">
         <div class="card-body">
-            <form action="/admin/informasi-biodata/{{ $biodata->id }}" method="POST">
+            <form action="{{ route('admi.biodata.update', $biodata->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="form-floating mb-3">

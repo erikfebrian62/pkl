@@ -91,7 +91,7 @@ class EditkandidatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Candidate $candidate)
     {
         $request->validate([
             'ketua' => 'required',
@@ -113,7 +113,7 @@ class EditkandidatController extends Controller
             unset($input['img']);
         }
 
-        Candidate::updated($input);
+        $candidate->update($input);
 
         return redirect(route('admin.kandidat.index'))->with('Success', 'Data telah di Perbarui!.');
     }
