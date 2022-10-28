@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="kandidat/pilihkandidat.css">
     <title>Project PKL</title>
 </head>
-<body>
+<body class="font-monospace">
 
 
     @include('partials.navbaradmin')

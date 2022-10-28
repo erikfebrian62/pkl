@@ -11,6 +11,7 @@
               Admin
             </a>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ Route('admin.dashboard') }}">Dashboard</a></li>
               <li><a class="dropdown-item" href="{{ Route('admin.biodata.index') }}">Biodata Siswa</a></li>
               <li><a class="dropdown-item" href="{{ Route('admin.kandidat.index') }}">Edit Kandidat</a></li>
               <li><a class="dropdown-item" href="#">Informasi Pemenang dan <br> Struktur Organisasi</a></li>

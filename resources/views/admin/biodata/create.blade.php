@@ -17,12 +17,22 @@
                     <label for="floatingInput">Nama</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="class" id="floatingInput" placeholder="Kelas">
-                    <label for="floatingInput">Kelas</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Kelas</option>
+                        <option value="1">X</option>
+                        <option value="2">XI</option>
+                        <option value="3">XII</option>
+                      </select>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="jurusan" id="floatingInput" placeholder="Jurusan">
-                    <label for="floatingInput">Jurusan</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Jurusan</option>
+                        <option value="1">Teknik Kendaraan Ringan Otomotif</option>
+                        <option value="2">Teknik Bisnis Sepeda Motor</option>
+                        <option value="3">Teknik Jaringan & Komputer</option>
+                        <option value="4">Teknik Ototronik</option>
+                        <option value="5"></option>
+                      </select>
                 </div>
                 <button type="submit" class="btn  btn-success btn-md float-end">Simpan</button>
             </form>

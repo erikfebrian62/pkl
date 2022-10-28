@@ -127,7 +127,7 @@ class EditkandidatController extends Controller
     public function destroy($id)
     {
         $candidate = Candidate::find($id);
-        $candidate->delete();
+        $candidate->delete($id);
 
         return redirect(route('admin.kandidat.index'))->with('Success', 'Data telah di Hapus!.');
     }
