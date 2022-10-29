@@ -34,7 +34,7 @@
                         <option value="5"></option>
                       </select>
                 </div>
-                <button type="submit" class="btn  btn-success btn-md float-end">Simpan</button>
+                <button type="submit" class="btn  btn-success btn-md float-end"><i class="fa fa-save" > Simpan</i></button>
             </form>
         </div>
     </div>

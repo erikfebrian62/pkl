@@ -25,7 +25,7 @@
                     <input type="text" class="form-control" name="jurusan" value="{{ $biodata->jurusan }}" id="floatingInput" placeholder="Jurusan">
                     <label for="floatingInput">Jurusan</label>
                 </div>
-                <button type="submit" class="btn  btn-success btn-md float-end">Simpan</button>
+                <button type="submit" class="btn  btn-success btn-md float-end" ><i class="fa fa-save"> Simpan</i></button>
             </form>
         </div>
     </div>

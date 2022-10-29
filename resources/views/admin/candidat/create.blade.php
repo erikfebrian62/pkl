@@ -35,7 +35,7 @@
                     <input type="text" class="form-control" name="misi" id="floatingInput" placeholder="Jurusan">
                     <label for="floatingInput">Misi</label>
                 </div>
-                <button type="submit" class="btn  btn-success btn-md float-end"><i class="bi bi-file-check"></i> Simpan</button>
+                <button type="submit" class="btn  btn-success btn-md float-end"><i class="fa fa-save"></i> Simpan</button>
             </form>
         </div>
     </div>
