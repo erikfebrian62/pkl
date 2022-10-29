@@ -69,38 +69,49 @@ class DatabaseSeeder extends Seeder
 
         Candidate::create([
             'img' => 'kandidat_no_urut_01.jpeg',
-            'ketua' => 'Burhan Upomo',
-            'kelas_ketua' => 'XII',
-            'jurusan_ketua' => 'Rekayasa Perangkat Lunak',
-            'wakil' => 'Yoyi Son',
+            'ketua' => 'Rivaldi',
+            'kelas_ketua' => 'XI',
+            'jurusan_ketua' => 'Ototronik',
+            'wakil' => 'Nuraeni',
             'kelas_wakil' => 'XI',
             'jurusan_wakil' => 'Teknik Jaringan & Komputer',
-            'visi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!',
-            'misi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!'
+            'visi' => 'Menjadikan OSIS SMK Pertiwi Kuningan seebagai organisasi yang unggul serta terwujudnya OSIS dan siswa SMK Pertiwi Kuningan yang berakhlak mulia, kreatif, dinamis, berkualitas, serta dapat bersaing di era industr idigital',
+            'misi' => 'Menumbuhkan kerukunan dan keimanan antar siswa
+                       Mengingatkan solidaritas dan kerjasama antar organisasi serta ekstrakulikuler
+                       Mengoptimalkan penggunaan jejaring sosial media atau internet sebagai sarana untuk memaksimalkan program kerja OSIS SMK Pertiwi Kuningan
+                       Mengembangkan organisasi dan ekstrakulikuler sebagai sarana penyaluran bakat siswa
+                       Melanjutkan dan mengembangkan program kerja sebelumnya'
         ]);
 
         Candidate::create([
             'img' => 'kandidat_no_urut_02.jpeg',
-            'ketua' => 'Sonri',
-            'kelas_ketua' => 'XII',
+            'ketua' => 'Muhammad Randi Syahputra',
+            'kelas_ketua' => 'XI',
             'jurusan_ketua' => 'Teknik Bisnis Sepeda Motor',
-            'wakil' => 'Yamino',
-            'kelas_wakil' => 'XII',
+            'wakil' => 'Adelya Samratul',
+            'kelas_wakil' => 'X',
             'jurusan_wakil' => 'Rekayasa Perangkat Lunak',
-            'visi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!',
-            'misi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!'
+            'visi' => 'Menjadikan OSIS SMK Pertiwi Kuningan sebagai mitra kerja dalam menciptakan siswa/siswi SMK Pertiwi Kuningan yang kreatif berbudi pekerti luhur dan berprestasi serta melatih dalam bersolialisasi dan berorganisasi',
+            'misi' => 'Meningkatkan iman dan takwa terhadap Tuhan Yang Maha Esa, melalui acara atau kegiataan keagamaan
+                       Melaksanakan kegiatan yang dapat meningkatkan hubungan positif antar guru dan siswa
+                       Meningkatkan kegiatan ekstrakulikuler sekolah sebagai wadah pengemabangan minat dan bakat siswa siswi SMK Pertiwi Kuningan
+                       Membentuk karakter pengurus yang cerdas dan solid
+                       Ikut menyelenggarakan bakti sosial di lingkungan sekolah atau sekitarnya sebagai tanda kepeduian sesama '
         ]);
 
         Candidate::create([
             'img' => 'kandidat_no_urut_03.jpeg',
-            'ketua' => 'Koror',
+            'ketua' => 'Yusup Saputra',
             'kelas_ketua' => 'XI',
-            'jurusan_ketua' => 'Rekayasa Perangkat Lunak',
-            'wakil' => 'Santi',
-            'kelas_wakil' => 'XII',
-            'jurusan_wakil' => 'Rekayasa Perangkat Lunak',
-            'visi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!',
-            'misi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!'
+            'jurusan_ketua' => 'Axioo Class Program',
+            'wakil' => 'Alin Alianti',
+            'kelas_wakil' => 'XI',
+            'jurusan_wakil' => 'Perbankan',
+            'visi' => 'Mewujudkan Osis SMk Pertiwi Kuningan yang progresif, bergerak lebih cepat mengikuti perkembangan zaman sehingga menjadikan OSIS sebagai wadah siswa siswi untuk mengmbangkan segala potensi yang ada sehingga terciptanya siswa siswi yang kreatif, cerdas, aktif, disiplin dan berakhlak',
+            'misi' => 'Meningkatkan keimanan dan ketakwaan kepada Tuhan Yang Maha Esa
+                       Membentuk karakter pengurus OSIS yang kreatif dan berpikir kritis
+                       Mengorganisir setiap kegiatan EKstrakulikuler
+                       Melanjutkan dan mengembangkan program kerja OSIS sebelumnya'
         ]);
     }
 }
