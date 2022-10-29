@@ -55,11 +55,10 @@
                                 </div>
                                 <h5>Kandidat</h5>
                                 <h1>NO {{ $loop->iteration }}</h1><br><br>
-                                <div class="row justify-content-start">
-                                    <div class="col-auto">
-                                        <img src="{{ asset('images/'. $candidate->img) }}" width="250px" class="rounded" alt="">
-                                    </div>
-                                    <div class="col-auto">
+                                {{-- <div class="col-auto">
+                                    <img src="{{ asset('images/'. $candidate->img) }}" width="250px" class="rounded" alt="">
+                                </div> --}}
+                                    {{-- <div class="col-auto">
                                     <div class="row d-block px-3">
                                         <div class="col">
                                             <h6>Nama Ketua:</h6>
@@ -75,9 +74,9 @@
                                         </div>
                                         <div class="col">
                                         <h6>Nama Wakil Ketua:</h6>
-                                        <h5>{{$candidate->wakil_ketua}}</h5>
+                                        <h5></h5>
                                         </div>
-                                        <div class="col">
+                                        <div class="col">{{$candidate->wakil_ketua}}
                                         <h6>Kelas:</h6>
                                         <h5>{{$candidate->kelas_wakil}}</h5>
                                         </div>
@@ -92,37 +91,37 @@
                                     <p class="mt-3">{{$candidate->visi}}</p>
                                     <p class="mt-3">{{$candidate->misi}}</p>
                                     </div>
-                                </div>
-                                {{-- <div class="row">
+                                </div> --}}
+                                <div class="row">
                                     <div class="col-lg-12">
-                                        <img src="" alt="" class="img-fluid w-100">
+                                        <img src="{{ asset('images/'. $candidate->img) }}" alt="" class="img-fluid w-100">
                                     </div>
                                 </div>
                                 <div class="row p-3">
                                     <div class="col-md-6">
                                         <p class="fs-6 mb-0">Nama Ketua: </p>
-                                        <p class="fw-bold fs-7" id="nama_ketua"></p>
+                                        <p class="fw-bold fs-7">{{$candidate->ketua}}</p>
                                         <p class="fs-6 mb-0">Kelas: </p>
-                                        <p class="fw-bold fs-7" id="kelas_ketua"></p>
+                                        <p class="fw-bold fs-7">{{$candidate->kelas_ketua}}</p>
                                         <p class="fs-6 mb-0">Jurusan: </p>
-                                        <p class="fw-bold fs-7" id="jurusan_ketua"></p>
+                                        <p class="fw-bold fs-7">{{$candidate->jurusan_ketua}}</p>
                                     </div>
                                     <div class="col-md-6">
                                         <p class="fs-6 mb-0">Nama Wakil Ketua: </p>
-                                        <p class="fw-bold fs-7" id="nama_wakil_ketua"></p>
+                                        <p class="fw-bold fs-7">{{$candidate->wakil}}</p>
                                         <p class="fs-6 mb-0">Kelas Wakil Ketua: </p>
-                                        <p class="fw-bold fs-7" id="kelas_wakil_ketua"></p>
+                                        <p class="fw-bold fs-7">{{$candidate->kelas_wakil}}</p>
                                         <p class="fs-6 mb-0">Jurusan Wakil Ketua: </p>
-                                        <p class="fw-bold fs-7" id="jurusan_wakil_ketua"></p>
+                                        <p class="fw-bold fs-7">{{$candidate->jurusan_wakil}}</p>
                                     </div>
                                     <h6 class="viisi-misi fw-bold">Visi Misi</h6>
-                                    <p class="mt-3" id="visi"></p>
-                                    <p class="mt-3" id="misi"></p>
-                                </div> --}}
+                                    <p class="mt-3">{{$candidate->misi}}</p>
+                                    <p class="mt-3">{{$candidate->visi}}</p>
+                                </div>
                                 </div>
                             </div>
                             </div>
-                        </div>
+                        </div>    
                         <a class="btn btn-primary w-100" data-bs-toggle="modal" href="#popup1" role="button">Pilih</a>
                     </div>
                 </div>
