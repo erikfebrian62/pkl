@@ -85,7 +85,7 @@ class DatabaseSeeder extends Seeder
 
         Candidate::create([
             'img' => 'kandidat_no_urut_02.jpeg',
-            'ketua' => 'Muhammad Randi Syahputra',
+            'ketua' => 'M. Randi Syahputra',
             'kelas_ketua' => 'XI',
             'jurusan_ketua' => 'Teknik Bisnis Sepeda Motor',
             'wakil' => 'Adelya Samratul',
