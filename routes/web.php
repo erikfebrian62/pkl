@@ -9,6 +9,7 @@ use App\Http\Controllers\InformasisiswaController;
 use App\Http\Controllers\InformasisuaraController;
 use App\Http\Controllers\InformasibiodataController;
 use App\Http\Controllers\InformasipemenangController;
+use App\Http\Controllers\KandidatController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*

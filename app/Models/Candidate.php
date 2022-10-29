@@ -12,7 +12,11 @@ class Candidate extends Model
     protected $fillable = [
         'img',
         'ketua',
+        'kelas_ketua',
+        'jurusan_ketua',
         'wakil',
+        'kelas_wakil',
+        'jurusan_wakil',
         'class',
         'jurusan',
         'visi',

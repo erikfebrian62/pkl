@@ -95,9 +95,11 @@ class EditkandidatController extends Controller
     {
         $request->validate([
             'ketua' => 'required',
+            'kelas_ketua' => 'required',
+            'jurusan_ketua' => 'required',
             'wakil' => 'required',
-            'class' => 'required',
-            'jurusan' => 'required',
+            'kelas_wakil' => 'required',
+            'jurusan_wakil' => 'required',
             'visi' => 'required',
             'misi' => 'required',
         ]);

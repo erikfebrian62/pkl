@@ -17,9 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('img')->nullable();
             $table->string('ketua');
+            $table->string('kelas_ketua');
+            $table->string('jurusan_ketua');
             $table->string('wakil');
-            $table->string('class');
-            $table->string('jurusan');
+            $table->string('kelas_wakil');
+            $table->string('jurusan_wakil');
             $table->text('visi');
             $table->text('misi');
             $table->timestamps();

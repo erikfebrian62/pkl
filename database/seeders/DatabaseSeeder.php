@@ -68,31 +68,37 @@ class DatabaseSeeder extends Seeder
 
 
         Candidate::create([
-            'img' => 'Jokowi.jpg',
+            'img' => 'kandidat_no_urut_01.jpeg',
             'ketua' => 'Burhan Upomo',
+            'kelas_ketua' => 'XII',
+            'jurusan_ketua' => 'Rekayasa Perangkat Lunak',
             'wakil' => 'Yoyi Son',
-            'class' => 'XII',
-            'jurusan' => 'RPL',
+            'kelas_wakil' => 'XI',
+            'jurusan_wakil' => 'Teknik Jaringan & Komputer',
             'visi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!',
             'misi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!'
         ]);
 
         Candidate::create([
-            'img' => 'SBY.png',
+            'img' => 'kandidat_no_urut_02.jpeg',
             'ketua' => 'Sonri',
+            'kelas_ketua' => 'XII',
+            'jurusan_ketua' => 'Teknik Bisnis Sepeda Motor',
             'wakil' => 'Yamino',
-            'class' => 'XII',
-            'jurusan' => 'TKJ',
+            'kelas_wakil' => 'XII',
+            'jurusan_wakil' => 'Rekayasa Perangkat Lunak',
             'visi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!',
             'misi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!'
         ]);
 
         Candidate::create([
-            'img' => 'Habibie.jpg',
+            'img' => 'kandidat_no_urut_03.jpeg',
             'ketua' => 'Koror',
+            'kelas_ketua' => 'XI',
+            'jurusan_ketua' => 'Rekayasa Perangkat Lunak',
             'wakil' => 'Santi',
-            'class' => 'XII',
-            'jurusan' => 'TBSM',
+            'kelas_wakil' => 'XII',
+            'jurusan_wakil' => 'Rekayasa Perangkat Lunak',
             'visi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!',
             'misi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae delectus facere eum nobis tempora quo temporibus animi illo autem quae impedit voluptates qui nostrum, placeat minus inventore fugit vel nihil!'
         ]);
