@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
-use App\Models\Biodata;
 use App\Models\Candidate;
 use Illuminate\Database\Seeder;
 
@@ -42,31 +41,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('Masnun123')
         ]);
 
-
-
-        Biodata::create([
-            'nis' => '111111',
-            'name' => 'Taufan',
-            'class' => 'XII',
-            'jurusan' => 'RPL',
-        ]);
-
-        Biodata::create([
-            'nis' => '222222',
-            'name' => 'Arul',
-            'class' => 'XII',
-            'jurusan' => 'RPL',
-        ]);
-
-        Biodata::create([
-            'nis' => '333333',
-            'name' => 'Alfan',
-            'class' => 'XII',
-            'jurusan' => 'RPL',
-        ]);
-
-
-
+        
         Candidate::create([
             'img' => 'kandidat_no_urut_01.jpeg',
             'ketua' => 'Rivaldi',

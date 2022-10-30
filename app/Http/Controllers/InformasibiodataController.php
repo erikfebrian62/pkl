@@ -39,17 +39,23 @@ class InformasibiodataController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'role' => 'required',
             'nis' => 'required',
             'name' => 'required',
             'class' => 'required',
-            'jurusan' => 'required'
+            'jurusan' => 'required',
+            'password' => 'required'
         ]);
 
-        $user = new User;
-        $user->nis = $request->nis;
-        $user->name = $request->name;
-        $user->class = $request->class;
-        $user->jurusan = $request->jurusan;
+        $user = new User([
+            'role' => $request->role,
+            'nis' => $request->nis,
+            'name' => $request->name,
+            'class' => $request->class,
+            'jurusan' => $request->jurusan,
+            'password' => Hash::make($request->password),
+        ]);
+
         $user->save();
 
         return redirect(route('admin.biodata.index'))->with('Success', 'Data berhasil di Tambahkan!.');
@@ -88,23 +94,17 @@ class InformasibiodataController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'role' => 'required',
             'nis' => 'required',
             'name' => 'required',
             'class' => 'required',
-            'jurusan' => 'required',
-            'password' => 'required'
+            'jurusan' => 'required'
         ]);
 
-        $user = new User([
-            'role' => $request->role,
-            'nis' => $request->nis,
-            'name' => $request->name,
-            'class' => $request->class,
-            'jurusan' => $request->jurusan,
-            'password' => Hash::make($request->password),
-        ]);
-
+        $user = User::find($id);
+        $user->nis = $request->nis;
+        $user->name = $request->name;
+        $user->class = $request->class;
+        $user->jurusan = $request->jurusan;
         $user->save();
 
         return redirect(route('admin.biodata.index'))->with('Success', 'Data telah di Perbarui!.');
