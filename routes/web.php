@@ -69,6 +69,8 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
     Route::put('/edit-kandidat/{id}', [EditkandidatController::class, 'update'])->name('kandidat.update');
 
     Route::delete('/edit-kandidat/{id}', [EditkandidatController::class, 'destroy'])->name('kandidat.destroy');
+
+    Route::get('/edit-kandidat/{id}', [EditkandidatController::class, 'show'])->name('kandidat.show');
 });
 
 

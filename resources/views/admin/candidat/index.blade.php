@@ -18,8 +18,6 @@
                         <th class="text-center">Profile</th>
                         <th class="text-center">Ketua</th>
                         <th class="text-center">Wakil</th>
-                        <th class="text-center">Kelas</th>
-                        <th class="text-center">Jurusan</th>
                         <th class="text-center">Aksi</th>
                     </thead>
                     <tbody>
@@ -29,12 +27,11 @@
                                 <td class="text-center"><img src="/images/{{ $candidate->img }}" width="40px"></td>
                                 <td class="text-center">{{ $candidate->ketua }}</td>
                                 <td class="text-center">{{ $candidate->wakil }}</td>
-                                <td class="text-center">{{ $candidate->class }}</td>
-                                <td class="text-center">{{ $candidate->jurusan }}</td>
                                 <td class="text-center">
                                     <form action="{{ route('admin.kandidat.destroy', $candidate->id) }}" method="POST">
                                         @csrf
                                         @method('delete')
+                                        <a href="{{ route('admin.kandidat.show', $candidate->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></i></a>
                                         <a href="{{ route('admin.kandidat.edit', $candidate->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
                                         <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                     </form>

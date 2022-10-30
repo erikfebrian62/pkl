@@ -17,8 +17,6 @@ class Candidate extends Model
         'wakil',
         'kelas_wakil',
         'jurusan_wakil',
-        'class',
-        'jurusan',
         'visi',
         'misi',
     ];

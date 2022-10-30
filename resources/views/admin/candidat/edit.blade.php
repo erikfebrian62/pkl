@@ -17,25 +17,57 @@
                     <input type="text" class="form-control" name="ketua" value="{{ $candidate->ketua }}" id="floatingInput" placeholder="Ketua">
                     <label for="floatingInput">Ketua</label>
                 </div>
+                <div class="mb-3">
+                    <select class="form-select" aria-label="Default select example" name="kelas_ketua">
+                        <option selected>{{ $candidate->kelas_ketua }}</option>
+                        <option value="X">X</option>
+                        <option value="XI">XI</option>
+                        <option value="XII">XII</option>
+                      </select>
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" aria-label="Default select example" name="jurusan_ketua">
+                        <option selected>{{ $candidate->jurusan_ketua}}</option>
+                        <option value="Teknik Kendaraan Ringan Otomotif">Teknik Kendaraan Ringan Otomotif</option>
+                        <option value="Teknik Bisnis Sepeda Motor">Teknik Bisnis Sepeda Motor</option>
+                        <option value="Teknik Jaringan & Komputer">Teknik Jaringan & Komputer</option>
+                        <option value="Teknik Ototronik">Teknik Ototronik</option>
+                        <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                        <option value="Axioo Class Program">Axioo Class Program</option>
+                        <option value="Perbankan">Perbankan</option>
+                      </select>
+                </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" name="wakil" value="{{ $candidate->wakil }}" id="floatingInput" placeholder="Wakil">
                     <label for="floatingInput">Wakil</label>
                 </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="class" value="{{ $candidate->class }}" id="floatingInput" placeholder="Kelas">
-                    <label for="floatingInput">Kelas</label>
+                <div class="mb-3">
+                    <select class="form-select" aria-label="Default select example" name="kelas_wakil">
+                        <option selected>{{ $candidate->kelas_wakil }}</option>
+                        <option value="X">X</option>
+                        <option value="XI">XI</option>
+                        <option value="XII">XII</option>
+                      </select>
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" aria-label="Default select example" name="jurusan_wakil">
+                        <option selected>{{ $candidate->jurusan_wakil}}</option>
+                        <option value="Teknik Kendaraan Ringan Otomotif">Teknik Kendaraan Ringan Otomotif</option>
+                        <option value="Teknik Bisnis Sepeda Motor">Teknik Bisnis Sepeda Motor</option>
+                        <option value="Teknik Jaringan & Komputer">Teknik Jaringan & Komputer</option>
+                        <option value="Ototronik">Ototronik</option>
+                        <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                        <option value="Axioo Class Program">Axioo Class Program</option>
+                        <option value="Perbankan">Perbankan</option>
+                      </select>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="jurusan" value="{{ $candidate->jurusan }}" id="floatingInput" placeholder="Jurusan">
-                    <label for="floatingInput">Jurusan</label>
+                    <textarea class="form-control" placeholder="Visi" name="visi" id="floatingTextarea" style="height: 150px">{{ $candidate->visi }}</textarea>
+                    <label for="floatingTextarea">Visi</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="visi" value="{{ $candidate->visi }}" id="floatingInput" placeholder="Jurusan">
-                    <label for="floatingInput">Visi</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="misi" value="{{ $candidate->misi }}" id="floatingInput" placeholder="Jurusan">
-                    <label for="floatingInput">Misi</label>
+                    <textarea class="form-control" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 200px">{{ $candidate->misi }}</textarea>
+                    <label for="floatingTextarea">Misi</label>
                 </div>
                 <button type="submit" class="btn  btn-success btn-md float-end"><i class="fa fa-save"></i> Simpan</button>
             </form>
