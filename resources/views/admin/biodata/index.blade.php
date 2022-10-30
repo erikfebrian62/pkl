@@ -22,18 +22,18 @@
                         <th class="text-center">Aksi</th>
                     </thead>
                     <tbody>
-                        @foreach ($biodata as $biodata)
+                        @foreach ($users as $user)
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
-                                <td class="text-center">{{ $biodata->nis }}</td>
-                                <td class="text-center">{{ $biodata->name }}</td>
-                                <td class="text-center">{{ $biodata->class }}</td>
-                                <td class="text-center">{{ $biodata->jurusan }}</td>
+                                <td class="text-center">{{ $user->nis }}</td>
+                                <td class="text-center">{{ $user->name }}</td>
+                                <td class="text-center">{{ $user->class }}</td>
+                                <td class="text-center">{{ $user->jurusan }}</td>
                                 <td class="text-center">
-                                    <form action="{{ route('admin.biodata.destroy', $biodata->id) }}" method="POST">
+                                    <form action="{{ route('admin.biodata.destroy', $user->id) }}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <a href="{{ route('admin.biodata.edit', $biodata->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                        <a href="{{ route('admin.biodata.edit', $user->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
                                         <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                     </form>
                                 </td>
