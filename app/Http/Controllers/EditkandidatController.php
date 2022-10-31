@@ -39,10 +39,13 @@ class EditkandidatController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'img' => 'required',
             'ketua' => 'required',
+            'kelas_ketua' => 'required',
+            'jurusan_ketua' => 'required',
             'wakil' => 'required',
-            'class' => 'required',
-            'jurusan' => 'required',
+            'kelas_wakil' => 'required',
+            'jurusan_wakil' => 'required',
             'visi' => 'required',
             'misi' => 'required',
         ]);
@@ -69,7 +72,8 @@ class EditkandidatController extends Controller
      */
     public function show($id)
     {
-
+        $candidate = Candidate::findOrFail($id);
+        return view('admin.candidat.show', compact('candidate'));
     }
 
     /**
@@ -94,6 +98,7 @@ class EditkandidatController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'img' => 'required',
             'ketua' => 'required',
             'kelas_ketua' => 'required',
             'jurusan_ketua' => 'required',

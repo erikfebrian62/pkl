@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use App\Models\Biodata;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class InformasibiodataController extends Controller
 {
@@ -15,8 +16,8 @@ class InformasibiodataController extends Controller
      */
     public function index()
     {
-        $biodata = Biodata::all();
-        return view('admin.biodata.index',compact('biodata'));
+        $users = User::where('role', 'user')->get();
+        return view('admin.biodata.index',compact('users'));
     }
 
     /**
@@ -38,18 +39,24 @@ class InformasibiodataController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'role' => 'required',
             'nis' => 'required',
             'name' => 'required',
             'class' => 'required',
-            'jurusan' => 'required'
+            'jurusan' => 'required',
+            'password' => 'required'
         ]);
 
-        $biodata = new Biodata;
-        $biodata->nis = $request->nis;
-        $biodata->name = $request->name;
-        $biodata->class = $request->class;
-        $biodata->jurusan = $request->jurusan;
-        $biodata->save();
+        $user = new User([
+            'role' => $request->role,
+            'nis' => $request->nis,
+            'name' => $request->name,
+            'class' => $request->class,
+            'jurusan' => $request->jurusan,
+            'password' => Hash::make($request->password),
+        ]);
+
+        $user->save();
 
         return redirect(route('admin.biodata.index'))->with('Success', 'Data berhasil di Tambahkan!.');
     }
@@ -73,8 +80,8 @@ class InformasibiodataController extends Controller
      */
     public function edit($id)
     {
-        $biodata = Biodata::find($id);
-        return view('admin.biodata.edit', compact('biodata'));
+        $users = User::find($id);
+        return view('admin.biodata.edit', compact('users'));
     }
 
     /**
@@ -93,12 +100,12 @@ class InformasibiodataController extends Controller
             'jurusan' => 'required'
         ]);
 
-        $biodata = Biodata::find($id);
-        $biodata->nis = $request->nis;
-        $biodata->name = $request->name;
-        $biodata->class = $request->class;
-        $biodata->jurusan = $request->jurusan;
-        $biodata->save();
+        $user = User::find($id);
+        $user->nis = $request->nis;
+        $user->name = $request->name;
+        $user->class = $request->class;
+        $user->jurusan = $request->jurusan;
+        $user->save();
 
         return redirect(route('admin.biodata.index'))->with('Success', 'Data telah di Perbarui!.');
     }
@@ -111,8 +118,8 @@ class InformasibiodataController extends Controller
      */
     public function destroy($id)
     {
-        $biodata = Biodata::find($id);
-        $biodata->delete();
+        $user = User::find($id);
+        $user->delete();
 
         return redirect(route('admin.biodata.index'))->with('Success', 'Data telah di Hapus!.');
     }

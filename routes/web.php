@@ -69,6 +69,8 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
     Route::put('/edit-kandidat/{id}', [EditkandidatController::class, 'update'])->name('kandidat.update');
 
     Route::delete('/edit-kandidat/{id}', [EditkandidatController::class, 'destroy'])->name('kandidat.destroy');
+
+    Route::get('/edit-kandidat/{id}', [EditkandidatController::class, 'show'])->name('kandidat.show');
 });
 
 
@@ -82,6 +84,8 @@ Route::prefix('user')->name('user.')->middleware('role:user')->group( function()
     Route::get('/informasi-siswa', [InformasisiswaController::class, 'siswa'])->name('informasi-siswa');
 
     Route::get('/informasi-pemenang', [InformasipemenangController::class, 'pemenang'])->name('informasi-pemenang');
+
+    Route::post('/pilih-kandidat/{id}', [PilihkandidatController::class, 'vote'])->name('kandidat.pilih');
 });
 
 
