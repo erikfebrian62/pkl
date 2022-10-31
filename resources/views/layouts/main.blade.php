@@ -25,7 +25,7 @@
 
     @include('partials.footer')
 
-    <div class="modal fade" id="popup1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal fade" id="pilih{{ $candidate->id }}" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-body" >
@@ -37,7 +37,8 @@
               <br>
               <div class="row justify-content-center align-items-center text-center">
                 <div class="col">
-                  <form action="">
+                  <form action="{{ route('user.kandidat.pilih', $candidate->id) }}" method="POST">
+                    @csrf
                     <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">YA saya yakin</button>
                   </form>
                 </div>

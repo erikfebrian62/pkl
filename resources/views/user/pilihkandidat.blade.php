@@ -44,7 +44,7 @@
                         <p type="button" class="detail-btn" data-bs-toggle="modal" data-bs-target="#kandidat{{ $candidate->id }}" data-id="{{ $candidate->id }}">
                             Lihat Selengkapnya...
                         </p>
-                        
+
                         <!-- Modal -->
                         <div class="modal fade" id="kandidat{{ $candidate->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" class="rounded">
                             <div class="modal-dialog modal-dialog-centered modal-lg ">
@@ -121,8 +121,13 @@
                                 </div>
                             </div>
                             </div>
-                        </div>    
-                        <a class="btn btn-primary w-100" data-bs-toggle="modal" href="#popup1" role="button">Pilih</a>
+                        </div>
+                        @if ($votes < 1)
+                        <form action="{{ route('user.kandidat.pilih', $candidate->id) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-primary w-100" onclick="confirm('Apakah anda yakin?')">Pilih</button>
+                        </form>
+                        @endif
                     </div>
                 </div>
             </div>

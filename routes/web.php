@@ -84,6 +84,8 @@ Route::prefix('user')->name('user.')->middleware('role:user')->group( function()
     Route::get('/informasi-siswa', [InformasisiswaController::class, 'siswa'])->name('informasi-siswa');
 
     Route::get('/informasi-pemenang', [InformasipemenangController::class, 'pemenang'])->name('informasi-pemenang');
+
+    Route::post('/pilih-kandidat/{id}', [PilihkandidatController::class, 'vote'])->name('kandidat.pilih');
 });
 
 
