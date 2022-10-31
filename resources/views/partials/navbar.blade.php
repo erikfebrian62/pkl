@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-lg bg-white p-4">
+<nav class="navbar navbar-expand-lg p-4" style="background-color: #00102e">
     <div class="container">
-      <a class="navbar-brand" href="#"><h4>E-Voting <br>OSIS</h4></a>
+      <img class="logo" src="/images/logo.png" alt="">
+      <a class="navbar-brand text-light" href="#"><h4 class="judul">E-Voting <br>OSIS</h4></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -8,7 +9,7 @@
         <ul class="navbar-nav ms-auto">
         @if(Auth::check())
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Halo, <b>{{ Auth::user()->name }}</b>
             </a>
             <ul class="dropdown-menu">

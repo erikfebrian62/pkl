@@ -115,8 +115,10 @@
                                         <p class="fw-bold fs-7">{{$candidate->jurusan_wakil}}</p>
                                     </div>
                                     <h6 class="viisi-misi fw-bold">Visi Misi</h6>
-                                    <p class="mt-3">{{$candidate->misi}}</p>
                                     <p class="mt-3">{{$candidate->visi}}</p>
+                                    <ul class="nav flex-column p-3">
+                                        <li class="nav-item">{{$candidate->misi}}</li>
+                                    </ul>
                                 </div>
                                 </div>
                             </div>
