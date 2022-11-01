@@ -2,7 +2,39 @@
 
 @section('content')
 <div class="container">
-    <h1 class="text-center fw-bold">BIODATA SISWA</h1>
+    <div class="row justify-content-center align-items-center text-center mb-5">
+        <div class="col">
+        <h3 class="fw-bold">Informasi Biodata Siswa</h3>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">Jumlah Siswa-Siswi</h5>
+              <p class="card-text">{{ $users->count() }}</p>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">Yang Sudah Voting</h5>
+              <p class="card-text">...</p>
+            </div>    
+          </div>
+        </div>
+    
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">Yang Belum Voting</h5>
+              <p class="card-text">...</p>
+            </div>    
+          </div>
+        </div>
+    </div>
     <a href="{{ route('admin.biodata.create') }}" class="btn btn-success btn-sm mt-5">Tambah Data <i class="bi bi-plus-square"></i></a>
     <div class="card mt-2">
         @if(session('Success'))
