@@ -22,6 +22,14 @@
         text-align: center;
         color: white;
       }
+      .logo {
+        height: 65px;
+        width: 65px;
+        margin-right: 10px; 
+      }
+      .judul{
+        padding-top: 9px;
+      }
     </style>
     <title>Project PKL</title>
 </head>
