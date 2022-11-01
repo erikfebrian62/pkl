@@ -12,26 +12,26 @@
           <div class="card h-100">
             <div class="card-body text-center">
               <h5 class="card-title">Jumlah Siswa-Siswi</h5>
-              <p class="card-text">{{ $users->count() }}</p>
+              <p class="card-text"></p>
             </div>
           </div>
         </div>
-    
+
         <div class="col">
           <div class="card h-100">
             <div class="card-body text-center">
               <h5 class="card-title">Yang Sudah Voting</h5>
               <p class="card-text">...</p>
-            </div>    
+            </div>
           </div>
         </div>
-    
+
         <div class="col">
           <div class="card h-100">
             <div class="card-body text-center">
               <h5 class="card-title">Yang Belum Voting</h5>
               <p class="card-text">...</p>
-            </div>    
+            </div>
           </div>
         </div>
     </div>
