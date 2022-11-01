@@ -15,7 +15,9 @@
     <style>
         .footer {
         background-color: #00102e;
-        height: 85px;  
+        height: 100px;
+        margin-top: 150px;
+        
       }
       .text {
         padding-top: 35px;
@@ -29,21 +31,21 @@
       }
       .judul{
         padding-top: 9px;
-      }
+      } 
     </style>
     <title>Project PKL</title>
 </head>
-<body class="font-monospace" style="background-color: #f5f8f9;">
+<body class="font-monospace " style="background-color: #f5f8f9;">
 
 
     @include('partials.navbaradmin')
 
     <div class="admin">
         @yield('content')
-
     </div>
 
     @include('partials.footer')
+
 
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

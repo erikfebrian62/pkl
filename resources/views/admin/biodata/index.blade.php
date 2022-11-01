@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center align-items-center text-center mb-5">
         <div class="col">
-        <h3 class="fw-bold">Informasi Biodata Siswa</h3>
+        <h3 class="fw-bold mt-4">Informasi Biodata Siswa</h3>
         </div>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
