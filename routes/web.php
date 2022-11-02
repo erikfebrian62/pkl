@@ -5,12 +5,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EditkandidatController;
 use App\Http\Controllers\PilihkandidatController;
-use App\Http\Controllers\InformasisiswaController;
 use App\Http\Controllers\InformasisuaraController;
 use App\Http\Controllers\InformasibiodataController;
 use App\Http\Controllers\InformasipemenangController;
-use App\Http\Controllers\KandidatController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,8 +77,6 @@ Route::prefix('user')->name('user.')->middleware('role:user')->group( function()
     Route::get('/pilih-kandidat', [PilihkandidatController::class, 'voting'])->name('pilih-kandidat');
 
     Route::get('/informasi-suara', [InformasisuaraController::class, 'suara'])->name('informasi-suara');
-
-    Route::get('/informasi-siswa', [InformasisiswaController::class, 'siswa'])->name('informasi-siswa');
 
     Route::get('/informasi-pemenang', [InformasipemenangController::class, 'pemenang'])->name('informasi-pemenang');
 
