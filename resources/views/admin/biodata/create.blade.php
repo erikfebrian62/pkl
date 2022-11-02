@@ -1,19 +1,16 @@
 @extends('layouts.mainadmin')
 
+@section('title')
+Biodata Siswa
+@endsection
+
 @section('content')
 <div class="container">
-    <h1 class="text-center fw-bold">BIODATA SISWA</h1>
-    <a href="{{ Route('admin.biodata.index') }}" class="btn btn-primary btn-sm mt-5"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
+    <a href="{{ Route('admin.biodata.index') }}" class="btn btn-primary btn-sm mt-3"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <div class="card mt-2">
         <div class="card-body">
             <form action="{{ route('admin.biodata.store') }}" method="POST">
                 @csrf
-                <div class="mb-3">
-                    <select class="form-select" aria-label="Default select example" name="role" id="role">
-                        <option selected>Role</option>
-                        <option value="user">User</option>
-                      </select>
-                </div>
                 <div class="form-floating mb-3">
                     <input type="number" class="form-control" name="nis" id="floatingInput" placeholder="NIS">
                     <label for="floatingInput">NIS</label>

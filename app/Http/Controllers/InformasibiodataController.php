@@ -38,25 +38,14 @@ class InformasibiodataController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'role' => 'required',
-            'nis' => 'required',
-            'name' => 'required',
-            'class' => 'required',
-            'jurusan' => 'required',
-            'password' => 'required'
-        ]);
-
-        $user = new User([
-            'role' => $request->role,
+        User::create([
+            'role' => 'user',
             'nis' => $request->nis,
             'name' => $request->name,
             'class' => $request->class,
             'jurusan' => $request->jurusan,
-            'password' => Hash::make($request->password),
+            'password' => bcrypt($request->password)
         ]);
-
-        $user->save();
 
         return redirect(route('admin.biodata.index'))->with('Success', 'Data berhasil di Tambahkan!.');
     }

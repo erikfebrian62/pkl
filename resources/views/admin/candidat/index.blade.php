@@ -1,9 +1,12 @@
 @extends('layouts.mainadmin')
 
+@section('title')
+Biodata Kandidat
+@endsection
+
 @section('content')
 <div class="container">
-    <h1 class="text-center fw-bold">BIODATA KANDIDAT</h1>
-    <a href="{{ route('admin.kandidat.create') }}" class="btn btn-success btn-sm mt-5">Tambah Data <i class="bi bi-plus-square"></i></a>
+    <a href="{{ route('admin.kandidat.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
     <div class="card mt-2">
         @if(session('Success'))
             <div class="alert alert-success">

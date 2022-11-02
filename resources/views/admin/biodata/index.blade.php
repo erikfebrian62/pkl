@@ -1,13 +1,13 @@
 @extends('layouts.mainadmin')
 
+@section('title')
+Biodata Siswa
+@endsection
+
 @section('content')
 <div class="container">
-    <div class="row justify-content-center align-items-center text-center mb-5">
-        <div class="col">
-        <h3 class="fw-bold mt-4">Informasi Biodata Siswa</h3>
-        </div>
     </div>
-    <a href="{{ route('admin.biodata.create') }}" class="btn btn-success btn-sm mt-5">Tambah Data <i class="bi bi-plus-square"></i></a>
+    <a href="{{ route('admin.biodata.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
     <div class="card mt-2">
         @if(session('Success'))
             <div class="alert alert-success">

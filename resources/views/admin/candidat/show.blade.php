@@ -1,9 +1,12 @@
 @extends("layouts.mainadmin")
 
+@section('title')
+Biodata Kandidat
+@endsection
+
 @section('content')
 <div class="container">
-    <h1 class="text-center fw-bold">BIODATA KANDIDAT</h1>
-    <a href="{{ route('admin.kandidat.index') }}" class="btn btn-primary btn-sm mt-5"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
+    <a href="{{ route('admin.kandidat.index') }}" class="btn btn-primary btn-sm mt-3"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <div class="row justify-content-center mt-2">
         <div class="col">
             <div class="card shadow-lg">
