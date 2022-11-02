@@ -61,7 +61,7 @@ class EditkandidatController extends Controller
 
         Candidate::create($input);
 
-        return redirect(route('admin.kandidat.index'))->with('Success', 'Data berhasil di Tambahkan!.');
+        return redirect(route('admin.kandidat.index'))->with('success', 'Data berhasil di Tambahkan!.');
     }
 
     /**
@@ -122,7 +122,7 @@ class EditkandidatController extends Controller
 
         Candidate::find($id)->update($input);
 
-        return redirect(route('admin.kandidat.index'))->with('Success', 'Data telah di Perbarui!.');
+        return redirect(route('admin.kandidat.index'))->with('success', 'Data telah di Perbarui!.');
     }
 
     /**
@@ -136,6 +136,6 @@ class EditkandidatController extends Controller
         $candidate = Candidate::find($id);
         $candidate->delete($id);
 
-        return redirect(route('admin.kandidat.index'))->with('Success', 'Data telah di Hapus!.');
+        return redirect(route('admin.kandidat.index'))->with('success', 'Data telah di Hapus!.');
     }
 }

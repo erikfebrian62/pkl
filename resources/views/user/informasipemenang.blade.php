@@ -5,7 +5,7 @@
       <br><br>
         <div class="row justify-content-center align-items-center text-center mb-5">
             <div class="col">
-              <h3>Informasi pemenang dan struktur oranisasi</h3>
+              <h3>Informasi Pemenang Dan Struktur Organisasi</h3>
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque rerum aliquam voluptatem ipsum. Repellat illo, reprehenderit quos minima placeat deserunt ad! Quis culpa illo enim architecto esse tempora officiis autem.</p>
             </div>
         </div>

@@ -8,11 +8,7 @@ Biodata Kandidat
 <div class="container">
     <a href="{{ route('admin.kandidat.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
     <div class="card mt-2">
-        @if(session('Success'))
-            <div class="alert alert-success">
-                {{session('Success')}}
-            </div>
-        @endif
+        @include('partials.alert')
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">
