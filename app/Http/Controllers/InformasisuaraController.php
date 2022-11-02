@@ -14,6 +14,7 @@ class InformasisuaraController extends Controller
         $votes = Vote::where('candidate_id')->get();
         $candidate = Candidate::all();
         $users = User::where('role', 'user')->get();
-        return view('user.informasisuara', compact('users', 'candidate', 'votes'));
+        $count = new Vote;
+        return view('user.informasisuara', compact('users', 'candidate', 'votes', 'count'));
     }
 }

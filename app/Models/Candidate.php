@@ -20,4 +20,9 @@ class Candidate extends Model
         'visi',
         'misi',
     ];
+
+    public function vote()
+    {
+        return $this->hasMany(Vote::class);
+    }
 }
