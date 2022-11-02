@@ -42,7 +42,7 @@
                             <div class="row">
                             <div class="col">
                                 <div class="suara">
-                                    <h6>500 suara</h6>
+                                    <h6>{{ $votes->count() }}</h6>
                                 </div>
                             </div>
                             <div class="col" >
