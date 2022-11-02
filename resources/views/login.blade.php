@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Mazer Admin Dashboard</title>
+    <title>Login E-Voting OSIS</title>
     <link rel="stylesheet" href="{{ asset('assets/css/main/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/pages/auth.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.svg') }}" type="image/x-icon">
@@ -18,7 +18,7 @@
     <div class="col-lg-5 col-12">
         <div id="auth-left">
             <h1 class="auth-title">E-voting OSIS.</h1>
-            <p class="auth-subtitle mb-5">Log in dengan data yang diberikan wali kelas.</p>
+            <p class="auth-subtitle mb-5">Login dengan data yang diberikan wali kelas.</p>
 
             <form action="{{ route('login.proces') }}" method="POST">
                 @csrf
@@ -34,13 +34,12 @@
                         <i class="bi bi-shield-lock"></i>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-block btn-lg shadow-lg mt-3">Log in</button>
+                <button class="btn btn-primary btn-block btn-lg shadow-lg mt-3">Login</button>
             </form>
         </div>
     </div>
     <div class="col-lg-7 d-none d-lg-block">
         <div id="auth-right">
-
         </div>
     </div>
 </div>
