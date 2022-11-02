@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-        <div class="container">
+    <div class="container">
         <div class="awalan">
             <h1>Pilih Kandidat</h1>
             <p class="kk">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
