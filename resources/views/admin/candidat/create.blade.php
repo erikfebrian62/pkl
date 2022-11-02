@@ -68,7 +68,43 @@ Biodata Kandidat
                 </div>
                 <div class="form-floating mb-3">
                     <textarea class="form-control" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 200px"></textarea>
-                    <label for="floatingTextarea">Misi</label>
+                    <label for="floatingTextarea">Misi 1</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 200px"></textarea>
+                    <label for="floatingTextarea">Misi 2</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 200px"></textarea>
+                    <label for="floatingTextarea">Misi 3</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 200px"></textarea>
+                    <label for="floatingTextarea">Misi 4</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 200px"></textarea>
+                    <label for="floatingTextarea">Misi 5</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 200px"></textarea>
+                    <label for="floatingTextarea">Misi 6</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 200px"></textarea>
+                    <label for="floatingTextarea">Misi 7</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 200px"></textarea>
+                    <label for="floatingTextarea">Misi 8</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 200px"></textarea>
+                    <label for="floatingTextarea">Misi 9</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 200px"></textarea>
+                    <label for="floatingTextarea">Misi 10</label>
                 </div>
                 <button type="submit" class="btn  btn-success btn-md float-end"><i class="fa fa-save"></i> Simpan</button>
             </form>

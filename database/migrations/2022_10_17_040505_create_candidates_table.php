@@ -23,7 +23,16 @@ return new class extends Migration
             $table->string('kelas_wakil');
             $table->string('jurusan_wakil');
             $table->text('visi');
-            $table->text('misi');
+            $table->text('misi_1')->nullable();
+            $table->text('misi_2')->nullable();
+            $table->text('misi_3')->nullable();
+            $table->text('misi_4')->nullable();
+            $table->text('misi_5')->nullable();
+            $table->text('misi_6')->nullable();
+            $table->text('misi_7')->nullable();
+            $table->text('misi_8')->nullable();
+            $table->text('misi_9')->nullable();
+            $table->text('misi_10')->nullable();
             $table->timestamps();
         });
     }

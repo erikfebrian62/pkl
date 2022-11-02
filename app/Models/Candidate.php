@@ -18,7 +18,16 @@ class Candidate extends Model
         'kelas_wakil',
         'jurusan_wakil',
         'visi',
-        'misi',
+        'misi_1',
+        'misi_2',
+        'misi_3',
+        'misi_4',
+        'misi_5',
+        'misi_6',
+        'misi_7',
+        'misi_8',
+        'misi_9',
+        'misi_10',
     ];
 
     public function vote()

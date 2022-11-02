@@ -17,7 +17,8 @@ class EditkandidatController extends Controller
     public function index()
     {
         $candidate = Candidate::all();
-        return view('admin.candidat.index',compact('candidate'));
+        $candidate = Candidate::where('misi_1', 'misi_2', 'misi_3', 'misi_4', 'misi_5');
+        return view('admin.candidat.index',compact('candidate', 'misi'));
     }
 
     /**
@@ -47,7 +48,16 @@ class EditkandidatController extends Controller
             'kelas_wakil' => 'required',
             'jurusan_wakil' => 'required',
             'visi' => 'required',
-            'misi' => 'required',
+            'misi_1'  => 'required',
+            'misi_2'  => 'required',
+            'misi_3'  => 'required',
+            'misi_4'  => 'required',
+            'misi_5'  => 'required',
+            'misi_6'  => 'required',
+            'misi_7'  => 'required',
+            'misi_8'  => 'required',
+            'misi_9'  => 'required',
+            'misi_10'  => 'required',
         ]);
 
         $input = $request->all();
@@ -106,7 +116,16 @@ class EditkandidatController extends Controller
             'kelas_wakil' => 'required',
             'jurusan_wakil' => 'required',
             'visi' => 'required',
-            'misi' => 'required',
+            'misi_1'  => 'required',
+            'misi_2'  => 'required',
+            'misi_3'  => 'required',
+            'misi_4'  => 'required',
+            'misi_5'  => 'required',
+            'misi_6'  => 'required',
+            'misi_7'  => 'required',
+            'misi_8'  => 'required',
+            'misi_9'  => 'required',
+            'misi_10'  => 'required',
         ]);
 
         $input = $request->all();
