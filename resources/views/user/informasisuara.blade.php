@@ -42,7 +42,7 @@
                             <div class="row">
                             <div class="col">
                                 <div class="suara">
-                                    <h6>500 suara</h6>
+                                    <h6>{{ $count->where('candidate_id', $candidate->id)->count() }} suara</h6>
                                 </div>
                             </div>
                             <div class="col" >
@@ -50,7 +50,7 @@
                             </div>
 
                             </div>
-                                
+
                             <div class="progress">
                             <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
@@ -65,6 +65,6 @@
                 <button class="btn btn-primary">Lihat Pemenang</button>
             </div>
         </div>
-    </div>       
+    </div>
 
 @endsection
