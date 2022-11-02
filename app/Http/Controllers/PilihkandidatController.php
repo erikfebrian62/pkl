@@ -23,6 +23,6 @@ class PilihkandidatController extends Controller
             'candidate_id' => $id
         ]);
 
-        return redirect(route('user.pilih-kandidat'));
+        return redirect(route('user.informasi-suara'));
     }
 }
