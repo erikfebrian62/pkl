@@ -36,7 +36,7 @@
             </a>
         </li>
         <li
-            class="sidebar-item  {{ (request()->segment(2) == 'Edit-kandidat') ? 'active' : '' }}">
+            class="sidebar-item  {{ (request()->segment(2) == 'edit-kandidat') ? 'active' : '' }}">
             <a href="{{ route('admin.kandidat.index') }}" class='sidebar-link'>
                 <i class="iconly-boldAdd-User"></i>
                 <span>Kelola Kandidat</span>
