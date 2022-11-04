@@ -6,7 +6,6 @@ Biodata Siswa
 
 @section('content')
 <div class="container">
-    </div>
     <a href="{{ route('admin.biodata.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
     <div class="card mt-2">
         @if(session('Success'))
