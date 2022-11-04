@@ -39,7 +39,7 @@ Route::get('/logout', function () {
 //Middleware admin
 Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( function() {
 
-    Route::get('/dasboard', [DashboardController::class, 'dash'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'dash'])->name('dashboard');
 
     //crud user
     Route::get('/informasi-biodata', [InformasibiodataController::class, 'index'])->name('biodata.index');
