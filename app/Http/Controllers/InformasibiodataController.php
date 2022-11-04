@@ -47,7 +47,7 @@ class InformasibiodataController extends Controller
             'password' => bcrypt($request->password)
         ]);
 
-        return redirect(route('admin.biodata.index'))->with('Success', 'Data berhasil di Tambahkan!.');
+        return redirect(route('admin.biodata.index'))->with('success', 'Data berhasil di Tambahkan!.');
     }
 
     /**
@@ -96,7 +96,7 @@ class InformasibiodataController extends Controller
         $user->jurusan = $request->jurusan;
         $user->save();
 
-        return redirect(route('admin.biodata.index'))->with('Success', 'Data telah di Perbarui!.');
+        return redirect(route('admin.biodata.index'))->with('success', 'Data telah di Perbarui!.');
     }
 
     /**
@@ -110,6 +110,6 @@ class InformasibiodataController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect(route('admin.biodata.index'))->with('Success', 'Data telah di Hapus!.');
+        return redirect(route('admin.biodata.index'))->with('success', 'Data telah di Hapus!.');
     }
 }

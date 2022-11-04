@@ -35,9 +35,18 @@ Biodata Kandidat
                         </div>
                         <div class="mt-5 text-center">
                             <h6 class="visi fw-bold">Visi</h6>
-                            <p class="mt-3">{{$candidate->misi}}</p>
-                            <h6 class="visi fw-bold">Misi</h6>
                             <p class="mt-3">{{$candidate->visi}}</p>
+                            <h6 class="visi fw-bold">Misi</h6>
+                            <p class="mt-3">{{$candidate->misi_1}}</p>
+                            <p class="mt-3">{{$candidate->misi_2}}</p>
+                            <p class="mt-3">{{$candidate->misi_3}}</p>
+                            <p class="mt-3">{{$candidate->misi_4}}</p>
+                            <p class="mt-3">{{$candidate->misi_5}}</p>
+                            <p class="mt-3">{{$candidate->misi_6}}</p>
+                            <p class="mt-3">{{$candidate->misi_7}}</p>
+                            <p class="mt-3">{{$candidate->misi_8}}</p>
+                            <p class="mt-3">{{$candidate->misi_9}}</p>
+                            <p class="mt-3">{{$candidate->misi_10}}</p>
                         </div>
                     </div>
                 </div>

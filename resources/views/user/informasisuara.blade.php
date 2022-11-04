@@ -42,7 +42,7 @@
                             <div class="row">
                             <div class="col">
                                 <div class="suara">
-                                    <h6>{{ $count->where('candidate_id', $candidate->id)->count() }} suara</h6>
+                                    <h6>{{ $count->where('candidate_id', $candidate->id)->count() }} suara</h6> 
                                 </div>
                             </div>
                             <div class="col" >
@@ -62,7 +62,7 @@
         </div>
         <div class="row justify-content-center align-items-center text-center mb-4">
             <div class="col-md-4">
-                <button class="btn btn-primary">Lihat Pemenang</button>
+                <a href="{{ route('user.informasi-pemenang')}}" class="btn btn-primary">Lihat Pemenang</a>
             </div>
         </div>
     </div>

@@ -20,6 +20,13 @@
             <h1 class="auth-title">E-voting OSIS.</h1>
             <p class="auth-subtitle mb-5">Login dengan data yang diberikan wali kelas.</p>
 
+            @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{session('error')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+
             <form action="{{ route('login.proces') }}" method="POST">
                 @csrf
                 <div class="form-group position-relative has-icon-left mb-4">
@@ -45,6 +52,9 @@
 </div>
 
     </div>
+
+    <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('assets/js/mazer.js') }}"></script>
 </body>
 
 </html>

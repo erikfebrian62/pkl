@@ -25,6 +25,8 @@ class LoginController extends Controller
             }else{
                 return redirect(route('admin.dashboard'));
             }
-        }return back()->with('Error', 'OOPS!!!');
+        }
+        
+        return back()->with('error', 'NIS atau Password salah!');
     }
 }
