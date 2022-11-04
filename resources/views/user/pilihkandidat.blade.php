@@ -41,7 +41,7 @@
                         <p class="card-text">{{$candidate->visi}}</p>
 
                         <!-- Button trigger modal -->
-                        <p type="button" class="detail-btn" data-bs-toggle="modal" data-bs-target="#kandidat{{ $candidate->id }}" data-id="{{ $candidate->id }}">
+                        <p type="button" class="btn btn-light sm-3" data-bs-toggle="modal" data-bs-target="#kandidat{{ $candidate->id }}" data-id="{{ $candidate->id }}">
                             Lihat Selengkapnya...
                         </p>
 
