@@ -9,8 +9,6 @@ Biodata Siswa
     <a href="{{ route('admin.biodata.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
     <div class="card mt-2">
 
-        @include('partials.alert')
-
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">
