@@ -20,6 +20,16 @@ class InformasibiodataController extends Controller
         return view('admin.biodata.index',compact('users'));
     }
 
+    public function search(Request $request) {
+        if($request->has('search')) {
+            $users = User::where('name', 'like', '%'.$request->search.'%')->get();
+        }
+        else {
+            $users =User::all();
+        }
+        return view('admin.biodata.index');
+    }
+    
     /**
      * Show the form for creating a new resource.
      *

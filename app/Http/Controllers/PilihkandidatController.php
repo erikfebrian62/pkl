@@ -18,11 +18,16 @@ class PilihkandidatController extends Controller
 
     public function vote($id)
     {
-        Vote::create([
-            'user_id' => Auth::user()->id,
-            'candidate_id' => $id
-        ]);
-
-        return redirect(route('user.informasi-suara'));
+        $votes = Vote::where('user_id', Auth::user()->id)->count();
+        if($votes < 1){
+            Vote::create([
+                'user_id' => Auth::user()->id,
+                'candidate_id' => $id
+            ]);
+            return redirect(route('user.informasi-suara'));
+        }
+        else{
+           return redirect(route('user.pilih-kandidat'))->with('danger','Anda Telah Voting.!');
+        }    
     }
 }

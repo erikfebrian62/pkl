@@ -7,8 +7,13 @@ Biodata Siswa
 @section('content')
 <div class="container">
     <a href="{{ route('admin.biodata.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
+    <form class="form-inline" action="{{ route('admin.biodata.search')}}" method="GET">
+        <div class="form-group w-100 mb-3">
+            <input type="search" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan nama">
+            <button type="submit" class="btn btn-primary mb-1">Cari</button>
+        </div>
+    </form>
     <div class="card mt-2">
-
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">
