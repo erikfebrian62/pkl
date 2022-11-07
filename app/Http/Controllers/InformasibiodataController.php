@@ -17,7 +17,7 @@ class InformasibiodataController extends Controller
     public function index()
     {
         $users = User::where('role', 'user')->get();
-        return view('admin.biodata.index',compact('users'));
+        return view('admin.biodata.index',[ 'title' => 'Informasi-Data-Siswa' ],compact('users'));
     }
 
     public function search(Request $request) {
@@ -37,7 +37,7 @@ class InformasibiodataController extends Controller
      */
     public function create()
     {
-        return view('admin.biodata.create');
+        return view('admin.biodata.create', [ 'title' => 'Tambah-Data-Siswa' ]);
     }
 
     /**
@@ -80,7 +80,7 @@ class InformasibiodataController extends Controller
     public function edit($id)
     {
         $users = User::find($id);
-        return view('admin.biodata.edit', compact('users'));
+        return view('admin.biodata.edit', [ 'title' => 'Edit-Data-Siswa' ], compact('users'));
     }
 
     /**

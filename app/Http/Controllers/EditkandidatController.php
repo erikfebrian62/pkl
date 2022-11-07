@@ -18,7 +18,7 @@ class EditkandidatController extends Controller
     {
         $candidate = Candidate::all();
         $candidate = Candidate::where('misi_1', 'misi_2', 'misi_3', 'misi_4', 'misi_5');
-        return view('admin.candidat.index',compact('candidate', 'misi'));
+        return view('admin.candidat.index',[ 'title' => 'Informasi-Biodata-Kandidat' ],compact('candidate', 'misi'));
     }
 
     /**
@@ -28,7 +28,7 @@ class EditkandidatController extends Controller
      */
     public function create()
     {
-        return view('admin.candidat.create');
+        return view('admin.candidat.create', [ 'title' => 'Tambah-Data-Kandidat' ]);
     }
 
     /**
@@ -83,7 +83,7 @@ class EditkandidatController extends Controller
     public function show($id)
     {
         $candidate = Candidate::findOrFail($id);
-        return view('admin.candidat.show', compact('candidate'));
+        return view('admin.candidat.show', [ 'title' => 'Tampilan-Data-Kandidat' ], compact('candidate'));
     }
 
     /**
@@ -95,7 +95,7 @@ class EditkandidatController extends Controller
     public function edit($id)
     {
         $candidate = Candidate::find($id);
-        return view('admin.candidat.edit', compact('candidate'));
+        return view('admin.candidat.edit', [ 'title' => 'Edit-Data-Kandidat' ],compact('candidate'));
     }
 
     /**
