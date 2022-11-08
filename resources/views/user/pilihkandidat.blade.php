@@ -7,6 +7,12 @@
             <p class="kk">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
 
+        @if ($message = session('Error'))
+            <div class="my-3 alert alert-danger">
+                {{ $message }}
+            </div>
+        @endif
+
         <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
 
         @foreach($candidate as $candidate)
@@ -115,7 +121,7 @@
                                         <p class="fw-bold fs-7">{{$candidate->jurusan_wakil}}</p>
                                     </div>
                                     <h6 class="viisi-misi fw-bold">Visi Misi</h6>
-                                    <p class="mt-3">{{$candidate->visi}}</p> 
+                                    <p class="mt-3">{{$candidate->visi}}</p>
                                       <ol class=" p-3">
                                           <li>{{ $candidate->misi_1}}</li>
                                           <li>{{$candidate->misi_2}}</li>

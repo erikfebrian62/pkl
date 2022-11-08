@@ -7,8 +7,20 @@ Biodata Siswa
 @section('content')
 <div class="container">
     <a href="{{ route('admin.biodata.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
+    @if (session('success'))
+        <div class="my-3 alert alert-success alert-dismissible fade show">
+            {{ session('success') }}
+        </div>
+    @endif
+    <div class="my-3 col-12 col-sm-8 col-md-5">
+        <form action="" method="GET">
+            <div class="input-group">
+                <input type="text" class="form-control" name="keyword" placeholder="Keyword">
+                <button class="input-group-text"><i class="bi bi-search mb-2"></i></button>
+            </div>
+        </form>
+    </div>
     <div class="card mt-2">
-
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">

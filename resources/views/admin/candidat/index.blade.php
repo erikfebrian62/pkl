@@ -7,6 +7,12 @@ Biodata Kandidat
 @section('content')
 <div class="container">
     <a href="{{ route('admin.kandidat.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
+    @if (session('success'))
+        <div class="my-3 alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <div class="card mt-2">
         @include('partials.alert')
         <div class="card-body">
