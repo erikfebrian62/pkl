@@ -42,7 +42,10 @@
                             <div class="row">
                             <div class="col">
                                 <div class="suara">
-                                    <h6>{{ $count->where('candidate_id', $candidate->id)->count() }} suara</h6> 
+                                    @php
+                                        $suara=$count->where('candidate_id', $candidate->id)->count()
+                                    @endphp
+                                    <h6>{{ $suara }} suara</h6> 
                                 </div>
                             </div>
                             <div class="col" >
@@ -52,7 +55,7 @@
                             </div>
 
                             <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar" role="progressbar" style="width: {{ $suara/$users->count()*100 }}%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
 
                     </div>
