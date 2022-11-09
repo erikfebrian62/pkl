@@ -17,7 +17,7 @@ class EditkandidatController extends Controller
     public function index()
     {
         $candidate = Candidate::all();
-        $candidate = Candidate::where('misi_1', 'misi_2', 'misi_3', 'misi_4', 'misi_5');
+        $misi = Candidate::where('misi_1', 'misi_2', 'misi_3', 'misi_4', 'misi_5');
         return view('admin.candidat.index',[ 'title' => 'Informasi-Biodata-Kandidat' ],compact('candidate', 'misi'));
     }
 

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('class');
             $table->string('jurusan');
-            $table->string('password')->unique();
+            $table->string('password');
             $table->timestamps();
         });
     }

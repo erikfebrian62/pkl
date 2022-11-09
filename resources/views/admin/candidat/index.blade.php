@@ -29,7 +29,7 @@ Biodata Kandidat
                         @foreach ($candidate as $candidate)
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
-                                <td class="text-center"><img src="/images/{{ $candidate->img }}" width="40px"></td>
+                                <td class="text-center"><img src="/images/{{ $candidate->img }}" width="100px"></td>
                                 <td class="text-center">{{ $candidate->ketua }}</td>
                                 <td class="text-center">{{ $candidate->wakil }}</td>
                                 <td class="text-center">

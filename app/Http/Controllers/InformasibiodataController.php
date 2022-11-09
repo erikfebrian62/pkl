@@ -16,7 +16,7 @@ class InformasibiodataController extends Controller
      */
     public function index()
     {
-        $users = User::where('role', 'user')->get();
+        $users = User::where('role', 'user')->paginate(10);
         return view('admin.biodata.index',[ 'title' => 'Informasi-Data-Siswa' ],compact('users'));
     }
 
