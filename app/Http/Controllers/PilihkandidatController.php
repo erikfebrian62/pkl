@@ -27,7 +27,7 @@ class PilihkandidatController extends Controller
             return redirect(route('user.informasi-suara'));
         }
         else{
-           return redirect(route('user.pilih-kandidat'))->with('danger','Anda Telah Voting.!');
+           return redirect(route('user.pilih-kandidat'))->with('danger','Anda Sudah Voting.!');
         }    
     }
 }
