@@ -7,11 +7,19 @@
             <p class="kk">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
 
+<<<<<<< HEAD
         @if ($message = session('Error'))
             <div class="my-3 alert alert-danger">
                 {{ $message }}
             </div>
         @endif
+=======
+          @if($message = session('danger'))
+          <div class="alert alert-danger">
+            {{ $message }}
+          </div>
+          @endif
+>>>>>>> 8a2bf1e0fb6d1eb89256eb187354d95e28fc5479
 
         <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
 
@@ -134,7 +142,7 @@
                             </div>
                             </div>
                         </div>
-                        @if ($votes < 1)
+                        @if($votes < 1)
                         <form action="{{ route('user.kandidat.pilih', $candidate->id) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-primary w-100" onclick="confirm('Apakah anda yakin?')">Pilih</button>

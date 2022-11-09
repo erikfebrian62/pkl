@@ -10,16 +10,23 @@ use Illuminate\Support\Facades\Hash;
 class InformasibiodataController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Store a newly created resource in storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+<<<<<<< HEAD
         $users = User::where('role', 'user')->paginate(10);
+=======
+        $keyword = $request->keyword;
+        $users = User::where('name', 'LIKE', '%'.$keyword.'%');
+        $users = User::where('role', 'user')->get();
+>>>>>>> 8a2bf1e0fb6d1eb89256eb187354d95e28fc5479
         return view('admin.biodata.index',[ 'title' => 'Informasi-Data-Siswa' ],compact('users'));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *

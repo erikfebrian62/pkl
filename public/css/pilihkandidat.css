@@ -40,7 +40,8 @@ body {
 .nomer {
     position: relative;
     bottom: 20px;
-    left: 140px;
+    left: 50%;
+    transform: translateX(-50%);
 
     background-color: #ebf3fd;
     height: 85px;

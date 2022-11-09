@@ -42,6 +42,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
     Route::get('/dashboard', [DashboardController::class, 'dash'])->name('dashboard');
 
     //crud user
+    // Route::resource('biodata', InformasibiodataController::class);
     Route::get('/informasi-biodata', [InformasibiodataController::class, 'index'])->name('biodata.index');
 
     Route::get('/informasi-biodata/create', [InformasibiodataController::class, 'create'])->name('biodata.create');
@@ -53,6 +54,8 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
     Route::put('/informasi-biodata/{id}', [InformasibiodataController::class, 'update'])->name('biodata.update');
 
     Route::delete('/informasi-biodata/{id}', [InformasibiodataController::class, 'destroy'])->name('biodata.destroy');
+
+    Route::get('/informasi-biodata/keyword', [InformasibiodataController::class, 'keyword'])->name('biodata.keyword');
 
     //crud candidate
     Route::get('/edit-kandidat', [EditkandidatController::class, 'index'])->name('kandidat.index');

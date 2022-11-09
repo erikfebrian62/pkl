@@ -84,9 +84,9 @@ class DatabaseSeeder extends Seeder
             'jurusan_wakil' => 'Perbankan',
             'visi' => 'Mewujudkan Osis SMk Pertiwi Kuningan yang progresif, bergerak lebih cepat mengikuti perkembangan zaman sehingga menjadikan OSIS sebagai wadah siswa siswi untuk mengmbangkan segala potensi yang ada sehingga terciptanya siswa siswi yang kreatif, cerdas, aktif, disiplin dan berakhlak.',
             'misi_1' => 'Meningkatkan keimanan dan ketakwaan kepada Tuhan Yang Maha Esa.',
-            'misi_1' => 'Membentuk karakter pengurus OSIS yang kreatif dan berpikir kritis.',
-            'misi_1' => 'Mengorganisir setiap kegiatan EKstrakulikuler.',
-            'misi_1' => 'Melanjutkan dan mengembangkan program kerja OSIS sebelumnya.'
+            'misi_2' => 'Membentuk karakter pengurus OSIS yang kreatif dan berpikir kritis.',
+            'misi_3' => 'Mengorganisir setiap kegiatan EKstrakulikuler.',
+            'misi_4' => 'Melanjutkan dan mengembangkan program kerja OSIS sebelumnya.'
         ]);
     }
 }
