@@ -29,5 +29,6 @@ class PilihkandidatController extends Controller
         else{
            return redirect(route('user.pilih-kandidat'))->with('danger','Anda Telah Voting.!');
         }
+           return redirect(route('user.pilih-kandidat'))->with('danger','Anda Sudah Voting.!');
     }
-}
+ }

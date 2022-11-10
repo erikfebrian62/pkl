@@ -8,7 +8,7 @@ use App\Http\Controllers\PilihkandidatController;
 use App\Http\Controllers\InformasisuaraController;
 use App\Http\Controllers\InformasibiodataController;
 use App\Http\Controllers\InformasipemenangController;
-
+use App\Http\Controllers\DisplayController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +23,8 @@ use App\Http\Controllers\InformasipemenangController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Route::get('/display', [DisplayController::class, 'display'])->name('display.index');
 
 //Auth login & logout
 Route::get('/', [LoginController::class, 'index'])->name('login.index');
