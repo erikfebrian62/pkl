@@ -7,19 +7,18 @@
             <p class="kk">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
 
-<<<<<<< HEAD
+
         @if ($message = session('Error'))
             <div class="my-3 alert alert-danger">
                 {{ $message }}
             </div>
         @endif
-=======
+
           @if($message = session('danger'))
           <div class="alert alert-danger">
             {{ $message }}
           </div>
           @endif
->>>>>>> 8a2bf1e0fb6d1eb89256eb187354d95e28fc5479
 
         <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
 
@@ -223,28 +222,28 @@
 
 @push('ajax')
 <script>
-    // $('#kandidat').modal('hide');
+    // // $('#kandidat').modal('hide');
 
-    // $(document).ready(function() {
-    //     $('.detail-btn').click(function() {
-    //         const id = $(this).attr('data-id');
+    // // $(document).ready(function() {
+    // //     $('.detail-btn').click(function() {
+    // //         const id = $(this).attr('data-id');
 
-    //         $.ajax({
-    //             url: 'kandidat/'+ id,
-    //             type: 'GET',
-    //             success: function(data) {
-    //                 console.log(data)
-    //                 $('#nama_ketua').html(data.name_ketua)
-    //                 $('#kelas_ketua').html(data.kelas_ketua)
-    //                 $('#jurusan_ketua').html(data.jurusan_ketua)
-    //                 $('#nama_wakil_ketua').html(data.wakil_ketua)
-    //                 $('#kelas_wakil_ketua').html(data.kelas_wakil_ketua)
-    //                 $('#jurusan_wakil_ketua').html(data.jurusan_wakil_ketua)
-    //                 $('#visi').html(data.visi)
-    //                 $('#misi').html(data.misi)
-    //             }
-    //         })
-    //     })
-    })
+    // //         $.ajax({
+    // //             url: 'kandidat/'+ id,
+    // //             type: 'GET',
+    // //             success: function(data) {
+    // //                 console.log(data)
+    // //                 $('#nama_ketua').html(data.name_ketua)
+    // //                 $('#kelas_ketua').html(data.kelas_ketua)
+    // //                 $('#jurusan_ketua').html(data.jurusan_ketua)
+    // //                 $('#nama_wakil_ketua').html(data.wakil_ketua)
+    // //                 $('#kelas_wakil_ketua').html(data.kelas_wakil_ketua)
+    // //                 $('#jurusan_wakil_ketua').html(data.jurusan_wakil_ketua)
+    // //                 $('#visi').html(data.visi)
+    // //                 $('#misi').html(data.misi)
+    // //             }
+    // //         })
+    // //     })
+    // })
 </script>
 @endpush

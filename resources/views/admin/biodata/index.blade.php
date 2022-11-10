@@ -7,7 +7,6 @@ Biodata Siswa
 @section('content')
 <div class="container">
     <a href="{{ route('admin.biodata.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
-<<<<<<< HEAD
     @if (session('success'))
         <div class="my-3 alert alert-success alert-dismissible fade show">
             {{ session('success') }}
@@ -21,14 +20,6 @@ Biodata Siswa
             </div>
         </form>
     </div>
-=======
-    <form class="form-inline" action="{{ route('admin.biodata.keyword')}} "method="GET">
-        <div class="form-group w-100 mb-3">
-            <input type="search" name="keyword" class="form-control w-75 d-inline" placeholder="Keyword">
-            <button type="submit" class="btn btn-primary mb-1">Cari</button>
-        </div>
-    </form>
->>>>>>> 8a2bf1e0fb6d1eb89256eb187354d95e28fc5479
     <div class="card mt-2">
         <div class="card-body">
             <div class="table-responsive">
