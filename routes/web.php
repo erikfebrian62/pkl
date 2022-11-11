@@ -57,7 +57,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
     Route::delete('/informasi-biodata/{id}', [InformasibiodataController::class, 'destroy'])->name('biodata.destroy');
 
-    Route::get('/informasi-biodata/keyword', [InformasibiodataController::class, 'keyword'])->name('biodata.keyword');
+    Route::get('/informasi-biodata/search', [InformasibiodataController::class, 'search'])->name('biodata.search');
 
     //crud candidate
     Route::get('/edit-kandidat', [EditkandidatController::class, 'index'])->name('kandidat.index');
