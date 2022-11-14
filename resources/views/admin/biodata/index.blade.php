@@ -13,7 +13,7 @@ Biodata Siswa
         </div>
     @endif
     <div class="my-3 col-12 col-sm-8 col-md-5">
-        <form action="{{ route('admin.biodata.search') }}" method="GET">
+        <form action="{{ route('admin.biodata.index') }}" method="GET">
             <div class="input-group">
                 <input type="search" class="form-control" name="search" placeholder="search" value="{{ request('search') }}">
                 <button class="input-group-text"><i class="bi bi-search mb-2"></i></button>

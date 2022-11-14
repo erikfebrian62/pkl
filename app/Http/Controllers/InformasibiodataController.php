@@ -9,20 +9,6 @@ use Illuminate\Support\Facades\Hash;
 
 class InformasibiodataController extends Controller
 {
-
-    public function search(Request $request)
-    {
-        if($request->has('search')) {
-            $users = User::where('nis', 'LIKE', '%' .$request->search. '%')
-            ->orWhere('name', 'LIKE', '%' .$request->search. '%')
-            ->orWhere('class', 'LIKE', '%' .$request->search. '%')
-            ->orWhere('jurusan', 'LIKE', '%' .$request->search. '%')->get();
-        }else{
-            $users = User::all();
-        }
-
-        return view('admin.biodata.index',[ 'title' => 'Informasi-Data-Siswa'], compact('users'));
-    }
     /**
      * Store a newly created resource in storage.
      *
@@ -31,7 +17,15 @@ class InformasibiodataController extends Controller
      */
     public function index(Request $request)
     {
-        $users = User::where('role', 'user')->paginate(10);
+        if($request->has('search')) {
+            $users = User::where('nis', 'LIKE', '%' .$request->search. '%')
+            ->orWhere('name', 'LIKE', '%' .$request->search. '%')
+            ->orWhere('class', 'LIKE', '%' .$request->search. '%')
+            ->orWhere('jurusan', 'LIKE', '%' .$request->search. '%')->paginate(10)->appends($request->all());
+        }else{
+            $users = User::where('role', 'user')->paginate(10);
+        }
+
         return view('admin.biodata.index',[ 'title' => 'Informasi-Data-Siswa' ],compact('users'));
     }
 
