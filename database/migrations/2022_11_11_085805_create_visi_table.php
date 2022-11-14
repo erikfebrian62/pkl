@@ -13,15 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('candidates', function (Blueprint $table) {
+        Schema::create('visi', function (Blueprint $table) {
             $table->id();
-            $table->string('img')->nullable();
-            $table->string('ketua');
-            $table->string('kelas_ketua');
-            $table->string('jurusan_ketua');
-            $table->string('wakil');
-            $table->string('kelas_wakil');
-            $table->string('jurusan_wakil');
+            $table->foreignId('candidate_id')->nullable()->index('fk_visi_to_candidate');
+            $table->text('visi');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('candidates');
+        Schema::dropIfExists('visi');
     }
 };

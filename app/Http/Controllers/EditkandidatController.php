@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Candidate;
+use App\Models\Visi;
 
 
 class EditkandidatController extends Controller
@@ -16,9 +17,9 @@ class EditkandidatController extends Controller
      */
     public function index()
     {
+        $visi = Visi::all();
         $candidate = Candidate::all();
-        $misi = Candidate::where('misi_1', 'misi_2', 'misi_3', 'misi_4', 'misi_5');
-        return view('admin.candidat.index',[ 'title' => 'Informasi-Biodata-Kandidat' ],compact('candidate', 'misi'));
+        return view('admin.candidat.index',[ 'title' => 'Informasi-Biodata-Kandidat' ],compact('candidate'));
     }
 
     /**
@@ -47,17 +48,6 @@ class EditkandidatController extends Controller
             'wakil' => 'required',
             'kelas_wakil' => 'required',
             'jurusan_wakil' => 'required',
-            'visi' => 'required',
-            'misi_1'  => 'required',
-            'misi_2'  => 'required',
-            'misi_3'  => 'required',
-            'misi_4'  => 'required',
-            'misi_5'  => 'required',
-            'misi_6'  => 'required',
-            'misi_7'  => 'required',
-            'misi_8'  => 'required',
-            'misi_9'  => 'required',
-            'misi_10'  => 'required',
         ]);
 
         $input = $request->all();
@@ -115,17 +105,6 @@ class EditkandidatController extends Controller
             'wakil' => 'required',
             'kelas_wakil' => 'required',
             'jurusan_wakil' => 'required',
-            'visi' => 'required',
-            'misi_1'  => 'required',
-            'misi_2'  => 'required',
-            'misi_3'  => 'required',
-            'misi_4'  => 'required',
-            'misi_5'  => 'required',
-            'misi_6'  => 'required',
-            'misi_7'  => 'required',
-            'misi_8'  => 'required',
-            'misi_9'  => 'required',
-            'misi_10'  => 'required',
         ]);
 
         $input = $request->all();

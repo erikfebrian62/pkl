@@ -50,8 +50,10 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <h6>Visi Misi</h6>
-                        <p class="card-text">{{$candidate->visi}}</p>
+                        <h6>Visi Misi</h6> 
+                          @foreach ($candidate->visi as $visis)
+                            <p class="mt-3">{{$visis->visi}}</p>
+                          @endforeach
 
                         <!-- Button trigger modal -->
                         <p type="button" class="btn btn-light sm-3" data-bs-toggle="modal" data-bs-target="#kandidat{{ $candidate->id }}" data-id="{{ $candidate->id }}">
@@ -68,43 +70,6 @@
                                 </div>
                                 <h5>Kandidat</h5>
                                 <h1>NO {{ $loop->iteration }}</h1><br><br>
-                                {{-- <div class="col-auto">
-                                    <img src="{{ asset('images/'. $candidate->img) }}" width="250px" class="rounded" alt="">
-                                </div> --}}
-                                    {{-- <div class="col-auto">
-                                    <div class="row d-block px-3">
-                                        <div class="col">
-                                            <h6>Nama Ketua:</h6>
-                                            <h5>{{$candidate->name_ketua}}</h5>
-                                        </div>
-                                        <div class="col">
-                                        <h6>Kelas:</h6>
-                                        <h5>{{$candidate->kelas_ketua}}</h5>
-                                        </div>
-                                        <div class="col">
-                                        <h6>Jurusan:</h6>
-                                        <h5>{{$candidate->jurusan_ketua}}</h5>
-                                        </div>
-                                        <div class="col">
-                                        <h6>Nama Wakil Ketua:</h6>
-                                        <h5></h5>
-                                        </div>
-                                        <div class="col">{{$candidate->wakil_ketua}}
-                                        <h6>Kelas:</h6>
-                                        <h5>{{$candidate->kelas_wakil}}</h5>
-                                        </div>
-                                        <div class="col">
-                                        <h6>Jurusan:</h6>
-                                        <h5>{{$candidate->jurusan_wakil}}</h5>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <div class="col">
-                                    <h6 class="viisi-misi fw-bold">Visi Misi</h6>
-                                    <p class="mt-3">{{$candidate->visi}}</p>
-                                    <p class="mt-3">{{$candidate->misi}}</p>
-                                    </div>
-                                </div> --}}
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <img src="{{ asset('images/'. $candidate->img) }}" alt="" class="img-fluid w-100">
@@ -127,15 +92,16 @@
                                         <p class="fs-6 mb-0">Jurusan Wakil Ketua: </p>
                                         <p class="fw-bold fs-7">{{$candidate->jurusan_wakil}}</p>
                                     </div>
-                                    <h6 class="viisi-misi fw-bold">Visi Misi</h6>
-                                    <p class="mt-3">{{$candidate->visi}}</p>
-                                      <ol class=" p-3">
-                                          <li>{{ $candidate->misi_1}}</li>
-                                          <li>{{$candidate->misi_2}}</li>
-                                          <li>{{$candidate->misi_3}}</li>
-                                          <li>{{$candidate->misi_4}}</li>
-                                          <li>{{$candidate->misi_5}}</li>
-                                      </ol>
+                                    <h6 class="viisi-misi fw-bold">Visi</h6>
+                                    @foreach ($candidate->visi as $visis)
+                                      <p class="mt-3">{{$visis->visi}}</p>
+                                    @endforeach
+                                    <h6 class="viisi-misi fw-bold">Misi</h6>
+                                    <ol>
+                                      @foreach ($candidate->misi as $misis)
+                                        <li class="mt-3">{{$misis->misi}}</li>
+                                      @endforeach
+                                    </ol>
                                 </div>
                                 </div>
                             </div>

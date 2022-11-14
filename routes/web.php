@@ -2,13 +2,14 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DisplayController;
+use App\Http\Controllers\EditVisiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EditkandidatController;
 use App\Http\Controllers\PilihkandidatController;
 use App\Http\Controllers\InformasisuaraController;
 use App\Http\Controllers\InformasibiodataController;
 use App\Http\Controllers\InformasipemenangController;
-use App\Http\Controllers\DisplayController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,6 +74,22 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
     Route::delete('/edit-kandidat/{id}', [EditkandidatController::class, 'destroy'])->name('kandidat.destroy');
 
     Route::get('/edit-kandidat/{id}', [EditkandidatController::class, 'show'])->name('kandidat.show');
+
+    //crud visi
+    Route::get('/edit-visi-kandidat', [EditVisiController::class, 'index'])->name('visi.index');
+
+    Route::get('/edit-visi-kandidat/{id}', [EditVisiController::class, 'show'])->name('visi.show');
+
+    Route::delete('/edit-visi-kandidat/{id}', [EditVisiController::class, 'destroy'])->name('visi.destroy');
+
+    Route::get('/edit-visi-kandidat/create', [EditVisiController::class, 'create'])->name('visi.create');
+
+    Route::post('/edit-visi-kandidat/store', [EditVisiController::class, 'store'])->name('visi.store');
+
+    Route::get('/edit-visi-kandidat/{id}/edit', [EditVisiController::class, 'edit'])->name('visi.edit');
+
+    Route::put('/edit-visi-kandidat/{id}', [EditVisiController::class, 'update'])->name('visi.update');
+
 });
 
 
