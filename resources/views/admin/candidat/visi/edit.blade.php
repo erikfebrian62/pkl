@@ -14,7 +14,7 @@ Biodata Kandidat
                 <label for="floatingInput">Ketua & Wakil</label>
             </div>
             <div class="form-floating mb-3">
-                <textarea class="form-control" placeholder="Visi" name="visi" value="{{ $visi->visi }}" id="floatingTextarea" style="height: 150px"></textarea>
+                <textarea class="form-control" placeholder="Visi" name="visi" value="" id="floatingTextarea" style="height: 150px"></textarea>
                 <label for="floatingTextarea"></label>
             </div>
                 <button type="submit" class="btn  btn-success btn-md float-end"><i class="fa fa-save"></i> Simpan</button>
