@@ -27,7 +27,7 @@ class EditVisiController extends Controller
     public function create()
     {
         $candidates = Candidate::get();
-        return view('admin.candidat.visi.create', ['tittle' => 'Tambah-Visi_Kandidat'], compact('candidates'));
+        return view('admin.candidat.visi.create', ['tittle' => 'Tambah-Visi-Kandidat'], compact('candidates'));
     }
 
     /**
@@ -54,8 +54,8 @@ class EditVisiController extends Controller
     public function show($id)
     {
         $candidates = Candidate::findOrFail($id);
-        $visi = Visi::get();
-        return view('admin.candidat.visi.show', ['tittle' => 'Tampilan-Visi_Kandidat'] , compact('candidates', 'visi'));
+        $visi = Visi::where('candidate_id', $candidates->id)->first();
+        return view('admin.candidat.visi.show', ['tittle' => 'Tampilan-Visi-Kandidat'] , compact('candidates', 'visi'));
     }
 
     /**
@@ -66,9 +66,9 @@ class EditVisiController extends Controller
      */
     public function edit($id)
     {
-       $visi = Visi::get();
-       $candidates = Candidate::find($id);
-       return view('admin.candidat.visi.edit', ['tittle' => 'Edit-Visi_Kandidat'], compact('visi', 'candidates'));
+        $candidates = Candidate::find($id);
+        $visi = Visi::where('candidate_id', $candidates->id)->first();
+       return view('admin.candidat.visi.edit', ['tittle' => 'Edit-Visi_Kandidat'], compact( 'candidates', 'visi'));
     }
 
     /**

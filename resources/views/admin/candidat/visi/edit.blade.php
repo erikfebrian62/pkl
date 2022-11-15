@@ -10,12 +10,12 @@ Biodata Kandidat
     <div class="card mt-2">
         <div class="card-body">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="ketua" value="{{ $candidates->ketua}} & {{ $candidates->wakil}}" id="floatingInput" placeholder="Ketua">
+                <input type="text" class="form-control" name="ketua" value="{{ $candidates->ketua}} & {{ $candidates->wakil}}" id="floatingInput" placeholder="Ketua" disabled>
                 <label for="floatingInput">Ketua & Wakil</label>
             </div>
             <div class="form-floating mb-3">
-                <textarea class="form-control" placeholder="Visi" name="visi" value="" id="floatingTextarea" style="height: 150px"></textarea>
-                <label for="floatingTextarea"></label>
+                <textarea class="form-control" placeholder="Visi" name="visi" value="" id="floatingTextarea" style="height: 150px">{{ $visi->visi}}</textarea>
+                <label for="floatingTextarea">Visi</label>
             </div>
                 <button type="submit" class="btn  btn-success btn-md float-end"><i class="fa fa-save"></i> Simpan</button>
             </form>
