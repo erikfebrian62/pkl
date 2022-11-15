@@ -34,7 +34,11 @@ Dasboard
                     </div>
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7 text-center">
                         <h6 class="text-muted font-semibold">Sudah Voting</h6>
+<<<<<<< HEAD
                         <h6 class="font-extrabold mb-0">{{ $votes->count() }}</h6>
+=======
+                        <h6 class="font-extrabold mb-0 ">{{ $vote->count() }}</h6>
+>>>>>>> a53d06a713117066b769094df759ba9eaf91ef09
                     </div>
                 </div>
             </div>

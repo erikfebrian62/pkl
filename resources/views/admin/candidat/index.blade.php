@@ -7,8 +7,8 @@ Biodata Kandidat
 @section('content')
 <div class="container">
     <a href="{{ route('admin.kandidat.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
-    <a href="{{ route('admin.visi.index') }}" class="btn btn-primary btn-sm mt-3 float-end ms-2">Kelola Visi</a>
-    <a href="" class="btn btn-primary btn-sm mt-3 float-end ms-3">Kelola Misi</a>
+    <a href="{{ route('admin.kandidat.visi.index') }}" class="btn btn-primary btn-sm mt-3 float-end ms-2">Kelola Visi</a>
+    <a href="{{ route('admin.kandidat.misi.index')}}" class="btn btn-primary btn-sm mt-3 float-end ms-3">Kelola Misi</a>
     @if (session('success'))
         <div class="my-3 alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
