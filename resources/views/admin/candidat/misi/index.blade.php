@@ -7,7 +7,7 @@ Visi Kandidat
 @section('content')
 <div class="container">
     <a href="{{ route('admin.kandidat.index') }}" class="btn btn-primary btn-sm mt-3"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
-    <a href="{{ route('admin.kandidat.visi.create')}}" class="btn btn-success btn-sm sm-3 mt-3 float-end">Tambah Data <i class="bi bi-plus-square"></i></a>
+    <a href="{{ route('admin.kandidat.misi.create')}}" class="btn btn-success btn-sm sm-3 mt-3 float-end">Tambah Data <i class="bi bi-plus-square"></i></a>
         @if (session('success'))
         <div class="my-3 alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
@@ -30,11 +30,11 @@ Visi Kandidat
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td class="text-center">{{ $candidate->ketua}} & {{ $candidate->wakil}}</td>
                                 <td class="text-center">
-                                    <form action="{{ route('admin.kandidat.visi.destroy', $candidate->id) }}" method="POST">
+                                    <form action="{{ route('admin.kandidat.misi.destroy', $candidate->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <a href="{{ route('admin.kandidat.visi.show', $candidate->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></i></a>
-                                        <a href="{{ route('admin.kandidat.visi.edit', $candidate->id)}}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                        <a href="{{ route('admin.kandidat.misi.show', $candidate->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></i></a>
+                                        <a href="{{ route('admin.kandidat.misi.edit', $candidate->id)}}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
                                         <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                     </form>
                                 </td>
