@@ -45,12 +45,15 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
     Route::get('/dashboard', [DashboardController::class, 'dash'])->name('dashboard');
 
     //crud user
-    // Route::resource('biodata', InformasibiodataController::class);
     Route::get('/informasi-biodata', [InformasibiodataController::class, 'index'])->name('biodata.index');
 
-    Route::get('/informasi-biodata/create', [InformasibiodataController::class, 'create'])->name('biodata.create');
+    Route::post('/informasi-biodata', [InformasibiodataController::class, 'import'])->name('biodata.import');
 
-    Route::post('/informasi-biodata/store', [InformasibiodataController::class, 'store'])->name('biodata.store');
+    Route::get('/informasi-biodata/export', [InformasibiodataController::class, 'export'])->name('biodata.export');
+
+    // Route::get('/informasi-biodata/create', [InformasibiodataController::class, 'create'])->name('biodata.create');
+
+    // Route::post('/informasi-biodata/store', [InformasibiodataController::class, 'store'])->name('biodata.store');
 
     Route::get('/informasi-biodata/{id}/edit', [InformasibiodataController::class, 'edit'])->name('biodata.edit');
 

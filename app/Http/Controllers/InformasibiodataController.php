@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-
-use Illuminate\Http\Request;
+use App\Exports\UserExport;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use App\Imports\UserImport;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 
 class InformasibiodataController extends Controller
 {
@@ -15,6 +17,20 @@ class InformasibiodataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function import()
+    {
+        Excel::import(new UserImport, request()->file('file'));
+
+        return back()->with('success', 'Berhasil Import Data!!');
+    }
+
+    public function export()
+    {
+        return Excel::download(new UserExport, 'User.xlsx');
+    }
+
+
+
     public function index(Request $request)
     {
         if($request->has('search')) {
@@ -34,10 +50,10 @@ class InformasibiodataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('admin.biodata.create', [ 'title' => 'Tambah-Data-Siswa' ]);
-    }
+    // public function create()
+    // {
+    //     return view('admin.biodata.create', [ 'title' => 'Tambah-Data-Siswa' ]);
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -45,19 +61,19 @@ class InformasibiodataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        User::create([
-            'role' => 'user',
-            'nis' => $request->nis,
-            'name' => $request->name,
-            'class' => $request->class,
-            'jurusan' => $request->jurusan,
-            'password' => bcrypt($request->password)
-        ]);
+    // public function store(Request $request)
+    // {
+    //     User::create([
+    //         'role' => 'user',
+    //         'nis' => $request->nis,
+    //         'name' => $request->name,
+    //         'class' => $request->class,
+    //         'jurusan' => $request->jurusan,
+    //         'password' => bcrypt($request->password)
+    //     ]);
 
-        return redirect(route('admin.biodata.index'))->with('success', 'Data berhasil di Tambahkan!.');
-    }
+    //     return redirect(route('admin.biodata.index'))->with('success', 'Data berhasil di Tambahkan!.');
+    // }
 
     /**
      * Display the specified resource.
