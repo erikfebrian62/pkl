@@ -39,14 +39,16 @@ class EditVisiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'candidate' => 'required',
             'visi' => 'required'
         ]);
 
         Visi::create([
-            'visi' => $request->visi,
+            'candidate_id' => $request->candidate,
+            'visi' => $request->visi
         ]);
 
-        return redirect(route('admin.candidat.visi.index'))->with('succsess', 'Data berhasil di Tambahkan!');
+        return redirect(route('admin.kandidat.visi.index'))->with('succsess', 'Data berhasil di Tambahkan!');
     }
 
     /**
@@ -91,7 +93,7 @@ class EditVisiController extends Controller
         $candidates = Candidate::find($id);
         $candidates->visi=$request->visi;
         $candidates->update;
-        return redirect(route('admin.candidat.visi.index'))->with('succsess', 'Visi Berhasil Di Edit!.');
+        return redirect(route('admin.kandidat.visi.index'))->with('succsess', 'Visi Berhasil Di Edit!.');
     }
 
     /**
@@ -105,6 +107,6 @@ class EditVisiController extends Controller
         $candidates = Candidate::find($id);
         $candidates->delete($id);
 
-        return redirect(route ('admin.visi.index'))->with('succsess', 'Data Telah Diperbarui!');
+        return redirect(route ('admin.kandidat.visi.index'))->with('succsess', 'Data Telah Diperbarui!');
     }
 }
