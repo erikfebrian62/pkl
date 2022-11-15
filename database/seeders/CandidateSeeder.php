@@ -35,11 +35,11 @@ class CandidateSeeder extends Seeder
 
         Misi::create([
             'candidate_id' => $candidate->id,
-            'misi' => 'Menumbuhkan kerukunan dan keimanan antar siswa.
-                       Mengingatkan solidaritas dan kerjasama antar organisasi serta ekstrakulikuler.
-                       Mengoptimalkan penggunaan jejaring sosial media atau internet sebagai sarana untuk memaksimalkan program kerja OSIS SMK Pertiwi Kuningan.
-                       Mengembangkan organisasi dan ekstrakulikuler sebagai sarana penyaluran bakat siswa.
-                       Melanjutkan dan mengembangkan program kerja sebelumnya.',
+            'misi' => 'Menumbuhkan kerukunan dan keimanan antar siswa.'
+                    //    Mengingatkan solidaritas dan kerjasama antar organisasi serta ekstrakulikuler.
+                    //    Mengoptimalkan penggunaan jejaring sosial media atau internet sebagai sarana untuk memaksimalkan program kerja OSIS SMK Pertiwi Kuningan.
+                    //    Mengembangkan organisasi dan ekstrakulikuler sebagai sarana penyaluran bakat siswa.
+                    //    Melanjutkan dan mengembangkan program kerja sebelumnya.,
         ]);
 
         $candidate = Candidate::create([
@@ -59,11 +59,11 @@ class CandidateSeeder extends Seeder
         
         Misi::create([
             'candidate_id' => $candidate->id,
-            'misi' => 'Meningkatkan iman dan takwa terhadap Tuhan Yang Maha Esa, melalui acara atau kegiataan keagamaan.
-                       Melaksanakan kegiatan yang dapat meningkatkan hubungan positif antar guru dan siswa.
-                       Meningkatkan kegiatan ekstrakulikuler sekolah sebagai wadah pengemabangan minat dan bakat siswa siswi SMK Pertiwi Kuningan.
-                       Membentuk karakter pengurus yang cerdas dan solid.
-                       Ikut menyelenggarakan bakti sosial di lingkungan sekolah atau sekitarnya sebagai tanda kepeduian sesama.'
+            'misi' => 'Meningkatkan iman dan takwa terhadap Tuhan Yang Maha Esa, melalui acara atau kegiataan keagamaan.'
+                    //    Melaksanakan kegiatan yang dapat meningkatkan hubungan positif antar guru dan siswa.
+                    //    Meningkatkan kegiatan ekstrakulikuler sekolah sebagai wadah pengemabangan minat dan bakat siswa siswi SMK Pertiwi Kuningan.
+                    //    Membentuk karakter pengurus yang cerdas dan solid.
+                    //    Ikut menyelenggarakan bakti sosial di lingkungan sekolah atau sekitarnya sebagai tanda kepeduian sesama.
                         
         ]);
 
@@ -84,10 +84,10 @@ class CandidateSeeder extends Seeder
 
         Misi::create([
             'candidate_id' => $candidate->id,
-            'misi' =>  'Meningkatkan keimanan dan ketakwaan kepada Tuhan Yang Maha Esa.
-                        Membentuk karakter pengurus OSIS yang kreatif dan berpikir kritis.
-                        Mengorganisir setiap kegiatan EKstrakulikuler.
-                        Melanjutkan dan mengembangkan program kerja OSIS sebelumnya.'
+            'misi' =>  'Meningkatkan keimanan dan ketakwaan kepada Tuhan Yang Maha Esa.'
+                        // Membentuk karakter pengurus OSIS yang kreatif dan berpikir kritis.
+                        // Mengorganisir setiap kegiatan EKstrakulikuler.
+                        // Melanjutkan dan mengembangkan program kerja OSIS sebelumnya.
                        
         ]);
     }

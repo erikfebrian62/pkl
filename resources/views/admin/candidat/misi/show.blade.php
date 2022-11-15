@@ -14,9 +14,11 @@ Biodata Kandidat
                 <label for="floatingInput">Ketua & Wakil</label>
             </div>
             <div class="form-floating mb-3">
-                <textarea class="form-control" placeholder="Visi" name="visi" value="" id="floatingTextarea" style="height: 150px" disabled>{{ $misi->misi }}
-                </textarea>
-                <label for="floatingTextarea">Misi</label>
+                <ol class="list-group list-group-numbered">
+                    @foreach ($misi as $item)
+                        <li class="list-group-item">{{$item->misi}}</li>
+                    @endforeach
+                </ol>
             </div>
             </form>
         </div>

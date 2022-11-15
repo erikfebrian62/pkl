@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Candidate;
 use App\Models\Visi;
+use App\models\Misi;
 
 
 class EditkandidatController extends Controller
@@ -73,7 +74,9 @@ class EditkandidatController extends Controller
     public function show($id)
     {
         $candidate = Candidate::findOrFail($id);
-        return view('admin.candidat.show', [ 'title' => 'Tampilan-Data-Kandidat' ], compact('candidate'));
+        $data = Misi::where('candidate_id', $candidate->id)->first();
+        $visi = Visi::where('candidate_id', $candidate->id)->first();
+        return view('admin.candidat.show', [ 'title' => 'Tampilan-Data-Kandidat' ], compact('candidate', 'data', 'visi'));
     }
 
     /**

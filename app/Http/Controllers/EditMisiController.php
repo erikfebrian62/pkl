@@ -40,14 +40,16 @@ class EditMisiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'candidate' => 'required',
             'misi' => 'required'
         ]);
 
         Misi::create([
-            'misi'
+            'candidate_id' => $request->candidate,
+            'misi' => $request->misi
         ]);
 
-        return redirect(route('admin.candidat.misi.index'))->with('success', 'Data Berhasil Di Tambahkan!');
+        return redirect(route('admin.kandidat.misi.index'))->with('success', 'Data Berhasil Di Tambahkan!');
     }
 
     /**
@@ -59,7 +61,7 @@ class EditMisiController extends Controller
     public function show($id)
     {
         $candidates = Candidate::findOrFail($id);
-        $misi = Misi::where('candidate_id', $candidates->id)->first();
+        $misi = Misi::where('candidate_id', $candidates->id)->get();
         return view('admin.candidat.misi.show', ['tittle' => 'Tampilan-Misi-Kandidat'], compact('candidates', 'misi'));
     }
 
@@ -72,7 +74,7 @@ class EditMisiController extends Controller
     public function edit($id)
     {
         $candidates = Candidate::findOrFail($id);
-        $misi = Misi::where('candidate_id', $candidates->id)->first();
+        $misi = Misi::where('candidate_id', $candidates->id)->get();
         return view('admin.candidat.misi.edit', ['tittle' => 'Edit-Misi-Kandidat'], compact('candidates', 'misi'));
     }
 
