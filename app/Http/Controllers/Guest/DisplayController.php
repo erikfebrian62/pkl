@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Guest;
 
-use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Candidate;
 use App\Models\Vote;
+use App\Models\Candidate;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DisplayController extends Controller
 {

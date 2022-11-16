@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Exports\UserExport;
 use App\Models\User;
+use App\Exports\UserExport;
 use App\Imports\UserImport;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
 
 class InformasibiodataController extends Controller
@@ -17,11 +17,17 @@ class InformasibiodataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function indeximport()
+    {
+        return view('admin.biodata.import');
+    }
+
+
     public function import()
     {
         Excel::import(new UserImport, request()->file('file'));
 
-        return back()->with('success', 'Berhasil Import Data!!');
+        return redirect(route('admin.biodata.index'))->with('success', 'Berhasil Import Data!!');
     }
 
     public function export()

@@ -1,16 +1,17 @@
 <?php
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\DisplayController;
-use App\Http\Controllers\EditVisiController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\EditkandidatController;
-use App\Http\Controllers\EditMisiController;
-use App\Http\Controllers\PilihkandidatController;
-use App\Http\Controllers\InformasisuaraController;
-use App\Http\Controllers\InformasibiodataController;
-use App\Http\Controllers\InformasipemenangController;
+use App\Http\Controllers\Guest\LoginController;
+use App\Http\Controllers\Guest\DisplayController;
+use App\Http\Controllers\Admin\EditMisiController;
+use App\Http\Controllers\Admin\EditVisiController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EditkandidatController;
+use App\Http\Controllers\Users\PilihkandidatController;
+use App\Http\Controllers\Users\InformasisuaraController;
+use App\Http\Controllers\Admin\InformasibiodataController;
+use App\Http\Controllers\Users\InformasipemenangController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,7 +49,9 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
     //crud user
     Route::get('/informasi-biodata', [InformasibiodataController::class, 'index'])->name('biodata.index');
 
-    Route::post('/informasi-biodata', [InformasibiodataController::class, 'import'])->name('biodata.import');
+    Route::get('/informasi-biodata/import', [InformasibiodataController::class, 'indeximport'])->name('biodata.import');
+
+    Route::post('/informasi-biodata/import', [InformasibiodataController::class, 'import'])->name('biodata.imports');
 
     Route::get('/informasi-biodata/export', [InformasibiodataController::class, 'export'])->name('biodata.export');
 

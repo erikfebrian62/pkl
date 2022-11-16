@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Users;
 
-use Illuminate\Http\Request;
-use App\Models\Candidate;
 use App\Models\Vote;
+use App\Models\Candidate;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class PilihkandidatController extends Controller

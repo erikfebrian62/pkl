@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\Models\Misi;
 use App\Models\Candidate;
-use App\Models\Visi;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Database\Seeders\CandidateSeeder;
 
-class EditVisiController extends Controller
+class EditMisiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +18,7 @@ class EditVisiController extends Controller
     public function index()
     {
         $candidates = Candidate::get();
-        return view('admin.candidat.visi.index', ['tittle' => 'edit-visi-kandidat'], compact('candidates'));
+        return view('admin.candidat.misi.index', ['tittle' => 'Edit-Misi-Kandidat'], compact('candidates'));
     }
 
     /**
@@ -27,7 +29,7 @@ class EditVisiController extends Controller
     public function create()
     {
         $candidates = Candidate::get();
-        return view('admin.candidat.visi.create', ['tittle' => 'Tambah-Visi-Kandidat'], compact('candidates'));
+        return view('admin.candidat.misi.create', ['tittle' => 'Tambah-Misi-Kandidat'], compact('candidates'));
     }
 
     /**
@@ -40,15 +42,15 @@ class EditVisiController extends Controller
     {
         $request->validate([
             'candidate' => 'required',
-            'visi' => 'required'
+            'misi' => 'required'
         ]);
 
-        Visi::create([
+        Misi::create([
             'candidate_id' => $request->candidate,
-            'visi' => $request->visi
+            'misi' => $request->misi
         ]);
 
-        return redirect(route('admin.kandidat.visi.index'))->with('succsess', 'Data berhasil di Tambahkan!');
+        return redirect(route('admin.kandidat.misi.index'))->with('success', 'Data Berhasil Di Tambahkan!');
     }
 
     /**
@@ -60,8 +62,8 @@ class EditVisiController extends Controller
     public function show($id)
     {
         $candidates = Candidate::findOrFail($id);
-        $visi = Visi::where('candidate_id', $candidates->id)->first();
-        return view('admin.candidat.visi.show', ['tittle' => 'Tampilan-Visi-Kandidat'] , compact('candidates', 'visi'));
+        $misi = Misi::where('candidate_id', $candidates->id)->get();
+        return view('admin.candidat.misi.show', ['tittle' => 'Tampilan-Misi-Kandidat'], compact('candidates', 'misi'));
     }
 
     /**
@@ -72,9 +74,9 @@ class EditVisiController extends Controller
      */
     public function edit($id)
     {
-        $candidates = Candidate::find($id);
-        $visi = Visi::where('candidate_id', $candidates->id)->first();
-       return view('admin.candidat.visi.edit', ['tittle' => 'Edit-Visi_Kandidat'], compact( 'candidates', 'visi'));
+        $candidates = Candidate::findOrFail($id);
+        $misi = Misi::where('candidate_id', $candidates->id)->get();
+        return view('admin.candidat.misi.edit', ['tittle' => 'Edit-Misi-Kandidat'], compact('candidates', 'misi'));
     }
 
     /**
@@ -87,13 +89,14 @@ class EditVisiController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'visi' => 'required'
+            'misi' => 'required'
         ]);
 
         $candidates = Candidate::find($id);
-        $candidates->visi=$request->visi;
-        $candidates->update;
-        return redirect(route('admin.kandidat.visi.index'))->with('succsess', 'Visi Berhasil Di Edit!.');
+        $candidates->misi=$request->misi;
+        $candidates->update();
+
+        return redirect(route('admin.candidat.misi.index'))->with('success', 'Data Berhasil Di Edit!');
     }
 
     /**
@@ -104,9 +107,9 @@ class EditVisiController extends Controller
      */
     public function destroy($id)
     {
-        $candidates = Candidate::find($id);
-        $candidates->delete($id);
+       $candidates = Candidate::get();
+       $candidates->delete($id);
 
-        return redirect(route ('admin.kandidat.visi.index'))->with('succsess', 'Data Telah Diperbarui!');
+       return redirect(route('admin.candidat.misi.index'))->with('success', 'Data Telah Diperbaharui!');
     }
 }
