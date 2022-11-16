@@ -21,7 +21,7 @@ Biodata Siswa
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">
-                    <div class="my-3 col-12">
+                    <div class="my-1 col-12 p-2">
                         <form action="{{ route('admin.biodata.index') }}" method="GET">
                             <div class="input-group">
                                 <input type="search" class="form-control" name="search" placeholder="search" value="{{ request('search') }}">
