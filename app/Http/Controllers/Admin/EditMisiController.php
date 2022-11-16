@@ -18,7 +18,7 @@ class EditMisiController extends Controller
     public function index()
     {
         $candidates = Candidate::get();
-        return view('admin.candidat.misi.index', ['tittle' => 'Edit-Misi-Kandidat'], compact('candidates'));
+        return view('admin.candidat.misi.index', ['title' => 'Edit-Misi-Kandidat'], compact('candidates'));
     }
 
     /**
@@ -29,7 +29,7 @@ class EditMisiController extends Controller
     public function create()
     {
         $candidates = Candidate::get();
-        return view('admin.candidat.misi.create', ['tittle' => 'Tambah-Misi-Kandidat'], compact('candidates'));
+        return view('admin.candidat.misi.create', ['title' => 'Tambah-Misi-Kandidat'], compact('candidates'));
     }
 
     /**
@@ -63,7 +63,7 @@ class EditMisiController extends Controller
     {
         $candidates = Candidate::findOrFail($id);
         $misi = Misi::where('candidate_id', $candidates->id)->get();
-        return view('admin.candidat.misi.show', ['tittle' => 'Tampilan-Misi-Kandidat'], compact('candidates', 'misi'));
+        return view('admin.candidat.misi.show', ['title' => 'Tampilan-Misi-Kandidat'], compact('candidates', 'misi'));
     }
 
     /**
@@ -75,8 +75,8 @@ class EditMisiController extends Controller
     public function edit($id)
     {
         $candidates = Candidate::findOrFail($id);
-        $misi = Misi::where('candidate_id', $candidates->id)->get();
-        return view('admin.candidat.misi.edit', ['tittle' => 'Edit-Misi-Kandidat'], compact('candidates', 'misi'));
+        $misi = Misi::where('candidate_id', $candidates->id)->first();
+        return view('admin.candidat.misi.edit', ['title' => 'Edit-Misi-Kandidat'], compact('candidates', 'misi'));
     }
 
     /**
@@ -96,7 +96,7 @@ class EditMisiController extends Controller
         $candidates->misi=$request->misi;
         $candidates->update();
 
-        return redirect(route('admin.candidat.misi.index'))->with('success', 'Data Berhasil Di Edit!');
+        return redirect(route('admin.kandidat.misi.index'))->with('success', 'Data Berhasil Di Edit!');
     }
 
     /**
@@ -107,9 +107,9 @@ class EditMisiController extends Controller
      */
     public function destroy($id)
     {
-       $candidates = Candidate::get();
-       $candidates->delete($id);
+       $misi = Misi::find($id);
+       $misi->delete();
 
-       return redirect(route('admin.candidat.misi.index'))->with('success', 'Data Telah Diperbaharui!');
+       return redirect(route('admin.kandidat.misi.index'))->with('success', 'Data Telah Diperbaharui!');
     }
 }

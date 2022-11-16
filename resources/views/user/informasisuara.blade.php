@@ -37,8 +37,9 @@
                         </div>
                         <div class="card-body">
                             <h6>Visi Misi</h6>
-                            <p class="card-text">{{$candidate->visi}}</p>
-
+                            @foreach ($candidate->visi as $visis)
+                                <p class="mt-3">{{$visis->visi}}</p>
+                            @endforeach
                             <div class="row">
                                 <div class="col">
                                     <div class="suara">

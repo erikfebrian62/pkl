@@ -18,7 +18,6 @@ Biodata Kandidat
                 </textarea>
                 <label for="floatingTextarea">visi</label>
             </div>
-            </form>
         </div>
     </div>
 </div>
