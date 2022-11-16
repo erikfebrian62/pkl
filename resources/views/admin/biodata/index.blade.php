@@ -12,8 +12,10 @@ Biodata Siswa
         </div>
     @endif
     <div class="my-3">
-        <a href="{{ route('admin.biodata.import') }}" class="btn btn-success btn-sm mt-3">Import <i class="bi bi-database-add"></i></a>
-        <a href="{{ route('admin.biodata.export') }}" class="btn btn-info btn-sm mt-3 float-end">Export <i class="bi bi-file-earmark-text"></i></a>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Import <i class="bi bi-database-add"></i>
+        </button>
+        <a href="{{ route('admin.biodata.export') }}" class="btn btn-info mt-y">Export <i class="bi bi-file-earmark-text"></i></a>
     </div>
     <div class="card mt-2">
         <div class="card-body">
@@ -60,4 +62,28 @@ Biodata Siswa
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fs-5" id="exampleModalLabel">Import Data</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+            <div class="my-3">
+                <form action="{{ route('admin.biodata.imports') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body mb-3">
+                        <input type="file" name="file" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Import</button>
+                      </div>
+                </form>
+            </div>
+      </div>
+    </div>
+  </div>
 @endsection

@@ -49,9 +49,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
     //crud user
     Route::get('/informasi-biodata', [InformasibiodataController::class, 'index'])->name('biodata.index');
 
-    Route::get('/informasi-biodata/import', [InformasibiodataController::class, 'indeximport'])->name('biodata.import');
-
-    Route::post('/informasi-biodata/import', [InformasibiodataController::class, 'import'])->name('biodata.imports');
+    Route::post('/informasi-biodata', [InformasibiodataController::class, 'import'])->name('biodata.imports');
 
     Route::get('/informasi-biodata/export', [InformasibiodataController::class, 'export'])->name('biodata.export');
 
