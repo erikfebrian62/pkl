@@ -6,24 +6,31 @@ Biodata Siswa
 
 @section('content')
 <div class="container">
-    <a href="{{ route('admin.biodata.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
     @if (session('success'))
         <div class="my-3 alert alert-success alert-dismissible fade show">
             {{ session('success') }}
         </div>
     @endif
     <div class="my-3 col-12 col-sm-8 col-md-5">
-        <form action="{{ route('admin.biodata.index') }}" method="GET">
-            <div class="input-group">
-                <input type="search" class="form-control" name="search" placeholder="search" value="{{ request('search') }}">
-                <button class="input-group-text"><i class="bi bi-search mb-2"></i></button>
-            </div>
+        <form action="{{ route('admin.biodata.import') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="file" class="form-control">
+            <button type="submit" class="btn btn-success btn-sm mt-3" >Import <i class="bi bi-database-add"></i></button>
+            <a href="{{ route('admin.biodata.export') }}" class="btn btn-info btn-sm mt-3 float-end">Export <i class="bi bi-file-earmark-text"></i></a>
         </form>
     </div>
     <div class="card mt-2">
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">
+                    <div class="my-3 col-12">
+                        <form action="{{ route('admin.biodata.index') }}" method="GET">
+                            <div class="input-group">
+                                <input type="search" class="form-control" name="search" placeholder="search" value="{{ request('search') }}">
+                                <button class="input-group-text"><i class="bi bi-search mb-2"></i></button>
+                            </div>
+                        </form>
+                    </div>
                     <thead>
                         <th class="text-center">No</th>
                         <th class="text-center">NIS</th>

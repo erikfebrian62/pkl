@@ -46,75 +46,76 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
     Route::get('/dashboard', [DashboardController::class, 'dash'])->name('dashboard');
 
     //crud user
-    // Route::resource('biodata', InformasibiodataController::class);
-    Route::prefix('informasi-biodata')->name('biodata.')->middleware('role:admin')->group(function() {
+    Route::get('/informasi-biodata', [InformasibiodataController::class, 'index'])->name('biodata.index');
 
-        Route::get('/', [InformasibiodataController::class, 'index'])->name('index');
-    
-        Route::get('create', [InformasibiodataController::class, 'create'])->name('create');
+    Route::post('/informasi-biodata', [InformasibiodataController::class, 'import'])->name('biodata.import');
 
-        Route::get('{id}/edit', [InformasibiodataController::class, 'edit'])->name('edit');
-    
-        Route::post('store', [InformasibiodataController::class, 'store'])->name('store');
-    
-        Route::put('{id}/update', [InformasibiodataController::class, 'update'])->name('update');
-    
-        Route::delete('{id}/delete', [InformasibiodataController::class, 'destroy'])->name('destroy');    
-    });
+    Route::get('/informasi-biodata/export', [InformasibiodataController::class, 'export'])->name('biodata.export');
 
-    //crud candidate 
+    // Route::get('/informasi-biodata/create', [InformasibiodataController::class, 'create'])->name('biodata.create');
+
+    // Route::post('/informasi-biodata/store', [InformasibiodataController::class, 'store'])->name('biodata.store');
+
+    Route::get('/informasi-biodata/{id}/edit', [InformasibiodataController::class, 'edit'])->name('biodata.edit');
+
+    Route::put('/informasi-biodata/{id}', [InformasibiodataController::class, 'update'])->name('biodata.update');
+
+    Route::delete('/informasi-biodata/{id}', [InformasibiodataController::class, 'destroy'])->name('biodata.destroy');
+
+    //crud candidate
 
     Route::prefix('kandidat')->name('kandidat.')->middleware('role:admin')->group(function() {
 
         Route::get('/', [EditkandidatController::class, 'index'])->name('index');
-    
+
         Route::get('create', [EditkandidatController::class, 'create'])->name('create');
 
         Route::get('{id}/edit', [EditkandidatController::class, 'edit'])->name('edit');
-        
+
         Route::get('{id}/show', [EditkandidatController::class, 'show'])->name('show');
 
         Route::post('store', [EditkandidatController::class, 'store'])->name('store');
 
         Route::put('{id}/update', [EditkandidatController::class, 'update'])->name('update');
-    
+
         Route::delete('{id}/delete', [EditkandidatController::class, 'destroy'])->name('destroy');
 
         //crud visi kandidat
         Route::prefix('visi')->name('visi.')->middleware('role:admin')->group(function() {
-    
+
             Route::get('/', [EditVisiController::class, 'index'])->name('index');
-        
+
             Route::get('{id}/show', [EditVisiController::class, 'show'])->name('show');
-        
+
             Route::get('create', [EditVisiController::class, 'create'])->name('create');
-    
+
             Route::get('{id}/edit', [EditVisiController::class, 'edit'])->name('edit');
-    
+
             Route::post('store', [EditVisiController::class, 'store'])->name('store');
-    
+
             Route::put('{id}/update', [EditVisiController::class, 'update'])->name('update');
-    
+
             Route::delete('{id}/delete', [EditVisiController::class, 'destroy'])->name('destroy');
-        
+
         });
         //crud misi kandidat
         Route::prefix('misi')->name('misi.')->middleware('role:admin')->group(function() {
-    
+
             Route::get('/', [EditMisiController::class, 'index'])->name('index');
-        
+
             Route::get('{id}/show', [EditMisiController::class, 'show'])->name('show');
-        
+
             Route::get('create', [EditMisiController::class, 'create'])->name('create');
-    
+
             Route::get('{id}/edit', [EditMisiController::class, 'edit'])->name('edit');
-    
+
             Route::post('store', [EditMisiController::class, 'store'])->name('store');
-    
+
             Route::put('{id}/update', [EditMisiController::class, 'update'])->name('update');
     
             Route::get('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
-        
+
+            Route::delete('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
         });
     });
 });

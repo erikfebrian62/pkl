@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <h6>Visi Misi</h6> 
+                        <h6>Visi Misi</h6>
                           @foreach ($candidate->visi as $visis)
                             <p class="mt-3">{{$visis->visi}}</p>
                           @endforeach
@@ -116,8 +116,7 @@
                     </div>
                 </div>
             </div>
-
-        @endforeach
+            @endforeach
         </div>
     </div>
 
