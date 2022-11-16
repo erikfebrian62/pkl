@@ -113,7 +113,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
     
             Route::put('{id}/update', [EditMisiController::class, 'update'])->name('update');
     
-            Route::delete('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
+            Route::get('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
         
         });
     });
