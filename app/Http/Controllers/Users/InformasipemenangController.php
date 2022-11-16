@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Users;
 
-use Illuminate\Http\Request;
 use App\Models\Candidate;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class InformasipemenangController extends Controller
 {

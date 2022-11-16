@@ -11,13 +11,9 @@ Biodata Siswa
             {{ session('success') }}
         </div>
     @endif
-    <div class="my-3 col-12 col-sm-8 col-md-5">
-        <form action="{{ route('admin.biodata.import') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <input type="file" name="file" class="form-control">
-            <button type="submit" class="btn btn-success btn-sm mt-3" >Import <i class="bi bi-database-add"></i></button>
-            <a href="{{ route('admin.biodata.export') }}" class="btn btn-info btn-sm mt-3 float-end">Export <i class="bi bi-file-earmark-text"></i></a>
-        </form>
+    <div class="my-3">
+        <a href="{{ route('admin.biodata.import') }}" class="btn btn-success btn-sm mt-3">Import <i class="bi bi-database-add"></i></a>
+        <a href="{{ route('admin.biodata.export') }}" class="btn btn-info btn-sm mt-3 float-end">Export <i class="bi bi-file-earmark-text"></i></a>
     </div>
     <div class="card mt-2">
         <div class="card-body">
