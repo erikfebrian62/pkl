@@ -9,7 +9,7 @@ Biodata Kandidat
     <a href="{{ route('admin.pemenang.index') }}" class="btn btn-primary btn-sm mt-3"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <div class="card mt-2">
         <div class="card-body">
-            <form action="{{ route('admin.pemenang.update') }}}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.pemenang.update', $pemenang->id )}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class=" mb-3">

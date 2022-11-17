@@ -58,7 +58,7 @@ class EditkandidatController extends Controller
             $destinationPath = 'images/';
             $profileImage = date('YmdHis') . "." . $img->getClientOriginalExtension();
             $img->move($destinationPath, $profileImage);
-            $input['img'] = "$profileImage";
+            $input['img'] = $profileImage;
         }
 
         Candidate::create($input);

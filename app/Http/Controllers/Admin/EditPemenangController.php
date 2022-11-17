@@ -86,7 +86,7 @@ class EditPemenangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Winner $winner)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'img' => 'required'
@@ -98,12 +98,12 @@ class EditPemenangController extends Controller
             $destinationPath = 'images/';
             $profileImage = date('YmdHis') . "." . $img->getClientOriginalExtension();
             $img->move($destinationPath, $profileImage);
-            $input['img'] = $profileImage;
+            $input['img'] = "$profileImage";
         }else{
             unset($input['img']);
         }
 
-        $winner->update($input);
+        Winner::findOrFail($id)->update($input);
 
         return redirect( route('admin.pemenang.index'))->with('success', 'Data telah di Perbarui!.');
     }
