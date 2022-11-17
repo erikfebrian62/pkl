@@ -113,15 +113,13 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
             Route::post('store', [EditMisiController::class, 'store'])->name('store');
 
-<<<<<<< HEAD
             Route::put('{id}/update', [EditMisiController::class, 'update'])->name('update');
     
             Route::get('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
-=======
+
             Route::put('{id}', [EditMisiController::class, 'update'])->name('update');
 
             Route::delete('{id}', [EditMisiController::class, 'destroy'])->name('destroy');
->>>>>>> 0d7fa22090e4e88272d230bad6a2411d638e29ea
         });
     });
 
@@ -140,11 +138,11 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
         Route::put('{id}', [EditPemenangController::class, 'update'])->name('update');
 
-<<<<<<< HEAD
+
         Route::get('delete', [EditPemenangController::class, 'destroy'])->name('destroy');
-=======
+
         Route::delete('{id}', [EditPemenangController::class, 'destroy'])->name('destroy');
->>>>>>> 0d7fa22090e4e88272d230bad6a2411d638e29ea
+
     });
 });
 

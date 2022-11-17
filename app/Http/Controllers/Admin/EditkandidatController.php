@@ -7,6 +7,7 @@ use App\models\Misi;
 use App\Models\Visi;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Http\Controllers\Controller;
 
 
@@ -101,6 +102,8 @@ class EditkandidatController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $candidate = Candidate::find($id);
+
         $request->validate([
             'img' => 'required',
             'ketua' => 'required',
@@ -114,15 +117,18 @@ class EditkandidatController extends Controller
         $input = $request->all();
 
         if ($img = $request->file('img')) {
-            $destinationPath = 'images/';
-            $profileImage = date('YmdHis') . "." . $img->getClientOriginalExtension();
-            $img->move($destinationPath, $profileImage);
-            $input['img'] = $profileImage;
-        }else{
-            unset($input['img']);
-        }
+            if($request->oldimage) {
+                File::delete(public_path('images/'. $candidate->img));
+            }
+                $destinationPath = 'images/';
+                $profileImage = date('YmdHis') . "." . $img->getClientOriginalExtension();
+                $img->move($destinationPath, $profileImage);
+                $input['img'] = $profileImage;
+            }else{
+                unset($input['img']);
+            }
 
-        Candidate::find($id)->update($input);
+        Candidate::findOrFail($id)->update($input);
 
         return redirect(route('admin.kandidat.index'))->with('success', 'Data telah di Perbarui!.');
     }
@@ -136,7 +142,8 @@ class EditkandidatController extends Controller
     public function destroy($id)
     {
         $candidate = Candidate::find($id);
-        $candidate->delete($id);
+        unlink('images/' . $candidate->img);
+        Candidate::where('id', $candidate->id)->delete();
 
         return redirect(route('admin.kandidat.index'))->with('success', 'Data telah di Hapus!.');
     }

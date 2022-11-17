@@ -14,6 +14,7 @@ Biodata Kandidat
                 @method('PUT')
                 <div class=" mb-3">
                     <input type="file" class="form-control" name="img" id="img">
+                    <input type="hidden" value="{{ $candidate->img}}" name="oldimage">
                     <img src="/images/{{ $candidate->img }}" class="mt-3" width="300px">
                 </div>
                 <div class="form-floating mb-3">
