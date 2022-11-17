@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Winner;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Auth\Events\Validated;
 
 class EditPemenangController extends Controller
@@ -48,7 +49,7 @@ class EditPemenangController extends Controller
             $destinationPath = 'images/';
             $profileImage = date('YmdHis') . "." . $img->getClientOriginalExtension();
             $img->move($destinationPath, $profileImage);
-            $input['img'] = "$profileImage";
+            $input['img'] = $profileImage;
         }
 
         Winner::create($input);
@@ -61,9 +62,9 @@ class EditPemenangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-       $pemenang = Winner::first();
+       $pemenang = Winner::find($id);
        return view('admin.pemenang.show', ['title' => 'Tampilan-Struktur'], compact('pemenang'));
     }
 
@@ -73,9 +74,9 @@ class EditPemenangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-       $pemenang = Winner::first();
+       $pemenang = Winner::find($id);
        return view('admin.pemenang.edit', ['title' => 'Edit-Struktur'], compact('pemenang'));
     }
 
@@ -88,6 +89,8 @@ class EditPemenangController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $pemenang = Winner::find($id);
+
         $request->validate([
             'img' => 'required'
         ]);
@@ -95,13 +98,16 @@ class EditPemenangController extends Controller
         $input = $request->all();
 
         if ($img = $request->file('img')) {
+            if ($request->oldImage) {
+                File::delete(public_path('images/'. $pemenang->img));
+            }
             $destinationPath = 'images/';
             $profileImage = date('YmdHis') . "." . $img->getClientOriginalExtension();
             $img->move($destinationPath, $profileImage);
-            $input['img'] = "$profileImage";
-        }else{
-            unset($input['img']);
-        }
+            $input['img'] = $profileImage;
+        } else {
+             unset($input['img']);
+         }
 
         Winner::findOrFail($id)->update($input);
 
@@ -114,10 +120,11 @@ class EditPemenangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-        $pemenang = Winner::first();
-        $pemenang->delete();
+        $pemenang = Winner::find($id);
+        unlink('images/' . $pemenang->img);
+        Winner::where('id', $pemenang->id)->delete();
 
         return redirect( route('admin.pemenang.index'))->with('success', 'Data telah di Hapus!.');
     }

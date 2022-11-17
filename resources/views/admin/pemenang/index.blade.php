@@ -19,9 +19,9 @@ Biodata Kandidat
                     <tbody>
                         @foreach ($pemenang as $pemenang)
                             <tr>
-                                    <td class="text-center"><img src="/images/{{ $pemenang->img }}" width="500px"></td>
+                                    <td class="text-center"><img src="{{ asset('images/'. $pemenang->img) }}" width="500px"></td>
                                     <td class="text-center">
-                                        <form action="{{ route('admin.pemenang.destroy') }}" method="POST">
+                                        <form action="{{ route('admin.pemenang.destroy', $pemenang->id) }}" method="POST">
                                             @csrf
                                             @method('delete')
                                             <a href="{{ route('admin.pemenang.show') }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></i></a>
