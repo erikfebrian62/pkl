@@ -113,7 +113,6 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
             Route::post('create', [EditMisiController::class, 'store'])->name('store');
 
-<<<<<<< HEAD
             Route::put('{id}/update', [EditMisiController::class, 'update'])->name('update');
     
             Route::get('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
@@ -121,11 +120,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
             Route::put('{id}', [EditMisiController::class, 'update'])->name('update');
 
             Route::delete('{id}', [EditMisiController::class, 'destroy'])->name('destroy');
-=======
-            Route::put('{id}', [EditMisiController::class, 'update'])->name('update');
 
-            Route::get('{id}', [EditMisiController::class, 'destroy'])->name('destroy');
->>>>>>> 65df4fe789c77641a9fb4b04cf434bc8d6980007
         });
     });
 
@@ -144,15 +139,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
         Route::put('{id}', [EditPemenangController::class, 'update'])->name('update');
 
-<<<<<<< HEAD
-
-        Route::get('delete', [EditPemenangController::class, 'destroy'])->name('destroy');
-
-        Route::delete('{id}', [EditPemenangController::class, 'destroy'])->name('destroy');
-
-=======
         Route::get('{id}', [EditPemenangController::class, 'destroy'])->name('destroy');
->>>>>>> 65df4fe789c77641a9fb4b04cf434bc8d6980007
     });
 });
 
