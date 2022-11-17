@@ -43,6 +43,13 @@
             </a>
         </li>
         <li
+            class="sidebar-item  {{ (request()->segment(2) == 'pemenang') ? 'active' : '' }}">
+            <a href="{{ route('admin.pemenang.index') }}" class='sidebar-link'>
+                <i class="iconly-boldAdd-User"></i>
+                <span>Kelola Struktur</span>
+            </a>
+        </li>
+        <li
             class="sidebar-item  ">
             <a href="{{ route('logout') }}" class='sidebar-link'>
                 <i class="bi bi-box-arrow-left"></i>

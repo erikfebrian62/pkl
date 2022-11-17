@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\LoginController;
+use App\Http\Controllers\Admin\EditPemenangController;
 use App\Http\Controllers\Guest\DisplayController;
 use App\Http\Controllers\Admin\EditMisiController;
 use App\Http\Controllers\Admin\EditVisiController;
@@ -118,6 +119,24 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
             Route::delete('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
         });
+    });
+    Route::prefix('pemenang')->name('pemenang.')->middleware('role:admin')->group(function(){
+        
+        Route::get('/', [EditPemenangController::class, 'index'])->name('index');
+
+        Route::get('show', [EditPemenangController::class, 'show'])->name('show');
+
+        Route::get('create', [EditPemenangController::class, 'create'])->name('create');
+
+        Route::get('edit', [EditPemenangController::class, 'edit'])->name('edit');
+
+        Route::post('store', [EditPemenangController::class, 'store'])->name('store');
+
+        Route::put('update', [EditPemenangController::class, 'update'])->name('update');
+
+        Route::get('delete', [EditPemenangController::class, 'destroy'])->name('destroy');
+
+        Route::delete('delete', [EditPemenangController::class, 'destroy'])->name('destroy');
     });
 });
 

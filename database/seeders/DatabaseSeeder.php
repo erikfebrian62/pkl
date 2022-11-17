@@ -3,10 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Misi;
 use App\Models\User;
-use App\Models\Visi;
-use App\Models\Candidate;
+use App\Models\Winner;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -45,6 +43,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CandidateSeeder::class,
+        ]);
+
+        Winner::create([
+            'img' => 'coomingsoon.png'
         ]);
     }
 }

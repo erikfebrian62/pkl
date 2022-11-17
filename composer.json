@@ -11,6 +11,7 @@
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "maatwebsite/excel": "^3.1",
+        "phpoffice/phpspreadsheet": "^1.9",
         "psr/simple-cache": "2.0"
     },
     "require-dev": {
