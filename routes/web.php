@@ -116,8 +116,6 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
             Route::put('{id}/update', [EditMisiController::class, 'update'])->name('update');
     
             Route::get('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
-
-            Route::delete('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
         });
     });
     Route::prefix('pemenang')->name('pemenang.')->middleware('role:admin')->group(function(){
@@ -135,8 +133,6 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
         Route::put('update', [EditPemenangController::class, 'update'])->name('update');
 
         Route::get('delete', [EditPemenangController::class, 'destroy'])->name('destroy');
-
-        Route::delete('delete', [EditPemenangController::class, 'destroy'])->name('destroy');
     });
 });
 
