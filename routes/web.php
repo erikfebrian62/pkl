@@ -78,9 +78,9 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
         Route::post('store', [EditkandidatController::class, 'store'])->name('store');
 
-        Route::put('{id}/update', [EditkandidatController::class, 'update'])->name('update');
+        Route::put('{id}', [EditkandidatController::class, 'update'])->name('update');
 
-        Route::delete('{id}/delete', [EditkandidatController::class, 'destroy'])->name('destroy');
+        Route::delete('{id}', [EditkandidatController::class, 'destroy'])->name('destroy');
 
         //crud visi kandidat
         Route::prefix('visi')->name('visi.')->middleware('role:admin')->group(function() {
@@ -95,9 +95,9 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
             Route::post('store', [EditVisiController::class, 'store'])->name('store');
 
-            Route::put('{id}/update', [EditVisiController::class, 'update'])->name('update');
+            Route::put('{id}', [EditVisiController::class, 'update'])->name('update');
 
-            Route::delete('{id}/delete', [EditVisiController::class, 'destroy'])->name('destroy');
+            Route::delete('{id}', [EditVisiController::class, 'destroy'])->name('destroy');
 
         });
         //crud misi kandidat
@@ -113,26 +113,38 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
             Route::post('store', [EditMisiController::class, 'store'])->name('store');
 
+<<<<<<< HEAD
             Route::put('{id}/update', [EditMisiController::class, 'update'])->name('update');
     
             Route::get('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
+=======
+            Route::put('{id}', [EditMisiController::class, 'update'])->name('update');
+
+            Route::delete('{id}', [EditMisiController::class, 'destroy'])->name('destroy');
+>>>>>>> 0d7fa22090e4e88272d230bad6a2411d638e29ea
         });
     });
+
+    //crud pemenang
     Route::prefix('pemenang')->name('pemenang.')->middleware('role:admin')->group(function(){
-        
+
         Route::get('/', [EditPemenangController::class, 'index'])->name('index');
 
         Route::get('show', [EditPemenangController::class, 'show'])->name('show');
 
         Route::get('create', [EditPemenangController::class, 'create'])->name('create');
 
-        Route::get('edit', [EditPemenangController::class, 'edit'])->name('edit');
+        Route::get('{id}/edit', [EditPemenangController::class, 'edit'])->name('edit');
 
         Route::post('store', [EditPemenangController::class, 'store'])->name('store');
 
-        Route::put('update', [EditPemenangController::class, 'update'])->name('update');
+        Route::put('{id}', [EditPemenangController::class, 'update'])->name('update');
 
+<<<<<<< HEAD
         Route::get('delete', [EditPemenangController::class, 'destroy'])->name('destroy');
+=======
+        Route::delete('{id}', [EditPemenangController::class, 'destroy'])->name('destroy');
+>>>>>>> 0d7fa22090e4e88272d230bad6a2411d638e29ea
     });
 });
 

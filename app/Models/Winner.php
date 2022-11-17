@@ -10,6 +10,6 @@ class Winner extends Model
     use HasFactory;
 
     protected $fillable = [
-        'img' => 'required'
+        'img'
     ];
 }
