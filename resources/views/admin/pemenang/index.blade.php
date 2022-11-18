@@ -24,7 +24,7 @@ Biodata Kandidat
                                         <form action="{{ route('admin.pemenang.destroy', $pemenang->id) }}" method="POST">
                                             @csrf
                                             @method('delete')
-                                            <a href="{{ route('admin.pemenang.show') }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></i></a>
+                                            <a href="{{ route('admin.pemenang.show', $pemenang->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></i></a>
                                             <a href="{{ route('admin.pemenang.edit', $pemenang->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
                                             <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                         </form>

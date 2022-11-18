@@ -124,7 +124,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
         Route::get('/', [EditPemenangController::class, 'index'])->name('index');
 
-        Route::get('show', [EditPemenangController::class, 'show'])->name('show');
+        Route::get('{id}/show', [EditPemenangController::class, 'show'])->name('show');
 
         Route::get('create', [EditPemenangController::class, 'create'])->name('create');
 
