@@ -113,9 +113,14 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
             Route::post('create', [EditMisiController::class, 'store'])->name('store');
 
+            Route::put('{id}/update', [EditMisiController::class, 'update'])->name('update');
+    
+            Route::get('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
+
             Route::put('{id}', [EditMisiController::class, 'update'])->name('update');
 
-            Route::get('{id}', [EditMisiController::class, 'destroy'])->name('destroy');
+            Route::delete('{id}', [EditMisiController::class, 'destroy'])->name('destroy');
+
         });
     });
 
