@@ -16,6 +16,6 @@ class DisplayController extends Controller
         $candidate = Candidate::all();
         $users = User::all();
         $count = new Vote;
-        return view('user.informasisuara', compact('users', 'candidate', 'votes', 'count'));
+        return view('display', compact('users', 'candidate', 'votes', 'count'));
     }
 }

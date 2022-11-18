@@ -24,6 +24,11 @@ class Candidate extends Model
         return $this->hasMany(Vote::class);
     }
 
+    public function votecount()
+    {
+        return $this->hasMany(Vote::class);
+    }
+
     public function misi()
     {
         return $this->hasMany(Misi::class);

@@ -13,7 +13,7 @@ Biodata Kandidat
                 @csrf
                 @method('PUT')
                 <div class=" mb-3">
-                    <img src="/images/{{ $pemenang->img }}" class="mt-3" width="300px">
+                    <center><img src="/images/{{ $pemenang->img }}" class="mt-3" width="500px"></center>
                 </div>
             </form>
         </div>

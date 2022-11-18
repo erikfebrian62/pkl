@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Models\Vote;
+use App\Models\User;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -31,5 +32,14 @@ class PilihkandidatController extends Controller
            return redirect(route('user.pilih-kandidat'))->with('danger','Anda Telah Voting.!');
         }
            return redirect(route('user.pilih-kandidat'))->with('danger','Anda Sudah Voting.!');
+    }
+
+    public function suara()
+    {
+        $data = [
+            'candidate' => Candidate::select('id')->withCount('vote')->get(),
+            'jmlhpeserta' => User::where('role', 'user')->count(),
+        ];
+        return response()->json($data);
     }
  }
