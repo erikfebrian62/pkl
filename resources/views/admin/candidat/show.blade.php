@@ -35,7 +35,7 @@ Biodata Kandidat
                         </div>
                         <div class="mt-5 text-center">
                             <h6 class="visi fw-bold">Visi</h6>
-                            <p class="mt-3">{{$visi->visi}}</p>
+                                <p class="mt-3">{{$visi->visi}}</p>
                             <h6 class="visi fw-bold">Misi</h6>
                             <ol>
                                 <li>{{$data->misi}}</li>
