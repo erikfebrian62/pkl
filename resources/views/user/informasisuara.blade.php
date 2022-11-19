@@ -46,7 +46,7 @@
                                         @php
                                             $suara=$count->where('candidate_id', $candidate->id)->count()
                                         @endphp
-                                        <h6>{{ $suara }} suara</h6> 
+                                        <h6 class="suara_{{ $candidate->id }}">{{ $suara }} suara</h6> 
                                     </div>
                                 </div>
                                 <div class="col" >
@@ -56,7 +56,7 @@
                             </div>
 
                             <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: {{ $suara/$users->count()*100 }}%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar" id="progress_{{ $candidate->id}}" role="progressbar" style="width: {{ $suara/$users->count()*100 }}%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
 
                     </div>
@@ -71,3 +71,26 @@
         </div>
     </div>
 @endsection
+
+@push('script')
+    <script>
+          setInterval(() => {
+          ambil();
+        }, 900000);
+        
+        function ambil(){
+            fetch('/api/voting')
+            .then((response) => response.json())
+            .then((data) => {
+                let jmlpeserta = data.jmlhpeserta;
+                data.candidate.forEach(item => {
+                    let a = document.querySelector(`#progress_${item.id}`);
+                    let b = document.querySelector(`#suara_${item.id}`);
+                    let rata = item.vote_count / jmlpeserta * 100;
+                    a.style.width = `${rata}%`;
+                    b.innerHTML = item.vote_count;
+                });
+            });
+        }
+    </script>
+@endpush
