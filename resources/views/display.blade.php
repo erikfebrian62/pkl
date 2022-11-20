@@ -79,7 +79,7 @@
     <script>
         setInterval(() => {
             ambil();
-        }, 900000);
+        }, 1000);
 
         function ambil(){
             fetch('/api/voting')

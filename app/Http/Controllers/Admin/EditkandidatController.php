@@ -7,8 +7,9 @@ use App\models\Misi;
 use App\Models\Visi;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class EditkandidatController extends Controller
@@ -145,6 +146,8 @@ class EditkandidatController extends Controller
         unlink('images/' . $candidate->img);
         Candidate::where('id', $candidate->id)->delete();
 
-        return redirect(route('admin.kandidat.index'))->with('success', 'Data telah di Hapus!.');
+        Alert::success('Success Title', 'Success Message');
+
+        return redirect(route('admin.kandidat.index'));
     }
 }

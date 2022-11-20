@@ -6,11 +6,6 @@ Biodata Siswa
 
 @section('content')
 <div class="container">
-    @if (session('success'))
-        <div class="my-3 alert alert-success alert-dismissible fade show">
-            {{ session('success') }}
-        </div>
-    @endif
     <div class="my-3">
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Import <i class="bi bi-database-add"></i>
@@ -38,7 +33,7 @@ Biodata Siswa
                         <th class="text-center">Aksi</th>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+                        @foreach ($users as $user )
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td class="text-center">{{ $user->nis }}</td>
@@ -50,7 +45,7 @@ Biodata Siswa
                                         @csrf
                                         @method('delete')
                                         <a href="{{ route('admin.biodata.edit', $user->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
-                                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                        <button class="btn btn-danger btn-sm btndelete" data-id="{{ $user->id }}"><i class="bi bi-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -87,3 +82,4 @@ Biodata Siswa
     </div>
   </div>
 @endsection
+
