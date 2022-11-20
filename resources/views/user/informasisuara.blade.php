@@ -46,7 +46,10 @@
                                         @php
                                             $suara=$count->where('candidate_id', $candidate->id)->count()
                                         @endphp
-                                        <h6 class="suara_{{ $candidate->id }}">{{ $suara }} suara</h6> 
+                                        <div class="d-inline-flex">
+                                            <h6 id="suara_{{ $candidate->id}}">{{ $suara }}</h6>
+                                            <h6 class="mx-1">Suara</h6>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col" >
@@ -74,12 +77,12 @@
 
 @push('script')
     <script>
-          setInterval(() => {
-          ambil();
+        setInterval(() => {
+            tampil();
         }, 900000);
-        
-        function ambil(){
-            fetch('/api/voting')
+
+        function tampil(){
+            fetch('/api/suara')
             .then((response) => response.json())
             .then((data) => {
                 let jmlpeserta = data.jmlhpeserta;
@@ -94,3 +97,4 @@
         }
     </script>
 @endpush
+

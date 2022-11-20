@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Guest\DisplayController;
+use App\Http\Controllers\Users\InformasisuaraController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/voting', [DisplayController::class, 'suara']);
-Route::get('/suara', [Informasisuara::class, 'hasil']);
+Route::get('/suara', [InformasisuaraController::class, 'hasil']);
