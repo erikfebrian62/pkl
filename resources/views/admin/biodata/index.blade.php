@@ -41,12 +41,8 @@ Biodata Siswa
                                 <td class="text-center">{{ $user->class }}</td>
                                 <td class="text-center">{{ $user->jurusan }}</td>
                                 <td class="text-center">
-                                    <form action="{{ route('admin.biodata.destroy', $user->id) }}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <a href="{{ route('admin.biodata.edit', $user->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
-                                        <button class="btn btn-danger btn-sm btndelete" data-id="{{ $user->id }}"><i class="bi bi-trash"></i></button>
-                                    </form>
+                                    <a href="{{ route('admin.biodata.edit', $user->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                    <a href="#" class="btn btn-danger btn-sm delete" data-id="{{ $user->id }}" data-nama="{{ $user->name }}"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach
@@ -83,3 +79,50 @@ Biodata Siswa
   </div>
 @endsection
 
+@push('js')
+   <script>
+
+       $('.delete').click( function(){
+
+           var userid = $(this).attr('data-id');
+           var username = $(this).attr('data-nama');
+            const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: 'btn btn-success',
+                        cancelButton: 'btn btn-danger'
+                    },
+                    buttonsStyling: false
+                    })
+
+                    swalWithBootstrapButtons.fire({
+                    title: 'Yakin?',
+                    text: "Akan menghapus nama data user "+username+"" ,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya, hapus!',
+                    cancelButtonText: 'Tidak, batal!',
+                    reverseButtons: true
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location = "/admin/informasi-biodata/"+userid+""
+                        swalWithBootstrapButtons.fire(
+                        'Terhapus!',
+                        'Data berhasil dihapus.',
+                        'success'
+                        )
+                    } else if (
+                        /* Read more about handling dismissals below */
+                        result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                        swalWithBootstrapButtons.fire(
+                        'Dibatalkan',
+                        'Data aman :)',
+                        'error'
+                        )
+                    }
+                    });
+        });
+
+
+   </script>
+@endpush

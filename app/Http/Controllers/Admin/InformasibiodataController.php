@@ -8,7 +8,6 @@ use App\Imports\UserImport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class InformasibiodataController extends Controller
 {
@@ -27,8 +26,6 @@ class InformasibiodataController extends Controller
     public function import()
     {
         Excel::import(new UserImport, request()->file('file'));
-
-        Alert::success('Success', 'Import data berhasil!');
 
         return redirect(route('admin.biodata.index'))->with('success', 'Berhasil Import Data!!');
     }
@@ -130,8 +127,6 @@ class InformasibiodataController extends Controller
         $user->jurusan = $request->jurusan;
         $user->save();
 
-        Alert::success('Success', 'Data berhasil diubah!');
-
         return redirect(route('admin.biodata.index'))->with('success', 'Data telah di Perbarui!.');
     }
 
@@ -146,9 +141,7 @@ class InformasibiodataController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        Alert::success('Success', 'Data berhasil dihapus');
-
-        return redirect(route('admin.biodata.index'))->with('success', 'Data telah di Hapus!.');
+       return back();
     }
 }
 
