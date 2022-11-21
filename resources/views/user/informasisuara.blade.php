@@ -75,13 +75,13 @@
 @push('script')
     <script>
           setInterval(() => {
-          ambil();
-        }, 900000);
+          nyokot();
+        }, 10000);
         
-        function ambil(){
-            fetch('/api/voting')
+        function nyokot(){
+            fetch('/api/suara')
             .then((response) => response.json())
-            .then((data) => {
+            .then((isi) => {
                 let jmlpeserta = data.jmlhpeserta;
                 data.candidate.forEach(item => {
                     let a = document.querySelector(`#progress_${item.id}`);

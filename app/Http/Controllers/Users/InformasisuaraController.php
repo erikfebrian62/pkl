@@ -21,10 +21,10 @@ class InformasisuaraController extends Controller
 
     public function hasil()
     {
-        $data = [
+        $isi = [
             'candidate' => Candidate::select('id')->withCount('vote')->get(),
             'jmlhpeserta' => User::where('role', 'user')->count(),
         ];
-        return response()->json($data);
+        return response()->json($isi);
     }
 }
