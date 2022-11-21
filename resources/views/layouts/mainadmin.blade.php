@@ -20,7 +20,9 @@
     <div id="app">
         @include('partials.sidebar')
     </div>
+
         </div>
+        {{-- @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@10"]) --}}
         <div id="main">
             <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
@@ -48,13 +50,15 @@
             </footer>
         </div>
     </div>
-    <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
+
     <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<!-- Need: Apexcharts -->
-<script src="{{ asset('assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
-<script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
 
+<!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    @stack('js')
 </body>
 
 </html>

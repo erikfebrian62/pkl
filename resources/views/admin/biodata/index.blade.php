@@ -6,11 +6,6 @@ Biodata Siswa
 
 @section('content')
 <div class="container">
-    @if (session('success'))
-        <div class="my-3 alert alert-success alert-dismissible fade show">
-            {{ session('success') }}
-        </div>
-    @endif
     <div class="my-3">
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Import <i class="bi bi-database-add"></i>
@@ -38,7 +33,7 @@ Biodata Siswa
                         <th class="text-center">Aksi</th>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+                        @foreach ($users as $user )
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td class="text-center">{{ $user->nis }}</td>
@@ -46,12 +41,8 @@ Biodata Siswa
                                 <td class="text-center">{{ $user->class }}</td>
                                 <td class="text-center">{{ $user->jurusan }}</td>
                                 <td class="text-center">
-                                    <form action="{{ route('admin.biodata.destroy', $user->id) }}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <a href="{{ route('admin.biodata.edit', $user->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
-                                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
-                                    </form>
+                                    <a href="{{ route('admin.biodata.edit', $user->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                    <a href="#" class="btn btn-danger btn-sm delete" data-id="{{ $user->id }}" data-nama="{{ $user->name }}"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach
@@ -87,3 +78,51 @@ Biodata Siswa
     </div>
   </div>
 @endsection
+
+@push('js')
+   <script>
+
+       $('.delete').click( function(){
+
+           var userid = $(this).attr('data-id');
+           var username = $(this).attr('data-nama');
+            const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: 'btn btn-success',
+                        cancelButton: 'btn btn-danger'
+                    },
+                    buttonsStyling: false
+                    })
+
+                    swalWithBootstrapButtons.fire({
+                    title: 'Yakin?',
+                    text: "Akan menghapus nama data user "+username+"" ,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya, hapus!',
+                    cancelButtonText: 'Tidak, batal!',
+                    reverseButtons: true
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location = "/admin/informasi-biodata/"+userid+""
+                        swalWithBootstrapButtons.fire(
+                        'Terhapus!',
+                        'Data berhasil dihapus.',
+                        'success'
+                        )
+                    } else if (
+                        /* Read more about handling dismissals below */
+                        result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                        swalWithBootstrapButtons.fire(
+                        'Dibatalkan',
+                        'Data aman :)',
+                        'error'
+                        )
+                    }
+                    });
+        });
+
+
+   </script>
+@endpush

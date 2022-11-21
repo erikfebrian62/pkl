@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Guest\DisplayController;
+use App\Http\Controllers\Users\InformasisuaraController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\DisplayController;

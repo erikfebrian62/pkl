@@ -141,6 +141,7 @@ class InformasibiodataController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect(route('admin.biodata.index'))->with('success', 'Data telah di Hapus!.');
+       return back();
     }
 }
+

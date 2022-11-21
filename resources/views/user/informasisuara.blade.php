@@ -46,7 +46,10 @@
                                         @php
                                             $suara=$count->where('candidate_id', $candidate->id)->count()
                                         @endphp
-                                        <h6 class="suara_{{ $candidate->id }}">{{ $suara }} suara</h6> 
+                                        <div class="d-inline-flex">
+                                            <h6 id="suara_{{ $candidate->id}}">{{ $suara }}</h6>
+                                            <h6 class="mx-1">Suara</h6>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col" >
@@ -74,11 +77,19 @@
 
 @push('script')
     <script>
+<<<<<<< HEAD
           setInterval(() => {
           nyokot();
         }, 10000);
         
         function nyokot(){
+=======
+        setInterval(() => {
+            tampil();
+        }, 900000);
+
+        function tampil(){
+>>>>>>> e87f2e101139cd0de139f61824f861b69f0d047b
             fetch('/api/suara')
             .then((response) => response.json())
             .then((isi) => {
@@ -94,3 +105,4 @@
         }
     </script>
 @endpush
+
