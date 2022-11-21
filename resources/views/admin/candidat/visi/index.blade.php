@@ -9,7 +9,6 @@ Visi Kandidat
     <a href="{{ route('admin.kandidat.index') }}" class="btn btn-primary btn-sm mt-3"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <a href="{{ route('admin.kandidat.visi.create')}}" class="btn btn-success btn-sm sm-3 mt-3 float-end">Tambah Data <i class="bi bi-plus-square"></i></a>
     <div class="card mt-2">
-        @include('partials.alert')
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">

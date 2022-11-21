@@ -9,7 +9,6 @@ Visi Kandidat
     <a href="{{ route('admin.kandidat.index') }}" class="btn btn-primary btn-sm mt-3"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <a href="{{ route('admin.kandidat.misi.create')}}" class="btn btn-success btn-sm sm-3 mt-3 float-end">Tambah Data <i class="bi bi-plus-square"></i></a>
     <div class="card mt-2">
-        @include('partials.alert')
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">
@@ -36,3 +35,27 @@ Visi Kandidat
 </div>
 @endsection
 
+ {{-- sweet alert toast succsess --}}
+
+ @push('js')
+ <script>
+    @if (Session::has('success'))
+    const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+    })
+
+    Toast.fire({
+    icon: 'info',
+    title: '{{ Session::get('success') }}'
+    })
+    @endif
+</script>
+ @endpush

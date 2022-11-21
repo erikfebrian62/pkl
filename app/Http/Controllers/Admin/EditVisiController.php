@@ -96,7 +96,7 @@ class EditVisiController extends Controller
         $candidates->update;
         return redirect(route('admin.kandidat.visi.index'))->with('succsess', 'Visi Berhasil Di Edit!.');
     }
-    
+
 
     /**
      * Remove the specified resource from storage.
@@ -107,7 +107,7 @@ class EditVisiController extends Controller
     public function destroy($id)
     {
         $candidates = Candidate::find($id);
-        $candidates->delete($id);
+        $candidates->delete();
 
         return redirect(route ('admin.kandidat.visi.index'))->with('succsess', 'Data Telah Diperbarui!');
     }

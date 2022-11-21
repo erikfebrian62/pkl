@@ -18,9 +18,9 @@ Biodata Kandidat
                 </textarea>
                 <label for="floatingTextarea">visi</label>
             </div>
-            
-            <a href="#" class="btn btn-danger btn-sm float-end" data-id="{{ $candidate->id }}"><i class="bi bi-trash"></i></a>
-            <a href="{{ route('admin.kandidat.visi.edit', $candidates->id) }}" class="btn btn-warning btn-sm me-2 float-end"><i class="bi bi-pencil-square"></i></a>
+
+            <a href="#" class="btn btn-danger btn-sm float-end btndelete" data-id="{{ $candidates->id }}"><i class="bi bi-trash"></i></a>
+            <a href="{{ route('admin.kandidat.visi.edit', $candidates->id) }}" class="btn btn-warning btn-sm me-2 float-end btn"><i class="bi bi-pencil-square"></i></a>
         </div>
     </div>
 </div>
@@ -51,7 +51,7 @@ Biodata Kandidat
                     reverseButtons: true
                     }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location = "/admin/kandidat/misi/"+kandidatmisiid+""
+                        window.location = "/admin/kandidat/misi/"+kandidatmisiid+"/delete"
                         swalWithBootstrapButtons.fire(
                         'Terhapus!',
                         'Data berhasil dihapus.',
@@ -70,27 +70,4 @@ Biodata Kandidat
                     });
         });
     </script>
-
-        {{-- sweet alert toast succsess --}}
-
-        <script>
-            @if (Session::has('success'))
-            const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-            })
-    
-            Toast.fire({
-            icon: 'info',
-            title: '{{ Session::get('success') }}'
-            })
-            @endif
-        </script>
 @endpush

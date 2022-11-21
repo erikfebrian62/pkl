@@ -79,9 +79,9 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
         Route::post('create', [EditkandidatController::class, 'store'])->name('store');
 
-        Route::put('{id}', [EditkandidatController::class, 'update'])->name('update');
+        Route::put('{id}/update', [EditkandidatController::class, 'update'])->name('update');
 
-        Route::get('{id}', [EditkandidatController::class, 'destroy'])->name('destroy');
+        Route::get('{id}/delete', [EditkandidatController::class, 'destroy'])->name('destroy');
 
         //crud visi kandidat
         Route::prefix('visi')->name('visi.')->middleware('role:admin')->group(function() {
@@ -96,9 +96,9 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
             Route::post('create', [EditVisiController::class, 'store'])->name('store');
 
-            Route::put('{id}', [EditVisiController::class, 'update'])->name('update');
+            Route::put('{id}/update', [EditVisiController::class, 'update'])->name('update');
 
-            Route::get('{id}', [EditVisiController::class, 'destroy'])->name('destroy');
+            Route::get('{id}/delete', [EditVisiController::class, 'destroy'])->name('destroy');
 
         });
         //crud misi kandidat
@@ -114,9 +114,9 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
             Route::post('create', [EditMisiController::class, 'store'])->name('store');
 
-            Route::put('{id}', [EditMisiController::class, 'update'])->name('update');
+            Route::put('{id}/update', [EditMisiController::class, 'update'])->name('update');
 
-            Route::get('{id}', [EditMisiController::class, 'destroy'])->name('destroy');
+            Route::get('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
 
         });
     });
@@ -129,7 +129,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
         Route::get('{id}/show', [EditPemenangController::class, 'show'])->name('show');
 
         Route::get('create', [EditPemenangController::class, 'create'])->name('create');
-        
+
         Route::get('{id}/edit', [EditPemenangController::class, 'edit'])->name('edit');
 
         Route::post('create', [EditPemenangController::class, 'store'])->name('store');

@@ -57,5 +57,36 @@ Dasboard
             </div>
         </div>
     </div>
+    @foreach ($candidates as $item)
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="text-center fw-bold h1 mt-1">{{ $loop->iteration }}</div>
+            <div class="card-body px-4 py-4-5">
+                <div class="row">
+                    <img src="{{ asset('images/'. $item->img) }}" class="card-img-top" alt="">
+                </div>
+                @php
+                    $suara=$votes->where('candidate_id', $item->id)->count()
+                @endphp
+                <div class="row">
+                    <div class="col">
+                        <div class="suara">
+                            @php
+                                $suara=$votes->where('candidate_id', $item->id)->count()
+                            @endphp
+                            <div class="d-inline-flex">
+                                <h6 id="suara_{{ $item->id}}">{{ $suara }}</h6>
+                                <h6 class="mx-1">Suara</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" >
+                        <h6 style="float:right">Total dari {{ $users->count() }} murid</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
 </div>
 @endsection
