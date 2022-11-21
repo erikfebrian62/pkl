@@ -92,10 +92,11 @@ class EditVisiController extends Controller
         ]);
 
         $candidates = Candidate::find($id);
-        $candidates->visi=$request->visi;
+        $candidates->visi = $request->visi;
         $candidates->update;
         return redirect(route('admin.kandidat.visi.index'))->with('succsess', 'Visi Berhasil Di Edit!.');
     }
+    
 
     /**
      * Remove the specified resource from storage.

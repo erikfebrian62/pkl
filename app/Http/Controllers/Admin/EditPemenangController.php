@@ -6,7 +6,6 @@ use App\Models\Winner;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
-use Illuminate\Auth\Events\Validated;
 
 class EditPemenangController extends Controller
 {
@@ -17,6 +16,7 @@ class EditPemenangController extends Controller
      */
     public function index()
     {
+        
        $pemenang = Winner::all();
         return view('admin.pemenang.index', ['title' => 'informasi-struktur'], compact('pemenang'));
     }

@@ -9,7 +9,6 @@ use App\Models\Candidate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
-use RealRashid\SweetAlert\Facades\Alert;
 
 
 class EditkandidatController extends Controller
@@ -145,8 +144,6 @@ class EditkandidatController extends Controller
         $candidate = Candidate::find($id);
         unlink('images/' . $candidate->img);
         Candidate::where('id', $candidate->id)->delete();
-
-        Alert::success('Success Title', 'Success Message');
 
         return redirect(route('admin.kandidat.index'));
     }

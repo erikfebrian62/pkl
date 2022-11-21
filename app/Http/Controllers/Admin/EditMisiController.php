@@ -6,7 +6,6 @@ use App\Models\Misi;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Database\Seeders\CandidateSeeder;
 
 class EditMisiController extends Controller
 {

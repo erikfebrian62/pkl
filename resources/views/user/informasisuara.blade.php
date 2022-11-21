@@ -77,19 +77,11 @@
 
 @push('script')
     <script>
-<<<<<<< HEAD
-          setInterval(() => {
-          nyokot();
-        }, 10000);
-        
-        function nyokot(){
-=======
         setInterval(() => {
             tampil();
         }, 900000);
 
         function tampil(){
->>>>>>> e87f2e101139cd0de139f61824f861b69f0d047b
             fetch('/api/suara')
             .then((response) => response.json())
             .then((isi) => {

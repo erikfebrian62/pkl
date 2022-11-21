@@ -35,3 +35,4 @@ Visi Kandidat
     </div>
 </div>
 @endsection
+

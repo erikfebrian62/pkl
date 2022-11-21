@@ -122,7 +122,5 @@ Biodata Siswa
                     }
                     });
         });
-
-
    </script>
 @endpush
