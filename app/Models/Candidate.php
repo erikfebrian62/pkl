@@ -38,4 +38,9 @@ class Candidate extends Model
     {
         return $this->hasMany(Visi::class);
     }
+
+    public function winner()
+    {
+        return $this->hasOne( Winner::class);
+    }
 }

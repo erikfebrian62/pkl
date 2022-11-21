@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Vote;
 use App\Models\Candidate;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Request;
 
 class DisplayController extends Controller
 {
@@ -26,4 +27,12 @@ class DisplayController extends Controller
         ];
         return response()->json($data);
     }
+
+    // public function winner(Request $request)
+    // {
+    //     $data = [
+    //         'candidate' => Candidate::withCount('vote')->orderBy('vote_count', 'desc')->first(),
+    //     ];
+    //     dd($data);
+    // }
 }

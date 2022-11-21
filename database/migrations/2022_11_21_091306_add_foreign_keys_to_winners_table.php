@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('winners', function (Blueprint $table) {
-            $table->id();
-            $table->string('img')->nullable();
-            $table->foreignId('candidate_id')->nullable()->index('fk_visi_to_candidate');
-            $table->timestamps();
+        Schema::table('winners', function (Blueprint $table) {
+            $table->foreign('candidate_id', 'fk_winner_to_candidate')->references('id')->on('candidates')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('winners');
+        Schema::table('winners', function (Blueprint $table) {
+            $table->dropForeign('fk_winner_to_candidate');
+        });
     }
 };

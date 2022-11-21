@@ -10,6 +10,12 @@ class Winner extends Model
     use HasFactory;
 
     protected $fillable = [
-        'img'
+        'img',
+        'candidate_id'
     ];
+
+    public function candidate()
+    {
+        return $this->belongsTo(Candidate::class);
+    }
 }

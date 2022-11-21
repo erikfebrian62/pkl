@@ -28,6 +28,7 @@ use App\Http\Controllers\Users\InformasipemenangController;
 //     return view('welcome');
 // });
 
+
 Route::get('/display', [DisplayController::class, 'display'])->name('display.index');
 
 //Auth login & logout
@@ -132,10 +133,10 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
         Route::get('{id}/show', [EditPemenangController::class, 'show'])->name('show');
 
         Route::get('create', [EditPemenangController::class, 'create'])->name('create');
-
+        
         Route::get('{id}/edit', [EditPemenangController::class, 'edit'])->name('edit');
 
-        Route::post('create', [EditPemenangController::class, 'store'])->name('store');
+        Route::post('create', [EditPemenangController::class, 'winner'])->name('store');
 
         Route::put('{id}', [EditPemenangController::class, 'update'])->name('update');
 

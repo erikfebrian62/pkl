@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Winner;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Candidate;
 use Illuminate\Support\Facades\File;
 
 class EditPemenangController extends Controller
@@ -16,7 +17,6 @@ class EditPemenangController extends Controller
      */
     public function index()
     {
-        
        $pemenang = Winner::all();
         return view('admin.pemenang.index', ['title' => 'informasi-struktur'], compact('pemenang'));
     }
@@ -37,23 +37,36 @@ class EditPemenangController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'img' => 'required'
+    //     ]);
+
+    //     $input = $request->all();
+
+    //     if ($img = $request->file('img')) {
+    //         $destinationPath = 'images/';
+    //         $profileImage = date('YmdHis') . "." . $img->getClientOriginalExtension();
+    //         $img->move($destinationPath, $profileImage);
+    //         $input['img'] = $profileImage;
+    //     }
+
+    //     Winner::create($input);
+    //     return redirect( route('admin.pemenang.index'))->with('success', 'Data berhasil di Tambahkan!.');
+    // }
+
+    public function winner(Request $request)
     {
-        $request->validate([
-            'img' => 'required'
-        ]);
+        $candidate = Candidate::withCount('vote')->orderBy('vote_count', 'desc')->first();
+        // dd($candidate);
+        // $data = [
+        //     'candidate' => Candidate::withCount('vote')->orderBy('vote_count', 'desc')->first(),
+        // ];
 
-        $input = $request->all();
-
-        if ($img = $request->file('img')) {
-            $destinationPath = 'images/';
-            $profileImage = date('YmdHis') . "." . $img->getClientOriginalExtension();
-            $img->move($destinationPath, $profileImage);
-            $input['img'] = $profileImage;
-        }
-
-        Winner::create($input);
-        return redirect( route('admin.pemenang.index'))->with('success', 'Data berhasil di Tambahkan!.');
+        Winner::create([
+            'candidate_id' => $candidate->id
+        ]);     
     }
 
     /**
