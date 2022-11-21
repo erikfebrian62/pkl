@@ -81,7 +81,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
         Route::put('{id}', [EditkandidatController::class, 'update'])->name('update');
 
-        Route::delete('{id}', [EditkandidatController::class, 'destroy'])->name('destroy');
+        Route::get('{id}', [EditkandidatController::class, 'destroy'])->name('destroy');
 
         //crud visi kandidat
         Route::prefix('visi')->name('visi.')->middleware('role:admin')->group(function() {
@@ -114,13 +114,9 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
             Route::post('create', [EditMisiController::class, 'store'])->name('store');
 
-            Route::put('{id}/update', [EditMisiController::class, 'update'])->name('update');
-
-            Route::get('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
-
             Route::put('{id}', [EditMisiController::class, 'update'])->name('update');
 
-            Route::delete('{id}', [EditMisiController::class, 'destroy'])->name('destroy');
+            Route::get('{id}', [EditMisiController::class, 'destroy'])->name('destroy');
 
         });
     });
@@ -136,7 +132,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
         
         Route::get('{id}/edit', [EditPemenangController::class, 'edit'])->name('edit');
 
-        Route::post('create', [EditPemenangController::class, 'winner'])->name('store');
+        Route::post('create', [EditPemenangController::class, 'store'])->name('store');
 
         Route::put('{id}', [EditPemenangController::class, 'update'])->name('update');
 

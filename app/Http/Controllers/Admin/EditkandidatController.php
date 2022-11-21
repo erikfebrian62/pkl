@@ -142,8 +142,8 @@ class EditkandidatController extends Controller
     public function destroy($id)
     {
         $candidate = Candidate::find($id);
-        unlink('images/' . $candidate->img);
-        Candidate::where('id', $candidate->id)->delete();
+        // unlink('images/' . $candidate->img);
+        // Candidate::where('id', $candidate->id)->delete();
 
         return redirect(route('admin.kandidat.index'));
     }

@@ -37,37 +37,39 @@ class EditPemenangController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function store(Request $request)
-    // {
-    //     $request->validate([
-    //         'img' => 'required'
-    //     ]);
-
-    //     $input = $request->all();
-
-    //     if ($img = $request->file('img')) {
-    //         $destinationPath = 'images/';
-    //         $profileImage = date('YmdHis') . "." . $img->getClientOriginalExtension();
-    //         $img->move($destinationPath, $profileImage);
-    //         $input['img'] = $profileImage;
-    //     }
-
-    //     Winner::create($input);
-    //     return redirect( route('admin.pemenang.index'))->with('success', 'Data berhasil di Tambahkan!.');
-    // }
-
-    public function winner(Request $request)
+    public function store(Request $request)
     {
         $candidate = Candidate::withCount('vote')->orderBy('vote_count', 'desc')->first();
-        // dd($candidate);
-        // $data = [
-        //     'candidate' => Candidate::withCount('vote')->orderBy('vote_count', 'desc')->first(),
-        // ];
+
+        $request->validate([
+            'img' => 'required'
+        ]);
+
+        $file = $request->file('img');
+        $nama_file = $file->getClientOriginalName();
+        $tujuan_upload = 'images/';
+        $file->move($tujuan_upload, $nama_file);
 
         Winner::create([
-            'candidate_id' => $candidate->id
-        ]);     
+            'candidate_id' => $candidate->id,
+            'img' => $nama_file
+        ]);
+
+        return redirect( route('admin.pemenang.index'))->with('success', 'Data berhasil di Tambahkan!.');
     }
+
+    // public function winner(Request $request)
+    // {
+        
+    //     // dd($candidate);
+    //     // $data = [
+    //     //     'candidate' => Candidate::withCount('vote')->orderBy('vote_count', 'desc')->first(),
+    //     // ];
+
+    //     Winner::create([
+    //         'candidate_id' => $candidate->id
+    //     ]);     
+    // }
 
     /**
      * Display the specified resource.
