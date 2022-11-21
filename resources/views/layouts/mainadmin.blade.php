@@ -11,8 +11,7 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.svg') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.png') }}" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-
-<link rel="stylesheet" href="{{ asset('assets/css/shared/iconly.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/shared/iconly.css') }}">
 
 </head>
 
@@ -21,7 +20,7 @@
         @include('partials.sidebar')
     </div>
 
-        </div>
+
         {{-- @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@10"]) --}}
         <div id="main">
             <header class="mb-3">
@@ -51,11 +50,12 @@
         </div>
     </div>
 
+    <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
+    {{-- Sweet-alert2 --}}
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-<!-- Jquery -->
+    <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
     @stack('js')

@@ -17,12 +17,8 @@ class InformasibiodataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function indeximport()
-    {
-        return view('admin.biodata.import');
-    }
 
-
+     
     public function import()
     {
         Excel::import(new UserImport, request()->file('file'));
