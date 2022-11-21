@@ -18,6 +18,9 @@ Biodata Kandidat
                 </textarea>
                 <label for="floatingTextarea">visi</label>
             </div>
+            
+            <a href="{{ route('admin.kandidat.visi.destroy', $candidates->id) }}" class="btn btn-danger btn-sm float-end"><i class="bi bi-trash"></i></a>
+            <a href="{{ route('admin.kandidat.visi.edit', $candidates->id) }}" class="btn btn-warning btn-sm me-2 float-end"><i class="bi bi-pencil-square"></i></a>
         </div>
     </div>
 </div>

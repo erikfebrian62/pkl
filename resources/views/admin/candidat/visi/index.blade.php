@@ -24,13 +24,7 @@ Visi Kandidat
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td class="text-center">{{ $candidate->ketua}} & {{ $candidate->wakil}}</td>
                                 <td class="text-center">
-                                    <form action="{{ route('admin.kandidat.visi.destroy', $candidate->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
                                         <a href="{{ route('admin.kandidat.visi.show', $candidate->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></i></a>
-                                        <a href="{{ route('admin.kandidat.visi.edit', $candidate->id)}}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
-                                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
-                                    </form>
                                 </td>
                             </tr>
                         @endforeach
