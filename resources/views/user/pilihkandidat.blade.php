@@ -128,14 +128,14 @@
          const swalWithBootstrapButtons = Swal.mixin({
                  customClass: {
                      confirmButton: 'btn btn-success',
-                     cancelButton: 'btn btn-danger'
+                     cancelButton: 'btn btn-danger me-2'
                  },
                  buttonsStyling: false
                  })
 
                  swalWithBootstrapButtons.fire({
                  title: 'Yakin?',
-                 text: "Anda akan memilih kandidat ini?"+username+"" ,
+                 text: "Anda akan memilih kandidat "+username+"" ,
                  icon: 'question',
                  showCancelButton: true,
                  confirmButtonText: 'Ya, saya yakin.',
