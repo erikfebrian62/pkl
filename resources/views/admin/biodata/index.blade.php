@@ -7,7 +7,7 @@ Biodata Siswa
 @section('content')
 <div class="container">
     <div class="my-3">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Import">
             Import <i class="bi bi-database-add"></i>
         </button>
         <a href="{{ route('admin.biodata.export') }}" class="btn btn-info mt-y">Export <i class="bi bi-file-earmark-text"></i></a>
@@ -42,7 +42,7 @@ Biodata Siswa
                                 <td class="text-center">{{ $user->jurusan }}</td>
                                 <td class="text-center">
                                     <a href="{{ route('admin.biodata.edit', $user->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
-                                    <a href="#" class="btn btn-danger btn-sm delete" data-id="{{ $user->id }}" data-nama="{{ $user->name }}"><i class="bi bi-trash"></i></a>
+                                    <a href="#" class="btn btn-danger btn-sm btndelete" data-id="{{ $user->id }}" data-nama="{{ $user->name }}"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach
@@ -55,7 +55,7 @@ Biodata Siswa
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Import" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -80,9 +80,10 @@ Biodata Siswa
 @endsection
 
 @push('js')
-   <script>
 
-       $('.delete').click( function(){
+    <script>
+
+       $('.btndelete').click( function(){
 
            var userid = $(this).attr('data-id');
            var username = $(this).attr('data-nama');
@@ -96,7 +97,7 @@ Biodata Siswa
 
                     swalWithBootstrapButtons.fire({
                     title: 'Yakin?',
-                    text: "Akan menghapus nama data user "+username+"" ,
+                    text: "Akan menghapus data user "+username+"" ,
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonText: 'Ya, hapus!',
@@ -108,7 +109,7 @@ Biodata Siswa
                         swalWithBootstrapButtons.fire(
                         'Terhapus!',
                         'Data berhasil dihapus.',
-                        'success'
+                        'success',
                         )
                     } else if (
                         /* Read more about handling dismissals below */
@@ -122,7 +123,27 @@ Biodata Siswa
                     }
                     });
         });
-
-
    </script>
+
+   <script>
+     @if (Session::has('success'))
+     const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+        })
+
+        Toast.fire({
+        icon: 'info',
+        title: '{{ Session::get('success') }}'
+        })
+     @endif
+   </script>
+
 @endpush

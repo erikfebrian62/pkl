@@ -153,7 +153,7 @@ Route::prefix('user')->name('user.')->middleware('role:user')->group( function()
 
     Route::get('/informasi-pemenang', [InformasipemenangController::class, 'pemenang'])->name('informasi-pemenang');
 
-    Route::post('/pilih-kandidat/{id}', [PilihkandidatController::class, 'vote'])->name('kandidat.pilih');
+    Route::get('/pilih-kandidat/{id}', [PilihkandidatController::class, 'vote'])->name('kandidat.pilih');
 });
 
 

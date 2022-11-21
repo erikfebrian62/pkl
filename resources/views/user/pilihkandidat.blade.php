@@ -8,7 +8,7 @@
         </div>
 
 
-        @if ($message = session('Error'))
+        {{-- @if ($message = session('Error'))
             <div class="my-3 alert alert-danger">
                 {{ $message }}
             </div>
@@ -18,7 +18,7 @@
           <div class="alert alert-danger">
             {{ $message }}
           </div>
-          @endif
+          @endif --}}
 
         <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
 
@@ -108,10 +108,7 @@
                             </div>
                         </div>
                         @if($votes < 1)
-                        <form action="{{ route('user.kandidat.pilih', $candidate->id) }}" method="POST">
-                            @csrf
-                            <button type="submit" class="btn btn-primary w-100" onclick="confirm('Apakah anda yakin?')">Pilih</button>
-                        </form>
+                            <button type="submit" class="btn btn-primary w-100 btnvotes" data-id="{{ $candidate->id }}" data-nama="{{ $candidate->ketua }}">Pilih</button>
                         @endif
                     </div>
                 </div>
@@ -119,35 +116,50 @@
             @endforeach
         </div>
     </div>
-
-    <div class="modal fade" id="pilih{{ $candidate->id }}" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-body" >
-              <div class="row justify-content-center">
-                <div class="col-start-center">
-                  <h3 class="text-center">Apakah anda yakin akan memilih kandidat ini ?</h3>
-                </div>
-              </div>
-              <br>
-              <div class="row justify-content-center align-items-center text-center">
-                <div class="col">
-                  <form action="{{ route('user.kandidat.pilih', $candidate->id) }}" method="POST">
-                    @csrf
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">YA saya yakin</button>
-                  </form>
-                </div>
-              </div><br>
-              <div class="row justify-content-center align-items-center text-center">
-                <div class="col">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                </div>
-              </div>
-              <br>
-              <br>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 @endsection
+
+@push('script')
+<script>
+
+    $('.btnvotes').click( function(){
+
+        var userid = $(this).attr('data-id');
+        var username = $(this).attr('data-nama');
+         const swalWithBootstrapButtons = Swal.mixin({
+                 customClass: {
+                     confirmButton: 'btn btn-success',
+                     cancelButton: 'btn btn-danger'
+                 },
+                 buttonsStyling: false
+                 })
+
+                 swalWithBootstrapButtons.fire({
+                 title: 'Yakin?',
+                 text: "Anda akan memilih kandidat ini?"+username+"" ,
+                 icon: 'question',
+                 showCancelButton: true,
+                 confirmButtonText: 'Ya, saya yakin.',
+                 cancelButtonText: 'Tidak',
+                 reverseButtons: true
+                 }).then((result) => {
+                 if (result.isConfirmed) {
+                     window.location = "/user/pilih-kandidat/"+userid+""
+                     swalWithBootstrapButtons.fire(
+                     'Voting Berhasil',
+                     'Terimakasih atas partisipan anda dalam voting pemilihan ketua OSIS',
+                     'success',
+                     )
+                 } else if (
+                     /* Read more about handling dismissals below */
+                     result.dismiss === Swal.DismissReason.cancel
+                 ) {
+                     swalWithBootstrapButtons.fire(
+                     'Tidak jadi',
+                     'Anda  :)',
+                     'error'
+                     )
+                 }
+                 });
+     });
+</script>
+@endpush

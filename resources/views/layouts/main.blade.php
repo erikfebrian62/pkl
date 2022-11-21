@@ -15,7 +15,7 @@
     <style>
       .footer {
         background-color: #00102e;
-        height: 85px;  
+        height: 85px;
       }
       .text {
         padding-top: 35px;
@@ -26,7 +26,7 @@
       .logo {
         height: 65px;
         width: 65px;
-        margin-right: 10px; 
+        margin-right: 10px;
       }
       .judul{
         padding-top: 9px;
@@ -45,11 +45,18 @@
 
     @include('partials.footer')
 
-    
+
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>
+
+     {{-- Sweet-alert2 --}}
+
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <!-- Jquery -->
+     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+     
     @stack('script')
 </body>
 </html>
