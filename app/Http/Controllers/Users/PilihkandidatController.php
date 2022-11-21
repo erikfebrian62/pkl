@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Users;
 
+use App\Models\User;
 use App\Models\Vote;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
