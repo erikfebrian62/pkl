@@ -164,10 +164,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-<<<<<<< HEAD
-=======
 
->>>>>>> d6286b5065afd6fdb57665373d1b950ed38d55d2
         /*
          * Package Service Providers...
          */

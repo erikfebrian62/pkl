@@ -6,7 +6,7 @@ Biodata Kandidat
 
 @section('content')
 <div class="container">
-    <a href="{{ route('admin.visi.index') }}" class="btn btn-primary btn-sm mt-3"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
+    <a href="{{ route('admin.kandidat.visi.index') }}" class="btn btn-primary btn-sm mt-3"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <div class="card mt-2">
         <form action="{{ route('admin.kandidat.visi.index')}}">
         <div class="card-body">

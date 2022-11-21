@@ -97,7 +97,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
             Route::put('{id}', [EditVisiController::class, 'update'])->name('update');
 
-            Route::delete('{id}', [EditVisiController::class, 'destroy'])->name('destroy');
+            Route::get('{id}', [EditVisiController::class, 'destroy'])->name('destroy');
 
         });
         //crud misi kandidat
