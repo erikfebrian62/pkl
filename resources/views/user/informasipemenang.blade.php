@@ -50,7 +50,6 @@
                         <div class="suara">
                             @php
                                 $suara=$count->where('candidate_id', $item->candidate->id)->count();
-                                dd($suara);
                             @endphp
                             <div class="d-inline-flex">
                                 <h6 id="suara_{{ $item->id}}">{{ $suara }}</h6>
