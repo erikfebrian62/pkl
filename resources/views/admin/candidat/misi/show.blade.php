@@ -13,15 +13,15 @@ Biodata Dari Kandidat
                 <input type="text" class="form-control" name="ketua" value="{{ $candidate->ketua}} & {{ $candidate->wakil}}" id="floatingInput" placeholder="Ketua" disabled>
                 <label for="floatingInput">Ketua & Wakil</label>
             </div>
-            <div class="card-body">
-                <ol class="list-group list-group-numbered">
-                    @foreach ($misis as $item)
-                        </p>{!!$item->misi!!}<p>
-                            <a href="{{ route('admin.kandidat.misi.destroy', $item->id)}}" class="float-end btn btn-danger"><i class="bi bi-trash"></i></a>
-                            <a href="{{ route('admin.kandidat.misi.edit', ['candidate' => $candidate->id, 'id' => $item->id])}}" class="me-2 float-end btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                    @endforeach
-                </ol>
-            </div>
+            @foreach ($misis as $item)
+                <div class="form-floating">
+                        <textarea class="form-control mb-2" placeholder="Visi" name="visi" value="" id="floatingTextarea" style="height: 150px" disabled>{!! $item->misi !!}
+                        </textarea>
+                        <a href="{{ route('admin.kandidat.misi.destroy', $item->id)}}" class="float-end btn btn-danger"><i class="bi bi-trash"></i></a>
+                        <a href="{{ route('admin.kandidat.misi.edit', ['candidate' => $candidate->id, 'id' => $item->id])}}" class="me-2 float-end btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                        <label for="floatingTextarea">visi</label>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>

@@ -71,11 +71,11 @@ class EditVisiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($candidate, $id)
     {
-        $candidates = Candidate::find($id);
-        $visi = Visi::where('candidate_id', $candidates->id)->get();
-       return view('admin.candidat.visi.edit', ['title' => 'Edit-Visi_Kandidat'], compact( 'candidates', 'visi'));
+        $candidate = Candidate::findOrFail($candidate);
+        $visi = Visi::find($id);
+       return view('admin.candidat.visi.edit', ['title' => 'Edit-Visi_Kandidat'], compact( 'candidate', 'visi'));
     }
 
     /**

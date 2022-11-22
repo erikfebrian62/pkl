@@ -23,7 +23,7 @@ Biodata Kandidat
             </div>
 
             <a href="#" class="btn btn-danger btn-sm float-end btndelete" data-id="{{ $item->id }}"><i class="bi bi-trash"></i></a>
-            <a href="{{ route('admin.kandidat.visi.edit', $item->id) }}" class="btn btn-warning btn-sm me-2 float-end btn"><i class="bi bi-pencil-square"></i></a>
+            <a href="{{ route('admin.kandidat.visi.edit',['candidate' => $candidates->id, 'id' => $item->id]) }}" class="btn btn-warning btn-sm me-2 float-end btn"><i class="bi bi-pencil-square"></i></a>
             @endforeach
         </div>
     </div>
