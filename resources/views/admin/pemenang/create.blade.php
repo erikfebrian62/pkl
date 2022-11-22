@@ -1,7 +1,7 @@
 @extends('layouts.mainadmin')
 
 @section('title')
-Biodata Kandidat
+Struktur Organisasi
 @endsection
 
 @section('content')

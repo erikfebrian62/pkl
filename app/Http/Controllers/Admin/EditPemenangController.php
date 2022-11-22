@@ -143,4 +143,9 @@ class EditPemenangController extends Controller
 
         return redirect( route('admin.pemenang.index'))->with('success', 'Data telah di Hapus!.');
     }
+
+    public function wait()
+    {
+        return view('nunggu');
+    }
 }

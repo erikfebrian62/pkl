@@ -43,6 +43,10 @@
       .judul{
         padding-top: 9px;
       }
+
+      .wait {
+        width: 100%;
+      }
     </style>
     <title>Project PKL</title>
 </head>
@@ -68,6 +72,9 @@
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
      <!-- Jquery -->
      <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+     {{-- svg di page nunggu --}}
+     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     @stack('script')
 </body>

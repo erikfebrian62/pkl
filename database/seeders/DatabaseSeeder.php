@@ -45,8 +45,8 @@ class DatabaseSeeder extends Seeder
             CandidateSeeder::class,
         ]);
 
-        Winner::create([
-            'img' => 'coomingsoon.png'
-        ]);
+        // Winner::create([
+        //     'img' => 'StrukturOrganisasi.jpg'
+        // ]);
     }
 }

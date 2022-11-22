@@ -31,6 +31,10 @@ use App\Http\Controllers\Users\InformasipemenangController;
 
 Route::get('/display', [DisplayController::class, 'display'])->name('display.index');
 
+// Route::get('/nunggu', function () {
+//     return view('nunggu');
+// });
+
 //Auth login & logout
 Route::get('/', [LoginController::class, 'index'])->name('login.index');
 
@@ -151,6 +155,8 @@ Route::prefix('user')->name('user.')->middleware('role:user')->group( function()
     Route::get('/informasi-pemenang', [InformasipemenangController::class, 'pemenang'])->name('informasi-pemenang');
 
     Route::get('/pilih-kandidat/{id}', [PilihkandidatController::class, 'vote'])->name('kandidat.pilih');
+
+    Route::get('/wait', [EditPemenangController::class, 'wait'])->name('waiting');
 });
 
 

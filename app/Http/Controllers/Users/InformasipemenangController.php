@@ -24,7 +24,10 @@ class InformasipemenangController extends Controller
         $votes = Vote::all();
         $count = new Vote;
         $winner = Winner::all();
-        // dd($votes);
-        return view('user.informasipemenang', compact('candidate', 'users', 'votes', 'winner', 'count'));
+        if ($winner->isEmpty()) {
+            return redirect( route('user.waiting'));
+        } else{
+            return view('user.informasipemenang', compact('candidate', 'users', 'votes', 'winner', 'count'));
+        }
     }
 }
