@@ -49,7 +49,7 @@ class EditMisiController extends Controller
             'misi' => $request->misi
         ]);
 
-        return redirect(route('admin.kandidat.misi.index'))->with('success', 'Data Berhasil Di Tambahkan!');
+        return redirect(route('admin.kandidat.misi.index'))->with('success', 'Visi Berhasil Di Tambahkan!');
     }
 
     /**
@@ -95,7 +95,7 @@ class EditMisiController extends Controller
         $candidates->misi = $request->misi;
         $candidates->save();
 
-        return redirect(route('admin.kandidat.misi.index'))->with('success', 'Data Berhasil Di Edit!');
+        return redirect(route('admin.kandidat.misi.index'))->with('success', 'Misi telah diperbarui!');
     }
 
     /**
@@ -109,6 +109,6 @@ class EditMisiController extends Controller
        $misi = Misi::find($id);
        $misi->delete();
 
-       return back()->with('success', 'Data Telah Diperbaharui!');
+       return back()->with('success', 'Misi berhasil dihapus!');
     }
 }

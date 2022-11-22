@@ -18,7 +18,7 @@ class InformasibiodataController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     
+
     public function import()
     {
         Excel::import(new UserImport, request()->file('file'));
@@ -137,7 +137,7 @@ class InformasibiodataController extends Controller
         $user = User::find($id);
         $user->delete();
 
-       return back();
+       return back()->with('success', 'Data telah dihapus!');
     }
 }
 

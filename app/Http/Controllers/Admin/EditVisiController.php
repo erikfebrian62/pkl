@@ -49,7 +49,7 @@ class EditVisiController extends Controller
             'visi' => $request->visi
         ]);
 
-        return redirect(route('admin.kandidat.visi.index'))->with('succsess', 'Data berhasil di Tambahkan!');
+        return redirect(route('admin.kandidat.visi.index'))->with('succsess', 'Visi berhasil di Tambahkan!');
     }
 
     /**
@@ -109,6 +109,6 @@ class EditVisiController extends Controller
         $visi = Visi::find($id);
         $visi->delete();
 
-        return redirect(route ('admin.kandidat.visi.index'))->with('succsess', 'Data Telah Diperbarui!');
+        return back()->with('succsess', 'Visi Berhasil dihapus!');
     }
 }
