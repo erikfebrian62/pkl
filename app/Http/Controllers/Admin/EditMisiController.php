@@ -95,7 +95,7 @@ class EditMisiController extends Controller
         $candidates->misi = $request->misi;
         $candidates->save();
 
-        return back()->with('success', 'Data Berhasil Di Edit!');
+        return redirect(route('admin.kandidat.misi.index'))->with('success', 'Data Berhasil Di Edit!');
     }
 
     /**

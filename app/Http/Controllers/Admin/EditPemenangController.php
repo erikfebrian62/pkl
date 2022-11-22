@@ -58,19 +58,6 @@ class EditPemenangController extends Controller
         return redirect( route('admin.pemenang.index'))->with('success', 'Data berhasil di Tambahkan!.');
     }
 
-    // public function winner(Request $request)
-    // {
-        
-    //     // dd($candidate);
-    //     // $data = [
-    //     //     'candidate' => Candidate::withCount('vote')->orderBy('vote_count', 'desc')->first(),
-    //     // ];
-
-    //     Winner::create([
-    //         'candidate_id' => $candidate->id
-    //     ]);     
-    // }
-
     /**
      * Display the specified resource.
      *
