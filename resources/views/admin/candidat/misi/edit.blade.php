@@ -4,7 +4,7 @@
 Biodata Kandidat
 @endsection
 
-@section('content')
+@section('content') 
 <div class="container">
     <a href="{{ route('admin.kandidat.misi.index') }}" class="btn btn-primary btn-sm mt-3"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <div class="card mt-2">
@@ -13,11 +13,11 @@ Biodata Kandidat
             @method('PUT')
             <div class="card-body">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="ketua" value="{{ $candidates->ketua}} & {{ $candidates->wakil}}" id="floatingInput" placeholder="Ketua" disabled>
+                    <input type="text" class="form-control" name="ketua" value="{{ $candidate->ketua}} & {{ $candidate->wakil}}" id="floatingInput" placeholder="Ketua" disabled>
                     <label for="floatingInput">Ketua & Wakil</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Misi" name="misi" value="" id="floatingTextarea" style="height: 150px">{{ $misi->misi }}
+                    <textarea class="form-control ckeditor" placeholder="Misi" name="misi" value="" id="floatingTextarea" style="height: 150px">{{ $misi->misi }}
                     </textarea>
                     <label for="floatingTextarea">Misi</label>
                 </div>

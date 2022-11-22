@@ -12,15 +12,15 @@ Biodata Kandidat
             <form action="{{ route('admin.kandidat.misi.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <select class="form-select" aria-label="Default select example" name="candidate">
+                    <select class="form-select mb-3" aria-label="Default select example" name="candidate">
                         <option selected>Ketua</option>
                         @foreach ($candidates as $candidate)
                             <option value="{{ $candidate->id}}">{{ $candidate->ketua}} & {{ $candidate->wakil}}</option>
                         @endforeach
                       </select>
                 <div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 150px"></textarea>
-                    <label for="floatingTextarea">Misi</label>
+                    {{-- <label for="floatingTextarea">Misi</label> --}}
+                    <textarea class="form-control ckeditor" placeholder="Misi" name="misi" id="floatingTextarea" style="height: 150px"></textarea>
                 </div>
                 <button type="submit" class="btn  btn-success btn-md float-end"><i class="fa fa-save"></i> Simpan</button>
             </form>

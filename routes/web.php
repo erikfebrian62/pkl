@@ -92,7 +92,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
             Route::get('create', [EditVisiController::class, 'create'])->name('create');
 
-            Route::get('{id}/edit', [EditVisiController::class, 'edit'])->name('edit');
+            Route::get('edit', [EditVisiController::class, 'edit'])->name('edit');
 
             Route::post('create', [EditVisiController::class, 'store'])->name('store');
 
@@ -110,7 +110,7 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
 
             Route::get('create', [EditMisiController::class, 'create'])->name('create');
 
-            Route::get('{id}/edit', [EditMisiController::class, 'edit'])->name('edit');
+            Route::get('{candidate}/{id}/edit', [EditMisiController::class, 'edit'])->name('edit');
 
             Route::post('create', [EditMisiController::class, 'store'])->name('store');
 

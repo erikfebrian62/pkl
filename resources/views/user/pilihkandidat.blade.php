@@ -101,7 +101,7 @@
                                     <h6 class="viisi-misi fw-bold">Misi</h6>
                                     <ol>
                                       @foreach ($candidate->misi as $misis)
-                                        <li class="mt-3">{{$misis->misi}}</li>
+                                        <li class="mt-3">{!!$misis->misi!!}</li>
                                       @endforeach
                                     </ol>
                                 </div>

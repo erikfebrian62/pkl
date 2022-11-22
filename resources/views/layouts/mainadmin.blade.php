@@ -50,6 +50,7 @@
         </div>
     </div>
 
+    <script src="//cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
     <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
     {{-- Sweet-alert2 --}}
@@ -58,6 +59,12 @@
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
+    <script>
+        $(document).ready(function() {
+            $('.ckedit').ckeditor()
+        })
+    </script>
+    @stack('script')
     @stack('js')
 </body>
 

@@ -60,9 +60,9 @@ class EditMisiController extends Controller
      */
     public function show($id)
     {
-        $candidates = Candidate::findOrFail($id);
-        $misi = Misi::where('candidate_id', $candidates->id)->get();
-        return view('admin.candidat.misi.show', ['title' => 'Tampilan-Misi-Kandidat'], compact('candidates', 'misi'));
+        $candidate = Candidate::findOrFail($id);
+        $misis = Misi::where('candidate_id', $candidate->id)->get();
+        return view('admin.candidat.misi.show', ['title' => 'Tampilan-Misi-Kandidat'], compact('candidate', 'misis'));
     }
 
     /**
@@ -71,11 +71,11 @@ class EditMisiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($candidate, $id)
     {
-        $candidates = Candidate::findOrFail($id);
-        $misi = Misi::where('candidate_id', $candidates->id)->first();
-        return view('admin.candidat.misi.edit', ['title' => 'Edit-Misi-Kandidat'], compact('candidates', 'misi'));
+        $candidate = Candidate::find($candidate);
+        $misi = Misi::find($id);
+        return view('admin.candidat.misi.edit', ['title' => 'Edit-Misi-Kandidat'], compact( 'misi', 'candidate'));
     }
 
     /**
