@@ -7,19 +7,6 @@
             <p class="kk">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
 
-
-        {{-- @if ($message = session('Error'))
-            <div class="my-3 alert alert-danger">
-                {{ $message }}
-            </div>
-        @endif
-
-          @if($message = session('danger'))
-          <div class="alert alert-danger">
-            {{ $message }}
-          </div>
-          @endif --}}
-
         <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
 
         @foreach($candidate as $candidate)
