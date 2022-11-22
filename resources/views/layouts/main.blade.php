@@ -45,9 +45,20 @@
       }
 
       .wait {
-        width: 100%;
+        width: 550px;
       }
+      
+      .gambar img{
+        width: 100%;
+        max-width: 850px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
     </style>
+
     <title>Project PKL</title>
 </head>
 <body class="">

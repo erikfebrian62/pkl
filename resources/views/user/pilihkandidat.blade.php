@@ -4,7 +4,7 @@
     <div class="container">
         <div class="awalan">
             <h1>Pilih Kandidat</h1>
-            <p class="kk">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="kk">PIlihlah Kandidat Terbaik Menurut Anda.</p>
         </div>
 
         <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
