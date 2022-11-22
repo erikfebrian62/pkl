@@ -22,7 +22,9 @@ class InformasipemenangController extends Controller
         // $visi = Visi::where('candidate_id', $candidate->id)->first();
         $users = User::where('role', 'user')->get();
         $votes = Vote::all();
+        $count = new Vote;
         $winner = Winner::all();
-        return view('user.informasipemenang', compact('candidate', 'users', 'votes', 'winner'));
+        // dd($votes);
+        return view('user.informasipemenang', compact('candidate', 'users', 'votes', 'winner', 'count'));
     }
 }

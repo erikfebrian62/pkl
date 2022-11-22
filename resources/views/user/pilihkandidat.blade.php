@@ -104,6 +104,11 @@
             </div>
             @endforeach
         </div>
+        <div class="row justify-content-center align-items-center text-center mb-4">
+            <div class="col-md-4">
+                <a href="{{ route('user.informasi-pemenang')}}" class="btn btn-primary">Lihat Pemenang</a>
+            </div>
+        </div>
     </div>
 @endsection
 

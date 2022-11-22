@@ -49,7 +49,8 @@
                     <div class="col">
                         <div class="suara">
                             @php
-                                $suara=$votes->where('candidate_id', $item->id)->count()
+                                $suara=$count->where('candidate_id', $item->candidate->id)->count();
+                                dd($suara);
                             @endphp
                             <div class="d-inline-flex">
                                 <h6 id="suara_{{ $item->id}}">{{ $suara }}</h6>
