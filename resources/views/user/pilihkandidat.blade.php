@@ -49,6 +49,7 @@
                             <p class="fw-bold fs-7">{{$candidate->jurusan_wakil}}</p>
                         </div>
                     </div>
+
                     <div class="card-body">
                         <h6>Visi Misi</h6>
                           @foreach ($candidate->visi as $visis)
@@ -59,6 +60,7 @@
                         <p type="button" class="btn btn-light sm-3" data-bs-toggle="modal" data-bs-target="#kandidat{{ $candidate->id }}" data-id="{{ $candidate->id }}">
                             Lihat Selengkapnya...
                         </p>
+
 
                         <!-- Modal -->
                         <div class="modal fade" id="kandidat{{ $candidate->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" class="rounded">

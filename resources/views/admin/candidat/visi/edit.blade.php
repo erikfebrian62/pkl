@@ -8,7 +8,9 @@ Biodata Kandidat
 <div class="container">
     <a href="{{ route('admin.kandidat.visi.index') }}" class="btn btn-primary btn-sm mt-3"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <div class="card mt-2">
-        <form action="{{ route('admin.kandidat.visi.update')}}">
+        <form action="{{ route('admin.kandidat.visi.update', $visi->id)}}" method="POST">
+            @csrf
+            @method('PUT')
         <div class="card-body">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="ketua" value="{{ $candidates->ketua}} & {{ $candidates->wakil}}" id="floatingInput" placeholder="Ketua" disabled>

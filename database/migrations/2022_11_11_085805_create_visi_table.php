@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('visi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('candidate_id')->nullable()->index('fk_visi_to_candidate');
-            $table->text('visi');
+            $table->text('visi')->nullable();
             $table->timestamps();
         });
     }

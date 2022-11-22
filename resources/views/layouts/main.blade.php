@@ -12,7 +12,19 @@
     <link rel="stylesheet" href="/css/pilihkandidat.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Signika+Negative&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Signika Negative', sans-serif;
+        }
+
+        a .judul {
+            font-family: 'Viga', sans-serif;
+        }
+
       .footer {
         background-color: #00102e;
         height: 85px;
@@ -34,7 +46,7 @@
     </style>
     <title>Project PKL</title>
 </head>
-<body class="font-monoscope">
+<body class="">
 
     @include('partials.navbar')
 
@@ -56,7 +68,7 @@
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
      <!-- Jquery -->
      <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-     
+
     @stack('script')
 </body>
 </html>

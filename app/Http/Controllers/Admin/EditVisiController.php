@@ -61,7 +61,7 @@ class EditVisiController extends Controller
     public function show($id)
     {
         $candidates = Candidate::findOrFail($id);
-        $visi = Visi::where('candidate_id', $candidates->id)->first();
+        $visi = Visi::where('candidate_id', $candidates->id)->get();
         return view('admin.candidat.visi.show', ['title' => 'Tampilan-Visi-Kandidat'] , compact('candidates', 'visi'));
     }
 
@@ -74,7 +74,7 @@ class EditVisiController extends Controller
     public function edit($id)
     {
         $candidates = Candidate::find($id);
-        $visi = Visi::where('candidate_id', $candidates->id)->first();
+        $visi = Visi::where('candidate_id', $candidates->id)->get();
        return view('admin.candidat.visi.edit', ['title' => 'Edit-Visi_Kandidat'], compact( 'candidates', 'visi'));
     }
 
@@ -91,9 +91,9 @@ class EditVisiController extends Controller
             'visi' => 'required'
         ]);
 
-        $candidates = Candidate::find($id);
+        $candidates = Visi::find($id);
         $candidates->visi = $request->visi;
-        $candidates->update;
+        $candidates->save();
         return redirect(route('admin.kandidat.visi.index'))->with('succsess', 'Visi Berhasil Di Edit!.');
     }
 
@@ -106,8 +106,8 @@ class EditVisiController extends Controller
      */
     public function destroy($id)
     {
-        $candidates = Candidate::find($id);
-        $candidates->delete();
+        $visi = Visi::find($id);
+        $visi->delete();
 
         return redirect(route ('admin.kandidat.visi.index'))->with('succsess', 'Data Telah Diperbarui!');
     }

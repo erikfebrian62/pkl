@@ -13,14 +13,18 @@ Biodata Kandidat
                 <input type="text" class="form-control" name="ketua" value="{{ $candidates->ketua}} & {{ $candidates->wakil}}" id="floatingInput" placeholder="Ketua" disabled>
                 <label for="floatingInput">Ketua & Wakil</label>
             </div>
+
+            @foreach ($visi as $item )
+
             <div class="form-floating mb-3">
-                <textarea class="form-control" placeholder="Visi" name="visi" value="" id="floatingTextarea" style="height: 150px" disabled>{{ $visi->visi }}
+                <textarea class="form-control" placeholder="Visi" name="visi" value="" id="floatingTextarea" style="height: 150px" disabled>{{ $item->visi }}
                 </textarea>
                 <label for="floatingTextarea">visi</label>
             </div>
 
-            <a href="#" class="btn btn-danger btn-sm float-end btndelete" data-id="{{ $candidates->id }}"><i class="bi bi-trash"></i></a>
-            <a href="{{ route('admin.kandidat.visi.edit', $candidates->id) }}" class="btn btn-warning btn-sm me-2 float-end btn"><i class="bi bi-pencil-square"></i></a>
+            <a href="#" class="btn btn-danger btn-sm float-end btndelete" data-id="{{ $item->id }}"><i class="bi bi-trash"></i></a>
+            <a href="{{ route('admin.kandidat.visi.edit', $item->id) }}" class="btn btn-warning btn-sm me-2 float-end btn"><i class="bi bi-pencil-square"></i></a>
+            @endforeach
         </div>
     </div>
 </div>
@@ -51,7 +55,7 @@ Biodata Kandidat
                     reverseButtons: true
                     }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location = "/admin/kandidat/misi/"+kandidatmisiid+"/delete"
+                        window.location = "/admin/kandidat/visi/"+kandidatmisiid+"/delete"
                         swalWithBootstrapButtons.fire(
                         'Terhapus!',
                         'Data berhasil dihapus.',

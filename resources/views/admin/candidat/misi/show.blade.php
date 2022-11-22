@@ -17,9 +17,8 @@ Biodata Kandidat
                 <ol class="list-group list-group-numbered">
                     @foreach ($misi as $item)
                         <li class="list-group-item">{{$item->misi}}
-                            @csrf
-                            <a href="{{ route('admin.kandidat.misi.destroy', $candidates->id)}}" class="float-end btn btn-danger"><i class="bi bi-trash"></i></a>
-                            <a href="{{ route('admin.kandidat.misi.edit', $candidates->id)}}" class="me-2 float-end btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                            <a href="{{ route('admin.kandidat.misi.destroy', $item->id)}}" class="float-end btn btn-danger"><i class="bi bi-trash"></i></a>
+                            <a href="{{ route('admin.kandidat.misi.edit', $item->id)}}" class="me-2 float-end btn btn-warning"><i class="bi bi-pencil-square"></i></a>
                     @endforeach
                 </ol>
             </div>

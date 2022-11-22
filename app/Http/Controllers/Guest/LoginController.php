@@ -20,7 +20,7 @@ class LoginController extends Controller
             if(Auth::user()->role === 'user') {
                 $vote = Vote::where('user_id', Auth::user()->id)->count();
                 if($vote > 0) {
-                    return redirect(route('user.informasi-suara'));
+                    return redirect(route('user.pilih-kandidat'));
                 }
                 return redirect(route('user.pilih-kandidat'));
             }else{

@@ -91,9 +91,9 @@ class EditMisiController extends Controller
             'misi' => 'required'
         ]);
 
-        $candidates = Candidate::find($id);
-        $candidates->misi=$request->misi;
-        $candidates->update();
+        $candidates = Misi::find($id);
+        $candidates->misi = $request->misi;
+        $candidates->save();
 
         return redirect(route('admin.kandidat.misi.index'))->with('success', 'Data Berhasil Di Edit!');
     }

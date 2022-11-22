@@ -26,7 +26,7 @@ class PilihkandidatController extends Controller
                 'user_id' => Auth::user()->id,
                 'candidate_id' => $id
             ]);
-            return redirect(route('user.informasi-suara'));
+            return back()->with('success', 'Anda sudah voting');
         }
         else{
            return redirect(route('user.pilih-kandidat'))->with('danger','Anda Telah Voting.!');
