@@ -1,0 +1,9 @@
+.gambar img{
+    width: 100%;
+    max-width: 885px;
+    height: auto;
+    display: block;
+    padding-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+  }
