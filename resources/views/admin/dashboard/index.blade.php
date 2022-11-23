@@ -49,9 +49,12 @@ Dasboard
                             <i class="iconly-boldShow"></i>
                         </div>
                     </div>
+                    @php
+                        $total = $users->count()
+                    @endphp
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7 text-center">
                         <h6 class="text-muted font-semibold">Belum Voting</h6>
-                        <h6 class="font-extrabold mb-0">80.000</h6>
+                        <h6 class="font-extrabold mb-0">{{ $total-$votes->count() }}</h6>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,6 @@ class EditkandidatController extends Controller
      */
     public function index()
     {
-        $visi = Visi::all();
         $candidate = Candidate::all();
         return view('admin.candidat.index',[ 'title' => 'Informasi-Biodata-Kandidat' ],compact('candidate'));
     }
@@ -76,9 +75,7 @@ class EditkandidatController extends Controller
     public function show($id)
     {
         $candidate = Candidate::findOrFail($id);
-        $data = Misi::where('candidate_id', $candidate->id)->first();
-        $visi = Visi::where('candidate_id', $candidate->id)->first();
-        return view('admin.candidat.show', [ 'title' => 'Tampilan-Data-Kandidat' ], compact('candidate', 'data', 'visi'));
+        return view('admin.candidat.show', [ 'title' => 'Tampilan-Data-Kandidat' ], compact('candidate'));
     }
 
     /**
@@ -105,7 +102,6 @@ class EditkandidatController extends Controller
         $candidate = Candidate::find($id);
 
         $request->validate([
-            'img' => 'required',
             'ketua' => 'required',
             'kelas_ketua' => 'required',
             'jurusan_ketua' => 'required',
@@ -114,21 +110,29 @@ class EditkandidatController extends Controller
             'jurusan_wakil' => 'required',
         ]);
 
-        $input = $request->all();
 
         if ($img = $request->file('img')) {
             if($request->oldimage) {
                 File::delete(public_path('images/'. $candidate->img));
             }
+
+                $request->validate([
+                    'img' => 'required|file|image|mimes:jpeg,jpg,png'
+                ]);
+                $file = $request->file('img');
+                $profileImage = date('YmdHis') . "." . $file->getClientOriginalExtension();
                 $destinationPath = 'images/';
-                $profileImage = date('YmdHis') . "." . $img->getClientOriginalExtension();
-                $img->move($destinationPath, $profileImage);
-                $input['img'] = $profileImage;
-            }else{
-                unset($input['img']);
+                $file->move($destinationPath, $profileImage);
+                $candidate->img = $profileImage;
+
             }
 
-        Candidate::findOrFail($id)->update($input);
+        $candidate->ketua = $request->ketua;
+        $candidate->kelas_ketua = $request->jurusan_ketua;
+        $candidate->wakil = $request->wakil;
+        $candidate->kelas_wakil = $request->kelas_wakil;
+        $candidate->jurusan_wakil = $request->jurusan_wakil;
+        $candidate->update();
 
         return redirect(route('admin.kandidat.index'))->with('success', 'Data telah di Perbarui!.');
     }
@@ -141,10 +145,10 @@ class EditkandidatController extends Controller
      */
     public function destroy($id)
     {
-        $candidate = Candidate::find($id)->get();
+        $candidate = Candidate::findOrFail($id);
         unlink('images/' . $candidate->img);
         Candidate::where('id', $candidate->id)->delete();
 
-        return redirect(route('admin.kandidat.index'));
+        return back()->with('success', 'Data kandidat berhasil dihapus!');
     }
 }

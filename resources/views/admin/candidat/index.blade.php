@@ -1,14 +1,13 @@
 @extends('layouts.mainadmin')
 
 @section('title')
-Visi Dari Kandidat
+Data Kandidat
 @endsection
 
 @section('content')
 <div class="container">
     <a href="{{ route('admin.kandidat.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
-    <a href="{{ route('admin.kandidat.visi.index') }}" class="btn btn-primary btn-sm mt-3 float-end ms-2">Kelola Visi</a>
-    <a href="{{ route('admin.kandidat.misi.index') }}" class="btn btn-primary btn-sm mt-3 float-end ms-3">Kelola Misi</a>
+    <a href="{{ route('admin.display') }}" class="btn btn-info btn-sm float-end mt-3">Live Vote <i class="bi bi-eye"></i></a>
     <div class="card mt-2">
         <div class="card-body">
             <div class="table-responsive">

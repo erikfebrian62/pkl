@@ -1,7 +1,7 @@
 @extends('layouts.mainadmin')
 
 @section('title')
-Visi Dari Kandidat
+Edit Data Kandidat
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@ Visi Dari Kandidat
     <a href="{{ route('admin.kandidat.index') }}" class="btn btn-primary btn-sm mt-3"><i class="bi bi-box-arrow-left"></i> Kembali</i></a>
     <div class="card mt-2">
         <div class="card-body">
-            <form action="{{ route('admin.kandidat.update', $candidate->id) }}}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.kandidat.update', $candidate->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class=" mb-3">
@@ -64,6 +64,14 @@ Visi Dari Kandidat
                         <option value="Axioo Class Program">Axioo Class Program</option>
                         <option value="Perbankan">Perbankan</option>
                       </select>
+                </div>
+                <label for="floatingTextarea">Visi</label>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control ckeditor" placeholder="" name="visi" id="floatingTextarea" style="height: 150px">{{ $candidate->visi }}</textarea>
+                </div>
+                    <label for="floatingTextarea">Misi</label>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control ckeditor" placeholder="" name="misi" id="floatingTextarea" style="height: 150px">{!! $candidate->misi !!}</textarea>
                 </div>
                 <button type="submit" class="btn  btn-success btn-md float-end"><i class="fa fa-save"></i> Simpan</button>
             </form>

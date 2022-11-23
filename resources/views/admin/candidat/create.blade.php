@@ -1,7 +1,7 @@
 @extends('layouts.mainadmin')
 
 @section('title')
-Visi Dari Kandidat
+Tambah Data Kandidat
 @endsection
 
 @section('content')
@@ -61,10 +61,14 @@ Visi Dari Kandidat
                         <option value="Axioo Class Program">Axioo Class Program</option>
                         <option value="Perbankan">Perbankan</option>
                       </select>
-                </div>
-                <div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Visi" name="visi" id="floatingTextarea" style="height: 150px"></textarea>
+                    </div>
                     <label for="floatingTextarea">Visi</label>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control ckeditor" placeholder="" name="visi" id="floatingTextarea" style="height: 150px"></textarea>
+                </div>
+                    <label for="floatingTextarea">Misi</label>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control ckeditor" placeholder="" name="misi" id="floatingTextarea" style="height: 150px"></textarea>
                 </div>
                 <button type="submit" class="btn  btn-success btn-md float-end"><i class="fa fa-save"></i> Simpan</button>
             </form>

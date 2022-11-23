@@ -13,7 +13,7 @@ class PilihkandidatController extends Controller
 {
     public function voting()
     {
-        $candidate = Candidate::with(['visi','misi'])->get();
+        $candidate = Candidate::get();
         $votes = Vote::where('user_id', Auth::user()->id)->count();
         return view('user.pilihkandidat', compact('candidate', 'votes'));
     }

@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('wakil');
             $table->string('kelas_wakil');
             $table->string('jurusan_wakil');
+            $table->text('visi');
+            $table->text('misi');
             $table->timestamps();
         });
     }
