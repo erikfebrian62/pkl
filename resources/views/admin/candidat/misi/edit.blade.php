@@ -21,7 +21,7 @@ Biodata Dari Kandidat
                     </textarea>
                     <label for="floatingTextarea">Misi</label>
                 </div>
-                    <button type="submit" class="btn  btn-success btn-md float-end"><i class="fa fa-save"></i> Simpan</button>
+                    <button type="submit" class="btn  btn-success btn-md mb-3 float-end"><i class="fa fa-save"></i> Simpan</button>
         </form>
     </div>
 </div>

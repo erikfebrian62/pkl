@@ -47,6 +47,7 @@
     </div>
     <div class="col-lg-7 d-none d-lg-block">
         <div id="auth-right">
+            <img src="{{ asset('images/voting.gif') }}" alt="" width="900" >
         </div>
     </div>
 </div>

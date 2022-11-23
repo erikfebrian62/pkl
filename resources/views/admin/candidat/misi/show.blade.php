@@ -15,11 +15,11 @@ Biodata Dari Kandidat
             </div>
             @foreach ($misis as $item)
                 <div class="form-floating">
-                        <textarea class="form-control mb-2" placeholder="Visi" name="visi" value="" id="floatingTextarea" style="height: 150px" disabled>{!! $item->misi !!}
+                        <textarea class="form-control mb-2" placeholder="Visi" name="visi" value="" id="floatingTextarea"  style="height: 150px"  disabled>{!! $item->misi !!}
                         </textarea>
                         <a href="{{ route('admin.kandidat.misi.destroy', $item->id)}}" class="float-end btn btn-danger"><i class="bi bi-trash"></i></a>
                         <a href="{{ route('admin.kandidat.misi.edit', ['candidate' => $candidate->id, 'id' => $item->id])}}" class="me-2 float-end btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                        <label for="floatingTextarea">visi</label>
+                        <label for="floatingTextarea">Misi</label>
                 </div>
             @endforeach
         </div>
