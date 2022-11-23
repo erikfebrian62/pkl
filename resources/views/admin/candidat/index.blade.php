@@ -7,8 +7,8 @@ Visi Dari Kandidat
 @section('content')
 <div class="container">
     <a href="{{ route('admin.kandidat.create') }}" class="btn btn-success btn-sm mt-3">Tambah Data <i class="bi bi-plus-square"></i></a>
-    <a href="{{ route('admin.kandidat.visi.index') }}" class="btn btn-primary btn-sm mt-3 float-end ms-2">Kelola Visi</a>
-    <a href="{{ route('admin.kandidat.misi.index') }}" class="btn btn-primary btn-sm mt-3 float-end ms-3">Kelola Misi</a>
+    {{-- <a href="{{ route('admin.kandidat.visi.index') }}" class="btn btn-primary btn-sm mt-3 float-end ms-2">Kelola Visi</a>
+    <a href="{{ route('admin.kandidat.misi.index') }}" class="btn btn-primary btn-sm mt-3 float-end ms-3">Kelola Misi</a> --}}
     <div class="card mt-2">
         <div class="card-body">
             <div class="table-responsive">

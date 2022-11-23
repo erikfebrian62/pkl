@@ -17,6 +17,8 @@ class Candidate extends Model
         'wakil',
         'kelas_wakil',
         'jurusan_wakil',
+        'visi',
+        'misi'
     ];
 
     public function vote()
@@ -27,16 +29,6 @@ class Candidate extends Model
     public function votecount()
     {
         return $this->hasMany(Vote::class);
-    }
-
-    public function misi()
-    {
-        return $this->hasMany(Misi::class);
-    }
-
-    public function visi()
-    {
-        return $this->hasMany(Visi::class);
     }
 
     public function winner()

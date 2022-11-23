@@ -22,7 +22,7 @@ class UserImport implements ToModel, WithHeadingRow
             'name' => $row['name'],
             'class' => $row['class'],
             'jurusan' => $row['jurusan'],
-            'password' => Hash::make($row['jurusan'])
+            'password' => Hash::make($row['password'])
         ]);
     }
 }

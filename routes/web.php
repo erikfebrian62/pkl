@@ -88,41 +88,41 @@ Route::prefix('admin')->name('admin.')->middleware('role:admin')->group( functio
         Route::get('{id}/delete', [EditkandidatController::class, 'destroy'])->name('destroy');
 
         //crud visi kandidat
-        Route::prefix('visi')->name('visi.')->middleware('role:admin')->group(function() {
+        // Route::prefix('visi')->name('visi.')->middleware('role:admin')->group(function() {
 
-            Route::get('/', [EditVisiController::class, 'index'])->name('index');
+        //     Route::get('/', [EditVisiController::class, 'index'])->name('index');
 
-            Route::get('{id}/show', [EditVisiController::class, 'show'])->name('show');
+        //     Route::get('{id}/show', [EditVisiController::class, 'show'])->name('show');
 
-            Route::get('create', [EditVisiController::class, 'create'])->name('create');
+        //     Route::get('create', [EditVisiController::class, 'create'])->name('create');
 
-            Route::get('{candidate}/{id}/edit', [EditVisiController::class, 'edit'])->name('edit');
+        //     Route::get('{candidate}/{id}/edit', [EditVisiController::class, 'edit'])->name('edit');
 
-            Route::post('create', [EditVisiController::class, 'store'])->name('store');
+        //     Route::post('create', [EditVisiController::class, 'store'])->name('store');
 
-            Route::put('{id}/update', [EditVisiController::class, 'update'])->name('update');
+        //     Route::put('{id}/update', [EditVisiController::class, 'update'])->name('update');
 
-            Route::get('{id}/delete', [EditVisiController::class, 'destroy'])->name('destroy');
+        //     Route::get('{id}/delete', [EditVisiController::class, 'destroy'])->name('destroy');
 
-        });
-        //crud misi kandidat
-        Route::prefix('misi')->name('misi.')->middleware('role:admin')->group(function() {
+        // });
+        // //crud misi kandidat
+        // Route::prefix('misi')->name('misi.')->middleware('role:admin')->group(function() {
 
-            Route::get('/', [EditMisiController::class, 'index'])->name('index');
+        //     Route::get('/', [EditMisiController::class, 'index'])->name('index');
 
-            Route::get('{id}/show', [EditMisiController::class, 'show'])->name('show');
+        //     Route::get('{id}/show', [EditMisiController::class, 'show'])->name('show');
 
-            Route::get('create', [EditMisiController::class, 'create'])->name('create');
+        //     Route::get('create', [EditMisiController::class, 'create'])->name('create');
 
-            Route::get('{candidate}/{id}/edit', [EditMisiController::class, 'edit'])->name('edit');
+        //     Route::get('{candidate}/{id}/edit', [EditMisiController::class, 'edit'])->name('edit');
 
-            Route::post('create', [EditMisiController::class, 'store'])->name('store');
+        //     Route::post('create', [EditMisiController::class, 'store'])->name('store');
 
-            Route::put('{id}/update', [EditMisiController::class, 'update'])->name('update');
+        //     Route::put('{id}/update', [EditMisiController::class, 'update'])->name('update');
 
-            Route::get('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
+        //     Route::get('{id}/delete', [EditMisiController::class, 'destroy'])->name('destroy');
 
-        });
+        // });
     });
 
     //crud pemenang

@@ -38,10 +38,8 @@
                     </div>
 
                     <div class="card-body">
-                        <h6>Visi Misi</h6>
-                          @foreach ($candidate->visi as $visis)
-                            <p class="mt-3">{{$visis->visi}}</p>
-                          @endforeach
+                        <h6>Visi</h6>
+                            <p class="mt-3">{{$candidate->visi}}</p>
 
                         <!-- Button trigger modal -->
                         <p type="button" class="btn btn-light sm-3" data-bs-toggle="modal" data-bs-target="#kandidat{{ $candidate->id }}" data-id="{{ $candidate->id }}">
@@ -82,15 +80,9 @@
                                         <p class="fw-bold fs-7">{{$candidate->jurusan_wakil}}</p>
                                     </div>
                                     <h6 class="viisi-misi fw-bold">Visi</h6>
-                                    @foreach ($candidate->visi as $visis)
-                                      <p class="mt-3">{{$visis->visi}}</p>
-                                    @endforeach
+                                      <p class="mt-3">{{$candidate->visi}}</p>
                                     <h6 class="viisi-misi fw-bold">Misi</h6>
-                                    <ol>
-                                      @foreach ($candidate->misi as $misis)
-                                        <li class="mt-3">{!!$misis->misi!!}</li>
-                                      @endforeach
-                                    </ol>
+                                        <p class="mt-3">{!!$candidate->misi!!}</p>
                                 </div>
                                 </div>
                             </div>
