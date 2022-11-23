@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <div class="awalan">
-            <h1>Pilih Kandidat</h1>
-            <p class="kk">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h1>Informasi Suara</h1>
+            <p class="kk">Perolehan Hasil Vote Sementara.</p>
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
 
@@ -36,10 +36,8 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <h6>Visi Misi</h6>
-                                @foreach ($candidate->visi as $visis)
-                                    <p class="mt-3">{{$visis->visi}}</p>
-                                @endforeach
+                            <h6>Visi</h6>
+                                    <p class="mt-3">{{$candidate->visi}}</p>
                             <div class="row">
                                 <div class="col">
                                     <div class="suara">
@@ -74,7 +72,7 @@
     <script>
         setInterval(() => {
             ambil();
-        }, 10000);
+        }, 9  00000);
 
         function ambil(){
             fetch('/api/voting')

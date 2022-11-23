@@ -13,7 +13,7 @@ class DisplayController extends Controller
     public function display()
     {
         $votes = Vote::all();
-        $candidate = Candidate::with(['visi','misi'])->get();
+        $candidate = Candidate::get();
         $users = User::where('role', 'user');
         $count = new Vote;
         return view('display', compact('users', 'candidate', 'votes', 'count'));

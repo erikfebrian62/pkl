@@ -34,13 +34,9 @@
                     </div>
                     <div class="col">
                         <h6 class="viisi-misi fw-bold">Visi</h6>
-                            @foreach ($item->candidate->visi as $visis)
-                                <p class="mt-3">{{$visis->visi}}</p>
-                            @endforeach
+                                <p class="mt-3">{{$item->visi}}</p>
                         <h6 class="viisi-misi fw-bold">Misi</h6>
-                                @foreach ($item->candidate->misi as $misis)
-                                    <div class="mt-3">{!!$misis->misi!!}</div>
-                                @endforeach
+                                    <div class="mt-3">{!!$item->misi!!}</div>
                     </div>
                 </div>
                 <div class="row ">

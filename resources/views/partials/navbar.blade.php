@@ -10,7 +10,7 @@
         @if(Auth::check())
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Halo, <b>{{ Auth::user()->name }}</b>
+              Hallo, <b>{{ Auth::user()->name }}</b>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>

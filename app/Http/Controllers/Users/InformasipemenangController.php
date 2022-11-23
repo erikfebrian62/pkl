@@ -15,11 +15,7 @@ class InformasipemenangController extends Controller
 {
     public function pemenang()
     {
-        // $candidate = Candidate::all();
-        $candidate = Candidate::with(['visi','misi'])->get();
-        // $candidate = Candidate::findOrFail($id);
-        // $data = Misi::where('candidate_id', $candidate->id)->get();
-        // $visi = Visi::where('candidate_id', $candidate->id)->first();
+        $candidate = Candidate::all();
         $users = User::where('role', 'user')->get();
         $votes = Vote::all();
         $count = new Vote;
