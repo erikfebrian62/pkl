@@ -1,7 +1,7 @@
 @extends("layouts.mainadmin")
 
 @section('title')
-Visi Dari Kandidat
+Tampilan Data Kandidat
 @endsection
 
 @section('content')
@@ -35,11 +35,9 @@ Visi Dari Kandidat
                         </div>
                         <div class="mt-5 text-center">
                             <h6 class="visi fw-bold">Visi</h6>
-                                <p class="mt-3">{{$visi->visi}}</p>
+                                <p class="mt-3">{{ $candidate->visi }}</p>
                             <h6 class="visi fw-bold">Misi</h6>
-                            <ol>
-                                <li>{{$data->misi}}</li>
-                            </ol>
+                                <div>{!! $candidate->misi !!}</div>
                         </div>
                     </div>
                 </div>

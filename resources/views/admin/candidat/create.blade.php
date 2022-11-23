@@ -1,7 +1,7 @@
 @extends('layouts.mainadmin')
 
 @section('title')
-Visi Dari Kandidat
+Tambah Data Kandidat
 @endsection
 
 @section('content')

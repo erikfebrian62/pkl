@@ -28,11 +28,5 @@ class DisplayController extends Controller
         return response()->json($data);
     }
 
-    // public function winner(Request $request)
-    // {
-    //     $data = [
-    //         'candidate' => Candidate::withCount('vote')->orderBy('vote_count', 'desc')->first(),
-    //     ];
-    //     dd($data);
-    // }
+   
 }
