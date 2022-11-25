@@ -38,14 +38,14 @@
         <li
             class="sidebar-item  {{ (request()->segment(2) == 'kandidat') ? 'active' : '' }}">
             <a href="{{ route('admin.kandidat.index') }}" class='sidebar-link'>
-                <i class="iconly-boldAdd-User"></i>
+                <i class="bi bi-people-fill"></i>
                 <span>Kelola Kandidat</span>
             </a>
         </li>
         <li
             class="sidebar-item  {{ (request()->segment(2) == 'pemenang') ? 'active' : '' }}">
             <a href="{{ route('admin.pemenang.index') }}" class='sidebar-link'>
-                <i class="iconly-boldAdd-User"></i>
+                <i class="bi bi-trophy"></i>
                 <span>Kelola Struktur</span>
             </a>
         </li>
