@@ -34,9 +34,9 @@
                     </div>
                     <div class="col">
                         <h6 class="viisi-misi fw-bold">Visi</h6>
-                                <p class="mt-3">{{$item->visi}}</p>
+                                <p class="mt-3">{{$item->candidate->visi}}</p>
                         <h6 class="viisi-misi fw-bold">Misi</h6>
-                                    <div class="mt-3">{!!$item->misi!!}</div>
+                                    <div class="mt-3">{!!$item->candidate->misi!!}</div>
                     </div>
                 </div>
                 <div class="row ">
