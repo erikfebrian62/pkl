@@ -141,7 +141,7 @@
                  ) {
                      swalWithBootstrapButtons.fire(
                      'Tidak jadi',
-                     'Anda  :)',
+                     'Anda Tidak Jadi memilih Kandidat ini :)',
                      'error'
                      )
                  }
