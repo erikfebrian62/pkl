@@ -11,10 +11,10 @@
 
         <div class="row mb-5">
           <div class="card p-5">
+            @foreach ($winner as $item)
             <div class="nomer">
-              <h5>1</h5>
+              <h5>{{ $item->candidate->id}}</h5>
             </div>
-              @foreach ($winner as $item)
               <div class="card-body">
                 <div class="row justify-content-start mb-5">
                     <div class="col-auto">
